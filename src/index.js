@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import firebase from "./Config/fbconfig";
-import Store from "./Redux/Store";
+import store from "./Redux/Store";
 import { createFirestoreInstance } from "redux-firestore";
 
 // react-redux-firebase config  from react-redux-firebase version 3 to store user profile
