@@ -10,6 +10,7 @@ class Home extends Component {
             <button type="button" class="btn btn-primary">
               welcome
             </button>
+            <h3>hello final project</h3>
           </div>
         </div>
       </div>
