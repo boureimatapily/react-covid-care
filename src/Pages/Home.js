@@ -11,6 +11,7 @@ class Home extends Component {
               welcome
             </button>
             <h3>hello final project</h3>
+            <h3>hello Mimi</h3>
           </div>
         </div>
       </div>
