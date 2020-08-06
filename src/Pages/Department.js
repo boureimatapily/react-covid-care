@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
- function Department() {
-    return (
-        <div>
-            <h1>Welcom to department</h1>
+function Department() {
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <h1>Department Dashboard</h1>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Department
+export default Department;

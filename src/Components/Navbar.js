@@ -41,11 +41,16 @@ function Navbar() {
                       Home
                     </Link>
                   </li>
-                  {/* <li className="nav-item">
-                    <Link className="nav-link" to="/">
-                      Link
+                  <li className="nav-item NavlinkColor">
+                    <Link className="nav-link" to="/department">
+                      Department
                     </Link>
-                  </li> */}
+                  </li>
+                  <li className="nav-item NavlinkColor">
+                    <Link className="nav-link" to="/hospital">
+                      Hospital
+                    </Link>
+                  </li>
 
                   
                 </ul>
