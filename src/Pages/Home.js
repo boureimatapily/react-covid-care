@@ -1,14 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Home extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Welcome to home</h1>
-                <button type="button" class="btn btn-primary">welcome</button>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <h1>Welcome to home</h1>
+            <button type="button" class="btn btn-primary">
+              welcome
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default  Home
+export default Home;
