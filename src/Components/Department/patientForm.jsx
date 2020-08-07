@@ -37,9 +37,12 @@ class PatientForm extends Form {
 
   render() {
     const { data, errors } = this.state;
+    console.log(data);
     return (
       <div>
-        <h1>patient Details</h1>
+        <h3 className="text-center mt-5 mb-5 text-capitalize text-secondary">
+          patient Details
+        </h3>
         <form onSubmit={this.handleSubmit}>
           <div className="row">
             <div className="form-group col-md-6 mb-3">
@@ -70,7 +73,7 @@ class PatientForm extends Form {
           </div>
           <div className="row">
             <div className="form-group col-md-4 mb-2">
-              <label htmlFor="temperature">temperature</label>
+              <label htmlFor="temperature">Temperature</label>
               <input
                 value={data.temperature}
                 onChange={this.handleChange}
@@ -82,7 +85,7 @@ class PatientForm extends Form {
               {errors && <p className="text-danger"> {errors.temperature} </p>}
             </div>
             <div className="form-group col-md-4 mb-2">
-              <label htmlFor="weight">weight</label>
+              <label htmlFor="weight">Weight</label>
               <input
                 value={data.weight}
                 onChange={this.handleChange}
@@ -94,7 +97,7 @@ class PatientForm extends Form {
               {errors && <p className="text-danger"> {errors.weight} </p>}
             </div>
             <div className="form-group col-md-4 mb-2">
-              <label htmlFor="height">height</label>
+              <label htmlFor="height">Height</label>
               <input
                 value={data.height}
                 onChange={this.handleChange}
@@ -122,7 +125,7 @@ class PatientForm extends Form {
           </div>
           <div className="row">
             <div className="form-group col-md-6 mb-3">
-              <label htmlFor="nextofkin">next of kin</label>
+              <label htmlFor="nextofkin">Next of kin</label>
               <input
                 value={data.nextofkin}
                 onChange={this.handleChange}
@@ -134,7 +137,7 @@ class PatientForm extends Form {
               {errors && <p className="text-danger"> {errors.nextofkin} </p>}
             </div>
             <div className="form-group col-md-6 mb-3">
-              <label htmlFor="contact">contact</label>
+              <label htmlFor="contact">Contact</label>
               <input
                 value={data.contact}
                 onChange={this.handleChange}
@@ -155,14 +158,12 @@ class PatientForm extends Form {
                 type="text"
                 id="report"
                 name="report"
-                className="form-control"
+                className="form-control "
               />
               {errors && <p className="text-danger"> {errors.report} </p>}
             </div>
           </div>
-          <button disabled={this.validate()} className="btn btn-primary mt-5">
-            submit
-          </button>
+          {this.renderButton("Submit")}
         </form>
       </div>
     );
