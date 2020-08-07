@@ -1,4 +1,5 @@
 import React from "react";
+import PatientForm from "../Components/Department/patientForm";
 
 function Department() {
   return (
@@ -6,6 +7,7 @@ function Department() {
       <div className="row">
         <div className="col">
           <h1>Department Dashboard</h1>
+          <PatientForm />
         </div>
       </div>
     </div>
