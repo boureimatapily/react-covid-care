@@ -6,12 +6,22 @@ class Home extends Component {
       <div className="container">
         <div className="row">
           <div className="col">
-            <h1>Welcome to home</h1>
-            <button type="button" class="btn btn-primary">
-              welcome
-            </button>
-            <h3>hello final project</h3>
-            <h3>hello Mimi</h3>
+            <h1>Fight COVID-19 With Codetrain and Covid Care Platform</h1>
+
+          </div>
+          <div className="col">
+            <h1>Section 1</h1>
+            
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <h1>Section 2 1</h1>
+            
+          </div>
+          <div className="col">
+            <h1>Section 2 2</h1>
+            
           </div>
         </div>
       </div>
