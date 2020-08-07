@@ -7,13 +7,13 @@ import "firebase/storage";
 import "firebase/analytics";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyDslZ8t4_O0C71bMKmvK-5dT4gxJBTxjEU",
-  authDomain: "learnforward-b8e93.firebaseapp.com",
-  databaseURL: "https://learnforward-b8e93.firebaseio.com",
-  projectId: "learnforward-b8e93",
-  storageBucket: "learnforward-b8e93.appspot.com",
-  messagingSenderId: "110471968321",
-  appId: "1:110471968321:web:6cacc25abd91228ffc38c0"
+  apiKey: "AIzaSyB9sIGOPZPiI4aRh3n5YEu7wRA79lBn0eY",
+  authDomain: "covid-care-a267c.firebaseapp.com",
+  databaseURL: "https://covid-care-a267c.firebaseio.com",
+  projectId: "covid-care-a267c",
+  storageBucket: "covid-care-a267c.appspot.com",
+  messagingSenderId: "783260378487",
+  appId: "1:783260378487:web:ccaa9783f729e1246c2d72"
 };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
