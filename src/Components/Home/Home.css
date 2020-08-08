@@ -1,12 +1,22 @@
-/* #appContainer{
-    padding: 100px;
-} */
-#covid_img{
-    width: 350px;
-    height: 210px;
-    margin-bottom: 20px;
-    border-radius: 50px;
+#appContainer{
+    border-color: tomato;
+    border: 2px solid black;
 }
+#covid_img{
+    width: 120px;
+    height: 220px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transform: rotate(60deg);
+}
+#covid_imgOne{
+    width: 120px;
+    height: 220px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transform: rotate(20deg);
+}
+
 .sectionOne{
     background-color: rgb(3, 11, 51);
     border-radius: 55% 44% 50% 49% / 0% 0% 33% 50%  ;

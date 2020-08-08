@@ -12,9 +12,16 @@ class Home extends Component {
             <h2>Fight COVID-19 With Codetrain and Covid Care Platform</h2>
             <span>Work from home, do everything remotly</span>
           </div>
-          <div className="col">
+          <div className="col d-flex flex-row justify-content-evenly align-items-center ">
             <img
-              src={require("../Images/covid.jpg")}
+              src={require("../Images/phone.JPG")}
+              alt="covid"
+              id="covid_imgOne"
+              className="d-none d-md-block"
+            />
+
+            <img
+              src={require("../Images/phone.JPG")}
               alt="covid"
               id="covid_img"
               className="d-none d-md-block"
