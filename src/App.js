@@ -5,6 +5,7 @@ import Department from "./Pages/Department";
 import Hospital from "./Pages/Hospital";
 import Navbar from "./Components/Navbar";
 import { ToastContainer } from "react-toastify"; // ToastContainer to acces to toast notify everywhere in the project
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
