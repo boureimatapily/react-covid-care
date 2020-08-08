@@ -6,7 +6,9 @@ import {
   TOGGLE_CHECKED,
   TOGGLE_CHECKED_ERR,
   UPDATE_USER,
-  UPDATE_USER_ERR
+  UPDATE_USER_ERR,
+  ADD_DEPARTMENT,
+  ADD_DEPARTMENT_ERR
 } from "../Type";
 import { toast } from "react-toastify";
 
@@ -36,7 +38,12 @@ const UserReducer = (state = {}, action) => {
     case UPDATE_USER_ERR:
          toast.error("Infos update error");
          return state;
-
+    case ADD_DEPARTMENT:
+          toast.info("Department added");
+          return state;
+    case ADD_DEPARTMENT_ERR:
+          toast.error("An error occured");
+          return state;
     default:
       return state;
   }

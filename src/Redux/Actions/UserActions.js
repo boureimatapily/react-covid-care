@@ -6,9 +6,37 @@ import {
   TOGGLE_CHECKED_ERR,
   TOGGLE_CHECKED,
   UPDATE_USER,
-  UPDATE_USER_ERR
+  UPDATE_USER_ERR,
+  ADD_DEPARTMENT,
+  ADD_DEPARTMENT_ERR
 } from "../Type";
 
+
+//Add new Department
+export const addDepart = (newDepart) => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firestore = getFirebase().firestore();
+    // const authorId = getState().firebase.auth.uid
+    firestore
+      .collection("departments")
+      .add({
+        ...newDepart,
+        // authorId:authorId,
+        date: new Date(),
+      })
+      .then(() => {
+        dispatch({ type: ADD_DEPARTMENT, newDepart });
+      })
+      .catch((err) => {
+        dispatch({ type: ADD_DEPARTMENT_ERR, err });
+      });
+  };
+};
+
+
+
+// user authentification actions 
+//Add new user
 export const addUser = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
@@ -29,7 +57,7 @@ export const addUser = (account) => {
       });
   };
 };
-
+      //Delete user
 export const deleteUser = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
@@ -46,7 +74,7 @@ export const deleteUser = (account) => {
       });
   };
 };
-
+    //Update user infos
 export const updateUser = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
@@ -65,7 +93,7 @@ export const updateUser = (account) => {
 };
 
 
-
+//check user user
 export const toggleChecked = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();

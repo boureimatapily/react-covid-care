@@ -1,4 +1,7 @@
 import React from "react";
+import { addDepart } from "../../Redux/Actions/UserActions";
+import { connect } from "react-redux";
+
 
 class AddDepartment extends React.Component {
   constructor(props) {
@@ -20,15 +23,16 @@ class AddDepartment extends React.Component {
     e.preventDefault();
     const newDepart = {
       department: this.state.department,
-      
     };
+    this.props.addDepart(newDepart);
+    this.setState({ department: "",})
   };
   render() {
     return (
       <div className="container">
         <div className="row">
           <div className="col">
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <div className="mb-3">
                 <label for="department" className="form-label">
                   Department Name
@@ -54,4 +58,4 @@ class AddDepartment extends React.Component {
   }
 }
 
-export default AddDepartment;
+export default connect(null, {addDepart})(AddDepartment);

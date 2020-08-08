@@ -7,6 +7,8 @@ export const TOGGLE_CHECKED = "TOGGLE_CHECKED";
 export const TOGGLE_CHECKED_ERR = "TOGGLE_CHECKED_ERR";
 export const UPDATE_USER = "UPDATE_USER";
 export const UPDATE_USER_ERR = "UPDATE_USER_ERR";
+export const ADD_DEPARTMENT = "ADD_DEPARTMENT";
+export const ADD_DEPARTMENT_ERR = "ADD_DEPARTMENT_ERR";
 
 // Auth Type
 export const LOG_IN = "LOG_IN";
