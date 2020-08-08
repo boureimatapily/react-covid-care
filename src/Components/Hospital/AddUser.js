@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux"
+import { addUser } from "../../Redux/Actions/UserActions";
 
 class AddUser extends React.Component {
   constructor(props) {
@@ -26,6 +28,8 @@ class AddUser extends React.Component {
       fullname: this.state.fullname,
       role: this.state.role,
     };
+    this.props.addUser(newUser)
+
   };
   render() {
     return (
@@ -100,4 +104,4 @@ class AddUser extends React.Component {
   }
 }
 
-export default AddUser;
+export default connect(null,{addUser})(AddUser);

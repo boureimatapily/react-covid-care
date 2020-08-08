@@ -1,5 +1,5 @@
 import React from 'react'
-import AddUser from '../Components/Hospital/AddUser'
+// import AddUser from '../Components/Hospital/AddUser'
 import AddDepartment from '../Components/Hospital/AddDepartment'
 
  function Hospital() {
