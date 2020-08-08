@@ -21,11 +21,12 @@ class AddDepartment extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
+    const { department} = this.state
     const newDepart = {
-      department: this.state.department,
+      department: department,
     };
     this.props.addDepart(newDepart);
-    this.setState({ department: "",})
+    this.setState({ department: " "})
   };
   render() {
     return (
@@ -39,7 +40,7 @@ class AddDepartment extends React.Component {
                 </label>
                 <input
                   type="department"
-                  className="form-control"
+                  className="form-control department"
                   id="department"
                   name="department"
                   value={this.state.value}

@@ -1,13 +1,12 @@
 import React from "react";
-import PatientForm from "../Components/Department/patientForm";
-
+// s
 function Department() {
   return (
     <div className="container">
       <div className="row">
         <div className="col">
-          <h1>Department Dashboard</h1>
-          <PatientForm />
+          <h1>Department List</h1>
+          
         </div>
       </div>
     </div>
