@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar/Navbar.css";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="container">
@@ -8,8 +8,8 @@ function Navbar() {
         <div className="col">
           <nav className="navbar navbar-expand-lg navbar-light NavColor">
             <div className="container-fluid">
-              <Link className="navbar-brand" to="/">
-               Covid Care
+              <Link className="navbar-brand brandColor" to="/">
+                Covid Care
               </Link>
               <button
                 className="navbar-toggler"
@@ -34,25 +34,30 @@ function Navbar() {
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
               ></div>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
                 <ul className="navbar-nav mr-auto mb-2 mb-lg-0 ">
-                  <li className="nav-item NavlinkColor">
-                    <Link clLinkssName="nav-link active" aria-current="page" to="/">
+                  <li className="nav-item whiteColor ">
+                    <Link
+                      clLinkssName="nav-link active"
+                      aria-current="page"
+                      to="/"
+                    >
                       Home
                     </Link>
                   </li>
-                  <li className="nav-item NavlinkColor">
-                    <Link className="nav-link" to="/department">
+                  <li className="nav-item whiteColor">
+                    <Link className="NavBtnLink" to="/department">
                       Department
                     </Link>
                   </li>
-                  <li className="nav-item NavlinkColor">
-                    <Link className="nav-link" to="/hospital">
+                  <li className="nav-item whiteColor ">
+                    <Link to="/hospital" className="NavBtnLink">
                       Hospital
                     </Link>
                   </li>
-
-                  
                 </ul>
               </div>
             </div>
