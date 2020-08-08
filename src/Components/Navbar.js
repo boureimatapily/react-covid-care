@@ -1,6 +1,8 @@
 import React from "react";
 import "./Navbar/Navbar.css";
 import { Link } from "react-router-dom";
+
+
 function Navbar() {
   return (
     <div className="container">
@@ -41,7 +43,7 @@ function Navbar() {
                 <ul className="navbar-nav mr-auto mb-2 mb-lg-0 ">
                   <li className="nav-item whiteColor ">
                     <Link
-                      clLinkssName="nav-link active"
+                      className=" active"
                       aria-current="page"
                       to="/"
                     >
