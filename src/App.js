@@ -4,12 +4,14 @@ import Home from "./Pages/Home";
 import Department from "./Pages/Department";
 import Hospital from "./Pages/Hospital";
 import Navbar from "./Components/Navbar";
+import { ToastContainer } from "react-toastify"; // ToastContainer to acces to toast notify everywhere in the project
 
 
 
 function App() {
   return (
     <React.Fragment>
+      <ToastContainer />
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
