@@ -1,7 +1,6 @@
-#appContainer{
-    border-color: tomato;
-    border: 2px solid black;
-}
+/* .appContainer{
+    background-color: rgb(3, 11, 51);  
+} */
 #covid_img{
     width: 120px;
     height: 220px;
