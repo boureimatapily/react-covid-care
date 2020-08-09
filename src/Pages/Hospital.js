@@ -1,5 +1,5 @@
 import React from "react";
-// import AddUser from '../Components/Hospital/AddUser'
+import AddUser from '../Components/Hospital/AddUser'
  import AddDepartment from "../Components/Hospital/AddDepartment";
 import Department from "./Department";
 
@@ -12,7 +12,7 @@ function Hospital() {
         </div>
       </div>
       <div className="row">
-          <div className="col-12">
+          <div className="col">
           <nav>
             <div className="nav nav-tabs" id="nav-tab" role="tablist">
               <a className="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">ADD Department</a>
@@ -28,7 +28,7 @@ function Hospital() {
               <Department/>
             </div>
             <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-            
+              <AddUser/>
             </div>
           </div>
                       
