@@ -35,7 +35,7 @@ const mSTp = (state) => {
   const uid = state.firebase.auth.uid
   return {
     departs: departs,
-    uid: state.firebase.auth.uid
+    uid: uid
   };
 };
 

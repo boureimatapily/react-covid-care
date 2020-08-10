@@ -3,7 +3,7 @@ import "./Navbar/Navbar.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../Redux/Actions/authActions";
-import firebase from "../Config/fbconfig"
+//import firebase from "../Config/fbconfig"
 
 function Navbar({logout, uid}) {
 

@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 class Home extends Component {
   render() {
-    const { profile, uid } = this.props;
+    const { uid } = this.props;
     if (!uid) return <Redirect to="/login" />;
     
     return (
