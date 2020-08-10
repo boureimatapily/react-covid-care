@@ -6,6 +6,7 @@ import Hospital from "./Pages/Hospital";
 import Navbar from "./Components/Navbar";
 import { ToastContainer } from "react-toastify"; // ToastContainer to acces to toast notify everywhere in the project
 import 'react-toastify/dist/ReactToastify.css';
+import Login from "./Pages/Login";
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/department" component={Department} />
         <Route exact path="/hospital" component={Hospital} />
+        <Route exact path="/login" component={Login} />
       </Switch>
     </React.Fragment>
   );

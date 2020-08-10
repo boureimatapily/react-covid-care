@@ -1,9 +1,12 @@
 import React from "react";
 import "./Navbar/Navbar.css";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { logout } from "../Redux/Actions/authActions";
+import firebase from "../Config/fbconfig"
 
+function Navbar({logout, uid}) {
 
-function Navbar() {
   return (
     <div className="container">
       <div className="row">
@@ -60,6 +63,16 @@ function Navbar() {
                       Hospital
                     </Link>
                   </li>
+                  <li className="nav-item whiteColor ">
+                    <Link to="/login" className="NavBtnLink">
+                      Login
+                    </Link>
+                  </li>
+                  <li className="nav-item whiteColor ">
+                    <Link to="/" className="NavBtnLink" onClick={logout}>
+                      Log Out
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -69,4 +82,13 @@ function Navbar() {
     </div>
   );
 }
-export default Navbar;
+
+const mStp = (state) => {
+  console.log(state)
+  const uid = state.firebase.auth.uid;
+  return {
+    uid: uid,
+    //auth: auth
+  };
+};
+export default connect(mStp, {logout })(Navbar);

@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 //import home css style file
 import "../Components/Home/Home.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Home extends Component {
   render() {
+    const { profile, uid } = this.props;
+    if (!uid) return <Redirect to="/login" />;
+    
     return (
       <div className="container appContainer">
         <div className="row sectionOne">
           <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
             <h2>Fight COVID-19 With Codetrain and Covid Care Platform</h2>
             <span>Work from home, do everything remotly</span>
+            
           </div>
           <div className="col d-flex flex-row justify-content-evenly align-items-center ">
             <img
@@ -30,6 +35,7 @@ class Home extends Component {
         </div>
         <div className="row sectionTwo">
           <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex flex-row justify-content-end align-items-center">
+
             <div className="card cardstyle d-flex flex-column justify-content-center align-items-center">
               <img
                 src={require("../Images/hospital.jpg")}
@@ -70,5 +76,13 @@ class Home extends Component {
     );
   }
 }
+const mStp = (state) => {
+  const uid = state.firebase.auth.uid;
+ // const profile = state.firebase.profile;
+  return {
+    uid: uid,
+    //profile: profile
+  };
+};
 
-export default Home;
+export default connect(mStp)(Home);

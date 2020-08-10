@@ -32,6 +32,7 @@ export const login = (creds) => {
       .signInWithEmailAndPassword(creds.email, creds.password)
       .then(() => {
         dispatch({ type: LOG_IN });
+        
       })
       .catch((err) => {
         dispatch({ type: LOG_IN_ERR }, err);
