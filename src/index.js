@@ -14,15 +14,15 @@ import { createFirestoreInstance } from "redux-firestore"; // allow to create fi
 const rrfConfig = {
   userProfile: "users", // firestore collection where users profiles are stored in database
   useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB, allow to link firebase and firestore
-  enableClaims: true, // Get custom claims along with the profile, allow to define role in our app
-  presence: "presence", // where list of online users is stored in database
-  sessions: "sessions", // where users sessions are stored in the datebase
+  //enableClaims: true, // Get custom claims along with the profile, allow to define role in our app
+  //presence: "presences", // where list of online users is stored in database
+  //sessions: "sessions", // where users sessions are stored in the datebase
 };
 
 // creating react-redux-firebase Props from react-redux-firebase version 3
 const rrfProps = {
   firebase,
-  config: { rrfConfig },
+  config: rrfConfig,
   dispatch: store.dispatch,
   createFirestoreInstance, // <- needed if using firestore
 };
