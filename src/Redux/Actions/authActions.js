@@ -3,16 +3,24 @@ import { LOG_IN, LOG_IN_ERR, SIGN_UP, SIGN_UP_ERR, LOG_OUT, LOG_OUT_ERR } from "
 export const register = (creds) => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
+    const firestore = getFirebase().firestore();
     firebase
       .auth()
       .createUserWithEmailAndPassword(creds.email, creds.password)
-      .then(() => {
+      .then((res) => {
+        return(
+          firestore.collection("users").doc(res.user.uid).set({
+            fullname:creds.fullname,
+            role:creds.role,
+            initials:creds.fullname[0] + creds.fullname[1]
+          })
+        )
+      }).then(()=>{
         dispatch({ type: SIGN_UP });
-        
-      })
-      .catch((err) => {
+      }).catch((err) => {
         dispatch({ type: SIGN_UP_ERR }, err);
       });
+      
   };
 };
 

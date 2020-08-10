@@ -29,9 +29,11 @@ function Department({ departs }) {
 const mSTp = (state) => {
   console.log(state);
   const departs = state.firestore.ordered.departments;
+  const users = state.firestore.ordered.users;
   // const uid = state.firebase.auth.uid
   return {
     departs: departs,
+    
     // uid: state.firebase.auth.uid
   };
 };

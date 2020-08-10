@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux"
-import { addUser } from "../../Redux/Actions/UserActions";
+//import { addUser } from "../../Redux/Actions/UserActions";
+import { register } from "../../Redux/Actions/authActions";
 
 class AddUser extends React.Component {
   constructor(props) {
@@ -22,13 +23,15 @@ class AddUser extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const newUser = {
+    const creds = {
       email: this.state.email,
       password: this.state.password,
       fullname: this.state.fullname,
       role: this.state.role,
     };
-    this.props.addUser(newUser)
+    this.props.register(creds);
+    document.getElementById("form").reset();
+
 
   };
   render() {
@@ -36,9 +39,9 @@ class AddUser extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col">
-            <form>
+            <form onSubmit={this.handleSubmit} id="form">
               <div className="mb-3">
-                <label for="email" className="form-label">
+                <label htmlFor="email" className="form-label">
                   Email address
                 </label>
                 <input
@@ -48,11 +51,11 @@ class AddUser extends React.Component {
                   name="email"
                   value={this.state.value}
                   onChange={this.handleChange}
-                  aria-describedby="emailHelp"
+                  
                 />
               </div>
               <div className="mb-3">
-                <label for="password" className="form-label">
+                <label htmlFor="password" className="form-label">
                   Password
                 </label>
                 <input
@@ -66,7 +69,7 @@ class AddUser extends React.Component {
               </div>
 
               <div className="mb-3">
-                <label for="fullname" className="form-label">
+                <label htmlFor="fullname" className="form-label">
                   fullname
                 </label>
                 <input
@@ -76,11 +79,11 @@ class AddUser extends React.Component {
                   name="fullname"
                   value={this.state.value}
                   onChange={this.handleChange}
-                  aria-describedby="fullnameHelp"
+                  
                 />
               </div>
               <div className="mb-3">
-                <label for="role" className="form-label">
+                <label htmlFor="role" className="form-label">
                   role
                 </label>
                 <input
@@ -90,7 +93,7 @@ class AddUser extends React.Component {
                   name="role"
                   value={this.state.value}
                   onChange={this.handleChange}
-                  aria-describedby="roleHelp"
+                  
                 />
               </div>
               <button type="submit" className="btn btn-primary">
@@ -104,4 +107,4 @@ class AddUser extends React.Component {
   }
 }
 
-export default connect(null,{addUser})(AddUser);
+export default connect(null,{register})(AddUser);

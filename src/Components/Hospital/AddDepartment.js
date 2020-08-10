@@ -35,7 +35,7 @@ class AddDepartment extends React.Component {
           <div className="col">
             <form onSubmit={this.handleSubmit}>
               <div className="mb-3">
-                <label for="department" className="form-label">
+                <label htmlFor="department" className="form-label">
                   Department Name
                 </label>
                 <input
