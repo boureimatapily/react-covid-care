@@ -3,8 +3,10 @@ import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase"; // allow to access to a spesific collection and do realtime listening
 import { connect } from "react-redux";
 import SingleDeparts from "../Components/Department/SingleDeparts";
+import { Redirect } from "react-router-dom";
 
-function Department({ departs }) {
+function Department({ departs, uid }) {
+  if(!uid) return <Redirect to="/login" />
   return (
     <div className="container">
       <div className="row">
@@ -29,12 +31,11 @@ function Department({ departs }) {
 const mSTp = (state) => {
   console.log(state);
   const departs = state.firestore.ordered.departments;
-  const users = state.firestore.ordered.users;
-  // const uid = state.firebase.auth.uid
+  //const users = state.firestore.ordered.users;
+  const uid = state.firebase.auth.uid
   return {
     departs: departs,
-    
-    // uid: state.firebase.auth.uid
+    uid: state.firebase.auth.uid
   };
 };
 

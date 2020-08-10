@@ -2,8 +2,11 @@ import React from "react";
 import AddUser from '../Components/Hospital/AddUser'
  import AddDepartment from "../Components/Hospital/AddDepartment";
 import Department from "./Department";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-function Hospital() {
+function Hospital({uid}) {
+  if(!uid) return <Redirect to="/login" />
   return (
     <div className="container">
       <div className="row">
@@ -38,5 +41,14 @@ function Hospital() {
     </div>
   );
 }
+const mStp = (state) => {
+  const uid = state.firebase.auth.uid;
+ // const profile = state.firebase.profile;
+  return {
+    uid: uid,
+    //profile: profile
+  };
+};
 
-export default Hospital;
+export default connect(mStp)(Hospital);
+
