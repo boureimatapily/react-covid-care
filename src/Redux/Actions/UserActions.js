@@ -37,13 +37,13 @@ export const addDepart = (newDepart) => {
 
 // user authentification actions 
 //Add new user
-export const addUser = (account) => {
+export const addPatient = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
     const authorId = getState().firebase.auth.uid
     // const id = account.userId;
     firestore
-      .collection("users")
+      .collection("patients")
       .add({
         ...account,
         authorId:authorId,
@@ -58,12 +58,12 @@ export const addUser = (account) => {
   };
 };
       //Delete user
-export const deleteUser = (account) => {
+export const deletePatient = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
     // const id = account.userId;
     firestore
-      .collection("users")
+      .collection("patients")
       .doc(account.id)
       .delete()
       .then(() => {
@@ -80,7 +80,7 @@ export const updateUser = (account) => {
     const firestore = getFirebase().firestore();
     // const id = account.userId;
     firestore
-      .collection("users")
+      .collection("patients")
       .doc(account.id)
       .update(account)
       .then(() => {
@@ -100,7 +100,7 @@ export const toggleChecked = (account) => {
     // const id = account.userId;
 
     firestore
-      .collection("users")
+      .collection("patients")
       .doc(account.id)
       .set(
         {

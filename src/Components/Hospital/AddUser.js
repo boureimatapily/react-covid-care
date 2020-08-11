@@ -38,7 +38,7 @@ class AddUser extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-xs-12 col-sm-12 col-md-6  col-md-offset-3 col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-xxl-6 col-xxl-offset-3">
             <form onSubmit={this.handleSubmit} id="form">
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
@@ -73,7 +73,7 @@ class AddUser extends React.Component {
                   fullname
                 </label>
                 <input
-                  type="fullname"
+                  type="text"
                   className="form-control"
                   id="fullname"
                   name="fullname"
@@ -87,7 +87,7 @@ class AddUser extends React.Component {
                   role
                 </label>
                 <input
-                  type="role"
+                  type="text"
                   className="form-control"
                   id="role"
                   name="role"
