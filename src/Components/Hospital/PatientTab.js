@@ -1,7 +1,6 @@
 import React from "react";
-//import PatientForm from "../Department/patientForm";
-import AddPatient from "./AddPatient";
-import PatientForm from "../Department/patientForm";
+import AddPatient from "./Patient/AddPatient"; // Adding patient
+import PatientList from "./Patient/PatientList"; // Patient list
 
 export default function PatientTab() {
   return (
@@ -30,7 +29,7 @@ export default function PatientTab() {
                 aria-controls="nav-profile"
                 aria-selected="false"
               >
-               .... Patient List
+                Patient List
               </a>
             </div>
           </nav>
@@ -43,7 +42,6 @@ export default function PatientTab() {
             >
               <h1>ADD Patient</h1>
               <AddPatient />
-              <PatientForm />
             </div>
             <div
               className="tab-pane fade"
@@ -51,7 +49,7 @@ export default function PatientTab() {
               role="tabpanel"
               aria-labelledby="nav-profile-tab"
             >
-              <h1>Patient List </h1>
+              <PatientList />
             </div>
           </div>
         </div>
