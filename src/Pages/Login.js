@@ -30,13 +30,9 @@ class Login extends React.Component {
 
   };
   render() {
-    const { uid, profile } = this.props;
+    const { uid} = this.props;
     if (uid){
-      if(profile.role === "manager"){
-        return <Redirect to="/hospital" />
-      }else{
-        return <Redirect to="/department" />
-      }
+      return <Redirect to="/" />
     };
     return (
       <div className="container">

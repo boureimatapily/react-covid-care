@@ -1,7 +1,7 @@
 import React from "react";
 import AddUser from '../Components/Hospital/AddUser'
  import AddDepartment from "../Components/Hospital/AddDepartment";
-import Department from "./Department";
+//import Department from "./Department";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
@@ -25,13 +25,21 @@ function Hospital({uid}) {
           </nav>
           <div className="tab-content" id="nav-tabContent">
             <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <h1>ADD Patient</h1>
               <AddDepartment/>
+              <h1>Patient List</h1>
+              
             </div>
             <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              <Department/>
+              {/* <Department/> */}
+              <h1>ADD Doctor</h1>
+                <AddUser/>  
+              <h1>Doctor List </h1>
+
             </div>
             <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-              <AddUser/>
+              
+              <h1>...List </h1>
             </div>
           </div>
                       
