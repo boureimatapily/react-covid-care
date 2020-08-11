@@ -1,9 +1,10 @@
 import React from "react";
 import AddUser from '../Components/Hospital/AddUser'
- import AddDepartment from "../Components/Hospital/AddDepartment";
+//import AddDepartment from "../Components/Hospital/AddDepartment";
 //import Department from "./Department";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
+import PatientTab from "../Components/Hospital/PatientTab"; // Tab to manage Patient adding and listing
 
 function Hospital({uid}) {
   if(!uid) return <Redirect to="/login" />
@@ -15,7 +16,7 @@ function Hospital({uid}) {
         </div>
       </div>
       <div className="row">
-          <div className="col">
+         <div className="col">
           <nav>
             <div className="nav nav-tabs" id="nav-tab" role="tablist">
               <a className="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Patient</a>
@@ -24,11 +25,10 @@ function Hospital({uid}) {
             </div>
           </nav>
           <div className="tab-content" id="nav-tabContent">
-            <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              <h1>ADD Patient</h1>
-              <AddDepartment/>
-              <h1>Patient List</h1>
-              
+            <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> 
+              {/* Tab to manage Patient adding and listing */}
+              <h1>All about Patient</h1>
+              <PatientTab /> 
             </div>
             <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               {/* <Department/> */}
