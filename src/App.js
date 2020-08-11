@@ -20,6 +20,7 @@ function App() {
         <Route exact path="/department" component={Department} />
         <Route exact path="/hospital" component={Hospital} />
         <Route exact path="/login" component={Login} />
+        {/* <Route exact path="/edit/:id" component={EditForm} /> */}
       </Switch>
     </React.Fragment>
   );

@@ -95,7 +95,7 @@ export const updateUser = (account) => {
 };
 
 
-//check user user
+//mark patient consultation as don
 export const toggleChecked = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
