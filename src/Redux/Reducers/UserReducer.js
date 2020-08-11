@@ -15,22 +15,22 @@ import { toast } from "react-toastify";
 const UserReducer = (state = {}, action) => {
   switch (action.type) {
     case ADD_USER_INFO:
-      toast.success("user infos added");
+      toast.success("Patient infos added");
       return state;
     case ADD_USER_INFO_ERR:
       toast.error("an error occured");
       return state;
     case DELETE_USER:
-      toast.warn("User deleted");
+      toast.warn("Patient deleted");
       return state;
     case DELETE_USER_ERR:
       toast.error("an error occured");
       return state;
     case TOGGLE_CHECKED:
-        toast.info("User checked");
+        toast.info("consulting confirmed");
         return state;
     case TOGGLE_CHECKED_ERR:
-        toast.error("User checked error");
+        toast.error("an error occured, try again");
         return state;
     case UPDATE_USER:
          toast.info("Info updated");

@@ -50,10 +50,11 @@ export const addPatient = (account) => {
         date: new Date(),
       })
       .then(() => {
-        dispatch({ type: ADD_USER_INFO, account });
+        dispatch({ type: ADD_USER_INFO} , account );
       })
       .catch((err) => {
-        dispatch({ type: ADD_USER_INFO_ERR, err });
+        dispatch({ type: ADD_USER_INFO_ERR},  err);
+          
       });
   };
 };
@@ -71,6 +72,7 @@ export const deletePatient = (account) => {
       })
       .catch((err) => {
         dispatch({ type: DELETE_USER_ERR, err });
+        console.log(err)
       });
   };
 };
