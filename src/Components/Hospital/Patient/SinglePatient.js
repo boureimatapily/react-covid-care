@@ -8,7 +8,7 @@ import {
   toggleChecked,
 } from "../../../Redux/Actions/UserActions";
 import { connect } from "react-redux";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function SinglePatient({ patient, deletePatient, toggleChecked }) {
   const handleRemove = (patient) => {
@@ -27,7 +27,7 @@ function SinglePatient({ patient, deletePatient, toggleChecked }) {
         <th>{patient.lastname}</th>
         <th>{patient.age}</th>
         <th>
-          <button type="button" class="btn btn-danger btnaction">
+          <button type="button" className="btn btn-danger btnaction">
             {" "}
             <img
               src={trash}
@@ -39,8 +39,8 @@ function SinglePatient({ patient, deletePatient, toggleChecked }) {
               onClick={() => handleRemove(patient)}
             />{" "}
           </button>
-          {/* <Link to={"/edit/" + account.id}>  */}
-          <button type="button" class="btn btn-secondary btnaction">
+          <Link to={"/edit/" + patient.id}> 
+          <button type="button" className="btn btn-secondary btnaction">
             <img
               src={pencil}
               alt="pencil"
@@ -50,9 +50,9 @@ function SinglePatient({ patient, deletePatient, toggleChecked }) {
               title="delete"
             />
           </button>
-          {/* </Link> */}
+          </Link>
           <input
-            class="form-check-input pcheckbox"
+            className="form-check-input pcheckbox"
             type="checkbox"
             // value={patient.checked}
             checked={patient.checked}

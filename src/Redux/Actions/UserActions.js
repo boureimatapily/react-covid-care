@@ -77,13 +77,13 @@ export const deletePatient = (account) => {
   };
 };
     //Update user infos
-export const updateUser = (account) => {
+export const updatePatient = (id, account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
     // const id = account.userId;
     firestore
       .collection("patients")
-      .doc(account.id)
+      .doc(id)
       .update(account)
       .then(() => {
         dispatch({ type: UPDATE_USER });
