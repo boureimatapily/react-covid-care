@@ -54,8 +54,8 @@ function SinglePatient({ patient, deletePatient, toggleChecked }) {
           <input
             className="form-check-input pcheckbox"
             type="checkbox"
-            // value={patient.checked}
-            checked={patient.checked}
+            value={patient.checked}
+            defaultChecked={patient.checked}
             id="checkbox"
             onClick={() => handleChecked(patient)}
           />

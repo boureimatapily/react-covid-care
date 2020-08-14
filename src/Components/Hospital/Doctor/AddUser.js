@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux"
 //import { addUser } from "../../Redux/Actions/UserActions";
-import { register } from "../../Redux/Actions/authActions";
+import { register } from "../../../Redux/Actions/authActions";
 
 class AddUser extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class AddUser extends React.Component {
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-6  col-md-offset-3 col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3 col-xxl-6 col-xxl-offset-3">
             <form onSubmit={this.handleSubmit} id="form">
-              <div className="mb-3">
+              <div className="mb-2">
                 <label htmlFor="email" className="form-label">
                   Email address
                 </label>
@@ -54,7 +54,7 @@ class AddUser extends React.Component {
                   
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-2">
                 <label htmlFor="password" className="form-label">
                   Password
                 </label>
@@ -68,7 +68,7 @@ class AddUser extends React.Component {
                 />
               </div>
 
-              <div className="mb-3">
+              <div className="mb-2">
                 <label htmlFor="fullname" className="form-label">
                   fullname
                 </label>
@@ -82,7 +82,7 @@ class AddUser extends React.Component {
                   
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-2">
                 <label htmlFor="role" className="form-label">
                   role
                 </label>

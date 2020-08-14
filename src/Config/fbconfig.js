@@ -21,6 +21,6 @@ var firebaseConfig = {
   // firebase.functions()
   const storage = firebase.storage();
   const auth = firebase.auth()
+  const db = firebase.firestore();
 
-
-  export { auth, storage,  firebase as default };
+  export { auth, storage, db,  firebase as default };

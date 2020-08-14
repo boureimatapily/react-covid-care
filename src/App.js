@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home";
-import Department from "./Pages/Department";
+import Doctor from "./Pages/Doctor";
 import Hospital from "./Pages/Hospital";
 import Navbar from "./Components/Navbar";
 import { ToastContainer } from "react-toastify"; // ToastContainer to acces to toast notify everywhere in the project
@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/department" component={Department} />
+        <Route exact path="/doctor" component={Doctor} />
         <Route exact path="/hospital" component={Hospital} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/edit/:id" component={EditPatient} />
