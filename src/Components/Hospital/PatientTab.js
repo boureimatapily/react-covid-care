@@ -1,6 +1,8 @@
 import React from "react";
 import AddPatient from "./Patient/AddPatient"; // Adding patient
 import PatientList from "./Patient/PatientList"; // Patient list
+import NonCheckedPatientList from "./Patient/NonCheckedPatientList";
+import CheckedPatientList from "./Patient/CheckedPatientList";
 
 export default function PatientTab() {
   return (
@@ -29,7 +31,29 @@ export default function PatientTab() {
                 aria-controls="nav-profile"
                 aria-selected="false"
               >
-                Patient List
+                All Patient
+              </a>
+              <a
+                className="nav-link"
+                id="nav-profile-tab"
+                data-toggle="tab"
+                href="#nav-profile-non-patient"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+              >
+                Non-Checked Patient
+              </a>
+              <a
+                className="nav-link"
+                id="nav-profile-tab"
+                data-toggle="tab"
+                href="#nav-profile-checkedpatient"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+              >
+                Checked Patient
               </a>
             </div>
           </nav>
@@ -40,7 +64,7 @@ export default function PatientTab() {
               role="tabpanel"
               aria-labelledby="nav-home-tab"
             >
-              <h1>ADD Patient</h1>
+              <h3 className="text-center">ADD Patient</h3>
               <AddPatient />
             </div>
             <div
@@ -49,7 +73,26 @@ export default function PatientTab() {
               role="tabpanel"
               aria-labelledby="nav-profile-tab"
             >
+              <h3 className="text-center"> All Patient </h3>
               <PatientList />
+            </div>
+            <div
+              className="tab-pane fade"
+              id="nav-profile-non-patient"
+              role="tabpanel"
+              aria-labelledby="nav-profile-tab"
+            >
+              <h3 className="text-center"> Non-Checked Patient </h3>
+                <NonCheckedPatientList />
+            </div>
+            <div
+              className="tab-pane fade"
+              id="nav-profile-checkedpatient"
+              role="tabpanel"
+              aria-labelledby="nav-profile-tab"
+            >
+              <h3 className="text-center"> Checked Patient </h3>
+                <CheckedPatientList />
             </div>
           </div>
         </div>

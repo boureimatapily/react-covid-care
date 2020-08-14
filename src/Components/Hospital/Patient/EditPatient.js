@@ -31,6 +31,7 @@ class EditPatient extends React.Component {
       folderId: this.props.patient.folderId,
       age: this.props.patient.age,
       doctorNote: this.props.patient.doctorNote,
+      doctorName: this.props.patient.doctorName,
       
     });
   }
@@ -41,13 +42,14 @@ class EditPatient extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const { firstname, lastname, age, folderId, doctorNote } = this.state;
+    const { firstname, lastname, age, folderId, doctorNote, doctorName } = this.state;
     const newPatient = {
       folderId: folderId,
       firstname: firstname,
       lastname: lastname,
       age: age,
       doctorNote: doctorNote,
+      doctorName: doctorName,
      
     };
     this.props.updatePatient(this.props.patientId, newPatient);
@@ -84,6 +86,17 @@ class EditPatient extends React.Component {
                     type="text"
                     id="folderId"
                     name="folderId"
+                    className="form-control"
+                  />
+                </div>
+                <div className="form-group col-md-4 mb-2">
+                  <label htmlFor="doctorName">Doctor Name</label>
+                  <input
+                    value={this.state.doctorName}
+                    onChange={this.handleChange}
+                    type="text"
+                    id="doctorName"
+                    name="doctorName"
                     className="form-control"
                   />
                 </div>
