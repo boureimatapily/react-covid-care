@@ -12,6 +12,9 @@ export const register = (creds) => {
           firestore.collection("users").doc(res.user.uid).set({
             fullname:creds.fullname,
             role:creds.role,
+            department:creds.department,
+            speciality:creds.speciality,
+            status: creds.status,
             initials:creds.fullname[0] + creds.fullname[1]
           })
         )
@@ -19,6 +22,7 @@ export const register = (creds) => {
         dispatch({ type: SIGN_UP });
       }).catch((err) => {
         dispatch({ type: SIGN_UP_ERR }, err);
+        console.log(err)
       });
       
   };
