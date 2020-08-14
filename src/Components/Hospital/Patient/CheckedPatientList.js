@@ -55,7 +55,9 @@ class CheckedPatientList extends React.Component{
               <tbody>
                 {checked  &&
                   checked.map((patient) => (
+                 
                     <SinglePatient patient={patient} key={patient.folderId} />
+                    
                   ))}
               </tbody>
             </table>
