@@ -48,8 +48,8 @@ function Navbar({logout, uid, profile}) {
                       </Link>
                     </li>
                     <li className="nav-item whiteColor">
-                      <Link className="NavBtnLink" to="/department">
-                        Departs
+                      <Link className="NavBtnLink" to="/doctor">
+                        Doctor
                       </Link>
                     </li>
                     <li className="nav-item whiteColor ">
@@ -157,7 +157,7 @@ function Navbar({logout, uid, profile}) {
 }
 
 const mStp = (state) => {
-  console.log(state)
+  // console.log(state)
   const uid = state.firebase.auth.uid;
   const profile = state.firebase.auth.profile;
   return {
