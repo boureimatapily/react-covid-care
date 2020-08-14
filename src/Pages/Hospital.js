@@ -19,7 +19,7 @@ function Hospital({uid}) {
             <div className="nav nav-tabs" id="nav-tab" role="tablist">
               <a className="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Patient</a>
               <a className="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Doctor</a>
-              <a className="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">ADD User</a>
+              {/* <a className="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">ADD User</a> */}
             </div>
           </nav>
           <div className="tab-content" id="nav-tabContent">
@@ -33,10 +33,9 @@ function Hospital({uid}) {
               <h3 className="text-center">All about Doctor</h3>
                 <DoctorTab />
             </div>
-            <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-              
+            {/* <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
               <h1>...List </h1>
-            </div>
+            </div> */}
           </div>
                       
           </div>
