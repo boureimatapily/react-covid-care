@@ -62,7 +62,7 @@ class EditPatient extends React.Component {
     console.log(this.state.file)
   }
   render() {
-    const { patient } = this.props;
+    const { patient, profile } = this.props;
 
     console.log(patient);
 
@@ -73,11 +73,12 @@ class EditPatient extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="form-group col-md-4 mb-2">
-                  <Link to="/patientList">
-                    <button type="submit" className="btn btn-primary m-20">
-                      Go Back
-                    </button>
-                  </Link>
+                <Link to= {profile.role === "manager" ? "/hospital" : "/doctor "}>
+                        <button type="submit" className="btn btn-primary m-20">
+                          Go Back
+                        </button>
+                    </Link>
+                 
                   <h2> Update Patient folder </h2>
                   <label htmlFor="folderId">Patient Folder ID</label>
                   <input
@@ -183,10 +184,11 @@ const mStp = (state, ownProps) => {
   let patient = patients.find((item) => {
     return item.id === id;
   });
-
+  const profile = state.firebase.profile;
   return {
     patientId: id,
     patient: patient,
+    profile: profile
   };
 };
 
