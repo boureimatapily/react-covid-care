@@ -1,5 +1,6 @@
 import React from "react";
 import firebase from "../../../Config/fbconfig"
+import SingleDoctor from "./SingleDoctor";
 
 class DoctorList extends React.Component{
   constructor(props){
@@ -37,10 +38,10 @@ class DoctorList extends React.Component{
       <div className="container">
         <div className="row">
           <div className="col">
-            <h1>Patient List </h1>
+           
             {doctors && doctors.map((doctor)=>(
                <div key={doctor.fullname}>
-              <h1> {doctor.fullname}</h1>
+              <SingleDoctor doctor={doctor} />
                </div>
     ))}
           </div>
