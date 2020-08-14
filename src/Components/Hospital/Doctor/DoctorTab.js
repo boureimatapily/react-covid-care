@@ -1,6 +1,7 @@
 import React from "react";
 import AddUser from "./AddUser";
 import DoctorList from "./DoctorList";
+import HomeDoctorsList from "./HomeDoctorsList";
 
 export default function DoctorTab() {
   return (
@@ -29,7 +30,40 @@ export default function DoctorTab() {
                 aria-controls="nav-profile"
                 aria-selected="false"
               >
-                Doctor List
+                ALL DoctorS List
+              </a>
+              <a
+                className="nav-link"
+                id="nav-profile-tab"
+                data-toggle="tab"
+                href="#nav-in-hospital-doctor-list"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+              >
+                In Hospital 
+              </a>
+              <a
+                className="nav-link"
+                id="nav-profile-tab"
+                data-toggle="tab"
+                href="#nav-work-home-doctor-list"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+              >
+               Work from Home  
+              </a>
+              <a
+                className="nav-link"
+                id="nav-profile-tab"
+                data-toggle="tab"
+                href="#nav-quarantined-doctor-list"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+              >
+               Quarantined Doctors 
               </a>
             </div>
           </nav>
@@ -51,6 +85,33 @@ export default function DoctorTab() {
             >
               <h3 className="text-center">Doctor list...</h3>
               <DoctorList />
+            </div>
+            <div
+              className="tab-pane fade"
+              id="nav-in-hospital-doctor-list"
+              role="tabpanel"
+              aria-labelledby="nav-profile-tab"
+            >
+              <h3 className="text-center">In hospital Doctor list...</h3>
+              
+            </div>
+            <div
+              className="tab-pane fade"
+              id="nav-work-home-doctor-list"
+              role="tabpanel"
+              aria-labelledby="nav-profile-tab"
+            >
+              <h3 className="text-center">home Doctor list...</h3>
+              <HomeDoctorsList />
+            </div>
+             <div
+              className="tab-pane fade"
+              id="nav-quarantined-doctor-list"
+              role="tabpanel"
+              aria-labelledby="nav-profile-tab"
+            >
+              <h3 className="text-center">quarantined Doctor list...</h3>
+              
             </div>
           </div>
         </div>
