@@ -1,5 +1,6 @@
 import React from "react";
 import AddUser from "./AddUser";
+import DoctorList from "./DoctorList";
 
 export default function DoctorTab() {
   return (
@@ -49,6 +50,7 @@ export default function DoctorTab() {
               aria-labelledby="nav-profile-tab"
             >
               <h3 className="text-center">Doctor list...</h3>
+              <DoctorList />
             </div>
           </div>
         </div>
