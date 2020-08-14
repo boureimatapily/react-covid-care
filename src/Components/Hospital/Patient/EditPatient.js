@@ -89,17 +89,7 @@ class EditPatient extends React.Component {
                     className="form-control"
                   />
                 </div>
-                <div className="form-group col-md-4 mb-2">
-                  <label htmlFor="doctorName">Doctor Name</label>
-                  <input
-                    value={this.state.doctorName}
-                    onChange={this.handleChange}
-                    type="text"
-                    id="doctorName"
-                    name="doctorName"
-                    className="form-control"
-                  />
-                </div>
+                
               </div>
               <div className="row">
                 <div className="form-group col-md-4 mb-2">
@@ -137,6 +127,17 @@ class EditPatient extends React.Component {
                 </div>
               </div>
               <div className="row">
+              <div className="form-group col-md-4 mb-2">
+                  <label htmlFor="doctorName">Doctor Name</label>
+                  <input
+                    value={this.state.doctorName}
+                    onChange={this.handleChange}
+                    type="text"
+                    id="doctorName"
+                    name="doctorName"
+                    className="form-control"
+                  />
+                </div>
                 <div className="form-group col-md-6 mb-2">
                   <textarea
                     className="form-control is-invalid"
