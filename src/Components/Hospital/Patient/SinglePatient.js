@@ -26,6 +26,7 @@ function SinglePatient({ patient, deletePatient, toggleChecked }) {
         <th>{patient.firstname}</th>
         <th>{patient.lastname}</th>
         <th>{patient.age}</th>
+        <th>{patient.doctorName}</th>
         <th>
           <button type="button" className="btn btn-danger btnaction">
             {" "}
