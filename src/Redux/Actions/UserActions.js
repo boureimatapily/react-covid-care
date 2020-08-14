@@ -11,9 +11,27 @@ import {
   ADD_DEPARTMENT_ERR
 } from "../Type";
 
+export const checkedPatient = () => {
+  return(dispatch, getState, { getFirebase }) =>{
+    const firestore = getFirebase().firestore()
+    firestore.collection("departments").where("checked", "==", true)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }
+}
+
+
 
 //Add new Department
-export const addDepart = (newDepart) => {
+export const AddDepart= (newDepart) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
     // const authorId = getState().firebase.auth.uid
@@ -84,7 +102,12 @@ export const updatePatient = (id, account) => {
     firestore
       .collection("patients")
       .doc(id)
-      .update(account)
+      .set(
+        {
+          ...account,
+        },
+        { merge: true }
+      )
       .then(() => {
         dispatch({ type: UPDATE_USER });
       })

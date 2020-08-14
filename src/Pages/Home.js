@@ -61,9 +61,9 @@ class Home extends Component {
                   alt="hospital_img"
                 />
                 <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                  <h5 className="card-title">Department</h5>
-                  <p className="card-text">All Department</p>
-                  <Link to="/department" className="getStartLink">
+                  <h5 className="card-title">Doctor</h5>
+                  <p className="card-text">Doctor Dashboard</p>
+                  <Link to="/doctor" className="getStartLink">
                     <button type="button" className="getStartBtn">
                       Get Start
                     </button>
@@ -110,9 +110,9 @@ class Home extends Component {
                   alt="hospital_img"
                 />
                 <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                  <h5 className="card-title">Department</h5>
-                  <p className="card-text">All Department</p>
-                  <Link to="/department" className="getStartLink">
+                  <h5 className="card-title">Doctor</h5>
+                  <p className="card-text">Doctor Dashboard</p>
+                  <Link to="/doctor" className="getStartLink">
                     <button type="button" className="getStartBtn">
                       Get Start
                     </button>
