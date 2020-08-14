@@ -2,6 +2,8 @@ import React from "react";
 import AddUser from "./AddUser";
 import DoctorList from "./DoctorList";
 import HomeDoctorsList from "./HomeDoctorsList";
+import QuarantinedDoctorsList from "./QuarantinedDoctorsList";
+import HospitalDoctorsList from "./HospitalDoctorsList";
 
 export default function DoctorTab() {
   return (
@@ -93,7 +95,7 @@ export default function DoctorTab() {
               aria-labelledby="nav-profile-tab"
             >
               <h3 className="text-center">In hospital Doctor list...</h3>
-              
+              <HospitalDoctorsList />
             </div>
             <div
               className="tab-pane fade"
@@ -111,7 +113,7 @@ export default function DoctorTab() {
               aria-labelledby="nav-profile-tab"
             >
               <h3 className="text-center">quarantined Doctor list...</h3>
-              
+              <QuarantinedDoctorsList />
             </div>
           </div>
         </div>
