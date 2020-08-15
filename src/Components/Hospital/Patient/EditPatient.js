@@ -73,7 +73,7 @@ class EditPatient extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="form-group col-md-4 mb-2">
-                <Link to= {profile.role === "manager" ? "/hospital" : "/doctor "}>
+                <Link to= {profile.role === "manager" ? "/hospital" : "/doctor"}>
                         <button type="submit" className="btn btn-primary m-20">
                           Go Back
                         </button>
