@@ -37,10 +37,10 @@ class HospitalDoctorsList extends React.Component{
     return (
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col d-flex flex-row flex-wrap">
             
             { hospitaldoctors &&  hospitaldoctors.map((doctor)=>(
-               <div key={doctor.fullname}>
+               <div key={doctor.fullname} className="col-4 mb-3">
               <SingleDoctor doctor={doctor} />
                </div>
     ))}
