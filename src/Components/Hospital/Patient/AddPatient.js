@@ -26,12 +26,13 @@ class AddPatient extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const { firstname, lastname, age, folderId } = this.state;
+    const { firstname, lastname, age, folderId, checked } = this.state;
     const newPatient = {
       folderId: folderId,
       firstname: firstname,
       lastname: lastname,
       age: age,
+      checked: checked
      
     };
     this.props.addPatient(newPatient);

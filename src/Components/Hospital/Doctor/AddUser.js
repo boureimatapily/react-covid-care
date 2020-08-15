@@ -123,9 +123,9 @@ class AddUser extends React.Component {
                   onChange={this.handleChange}
                 >
                   <option selected>Choose Doctor Status</option>
-                  <option value="Quanrantine">Quanrantined</option>
-                  <option value="Home">Home</option>
-                  <option value="available">Availbable</option>
+                  <option value="Quanrantined">Quanrantined Doctor</option>
+                  <option value="Home">Work from Home</option>
+                  <option value="Hospital">Availbable(In Hospital)</option>
                 </select>
               </div>
               <div className="mb-2">

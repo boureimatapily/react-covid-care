@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
-import SinglePatient from "./SinglePatient";
+import AdminSinglePatient from "./AdminSinglePatient";
 
 class PatientList extends React.Component {
   render() {
@@ -30,7 +30,7 @@ class PatientList extends React.Component {
               <tbody>
                 {patients &&
                   patients.map((patient) => (
-                    <SinglePatient patient={patient} key={patient.folderId} />
+                    <AdminSinglePatient patient={patient} key={patient.folderId} />
                   ))}
               </tbody>
             </table>
