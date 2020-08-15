@@ -6,16 +6,15 @@ import { connect } from "react-redux";
 
 class Home extends Component {
   render() {
-    const { uid, profile} = this.props;
-    if(!uid) return <Redirect to="/login" />
-    if(profile.role === "manager"){
+    const { uid, profile } = this.props;
+    if (!uid) return <Redirect to="/login" />;
+    if (profile.role === "manager") {
       return (
         <div className="container appContainer">
           <div className="row sectionOne">
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
               <h2>Fight COVID-19 With Codetrain and Covid Care Platform</h2>
               <span>Work from home, do everything remotly</span>
-              
             </div>
             <div className="col d-flex flex-row justify-content-evenly align-items-center ">
               <img
@@ -24,7 +23,7 @@ class Home extends Component {
                 id="covid_imgOne"
                 className="d-none d-md-block"
               />
-  
+
               <img
                 src={require("../Images/phone.JPG")}
                 alt="covid"
@@ -34,8 +33,7 @@ class Home extends Component {
             </div>
           </div>
           <div className="row sectionTwo">
-            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex flex-row justify-content-end align-items-center">
-  
+            <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 col-xxl-12 d-flex flex-row justify-content-center align-items-center">
               <div className="card cardstyle d-flex flex-column justify-content-center align-items-center">
                 <img
                   src={require("../Images/hospital.jpg")}
@@ -53,7 +51,7 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6  col-xxl-6 d-flex flex-row justify-content-start align-items-center">
+            {/* <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6  col-xxl-6 d-flex flex-row justify-content-start align-items-center">
               <div className="card cardstyle flex-column justify-content-center align-items-center">
                 <img
                   src={require("../Images/health1.jpg")}
@@ -70,19 +68,17 @@ class Home extends Component {
                   </Link>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       );
-  
-    }else{
+    } else {
       return (
         <div className="container appContainer">
           <div className="row sectionOne">
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
               <h2>Fight COVID-19 With Codetrain and Covid Care Platform</h2>
               <span>Work from home, do everything remotly</span>
-              
             </div>
             <div className="col d-flex flex-row justify-content-evenly align-items-center ">
               <img
@@ -91,7 +87,7 @@ class Home extends Component {
                 id="covid_imgOne"
                 className="d-none d-md-block"
               />
-  
+
               <img
                 src={require("../Images/phone.JPG")}
                 alt="covid"
@@ -101,7 +97,6 @@ class Home extends Component {
             </div>
           </div>
           <div className="row sectionTwo">
-            
             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 col-xxl-12 d-flex flex-row justify-content-center align-items-center">
               <div className="card cardstyle flex-column justify-content-center align-items-center">
                 <img
@@ -123,17 +118,15 @@ class Home extends Component {
           </div>
         </div>
       );
-
     }
-  
-     }
+  }
 }
 const mStp = (state) => {
   const uid = state.firebase.auth.uid;
- const profile = state.firebase.profile;
+  const profile = state.firebase.profile;
   return {
     uid: uid,
-    profile: profile
+    profile: profile,
   };
 };
 

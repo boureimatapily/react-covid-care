@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import DoctorProfile from "../Components/Hospital/Doctor/DoctorProfile";
+import DoctorPatient from "../Components/Hospital/Doctor/DoctorPatient";
 
 function Doctor({ uid }) {
   if (!uid) return <Redirect to="/login" />;
@@ -60,6 +61,7 @@ function Doctor({ uid }) {
             >
               {/* <Department/> */}
               <h3 className="text-center">Patient List</h3>
+              <DoctorPatient />
             </div>
           </div>
         </div>
