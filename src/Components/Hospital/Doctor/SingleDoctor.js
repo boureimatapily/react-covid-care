@@ -16,6 +16,7 @@ export default function SingleDoctor({ doctor }) {
                 Status: {doctor.status}{" "}
               </h4>
               <div className="card-text">
+                <h6>Email: {doctor.email}</h6>
                 <h6>Department: {doctor.department}</h6>
                 <h6>Role: {doctor.role}</h6>
                 <h6>Speciality: {doctor.speciality}</h6>

@@ -21,12 +21,12 @@ class HospitalDoctorsList extends React.Component{
           .where("status", "==", "Hospital")
           .onSnapshot(snapshot => {
             //You can "listen" to a document with the onSnapshot() method.
-            const listItems = snapshot.docs.map(doc => ({
+            const hospitalItems = snapshot.docs.map(doc => ({
               //map each document into snapshot
               id: doc.id, //id and data pushed into items array
               ...doc.data() //spread operator merges data to id.
             }));
-            this.setState({ hospitaldoctors:listItems}) //items is equal to listItems
+            this.setState({ hospitaldoctors:hospitalItems}) //items is equal to listItems
           });
   }
 

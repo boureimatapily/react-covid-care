@@ -21,12 +21,12 @@ class HomeDoctorsList extends React.Component{
           .where("status", "==", "Home")
           .onSnapshot(snapshot => {
             //You can "listen" to a document with the onSnapshot() method.
-            const listItems = snapshot.docs.map(doc => ({
+            const homeItems = snapshot.docs.map(doc => ({
               //map each document into snapshot
               id: doc.id, //id and data pushed into items array
               ...doc.data() //spread operator merges data to id.
             }));
-            this.setState({homedoctors:listItems}) //items is equal to listItems
+            this.setState({homedoctors:homeItems}) //items is equal to listItems
           });
   }
 

@@ -21,12 +21,12 @@ class QuarantinedDoctorsList extends React.Component{
           .where("status", "==", "Quanrantined")
           .onSnapshot(snapshot => {
             //You can "listen" to a document with the onSnapshot() method.
-            const listItems = snapshot.docs.map(doc => ({
+            const quarantinedtems = snapshot.docs.map(doc => ({
               //map each document into snapshot
               id: doc.id, //id and data pushed into items array
               ...doc.data() //spread operator merges data to id.
             }));
-            this.setState({quanrantineddoctors:listItems}) //items is equal to listItems
+            this.setState({quanrantineddoctors:quarantinedtems}) //items is equal to listItems
           });
   }
 

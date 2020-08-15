@@ -11,6 +11,7 @@ export const register = (creds) => {
         return(
           firestore.collection("users").doc(res.user.uid).set({
             fullname:creds.fullname,
+            email:creds.email,
             role:creds.role,
             department:creds.department,
             speciality:creds.speciality,

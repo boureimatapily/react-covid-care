@@ -7,8 +7,8 @@ import {
   TOGGLE_CHECKED,
   UPDATE_USER,
   UPDATE_USER_ERR,
-  ADD_DEPARTMENT,
-  ADD_DEPARTMENT_ERR,
+  // ADD_DEPARTMENT,
+  // ADD_DEPARTMENT_ERR,
   ADD_TIME,
   ADD_TIME_ERR,
 } from "../Type";
@@ -30,26 +30,26 @@ import {
 //   }
 // }
 
-//Add new Department
-export const AddDepart = (newDepart) => {
-  return (dispatch, getState, { getFirebase }) => {
-    const firestore = getFirebase().firestore();
-    // const authorId = getState().firebase.auth.uid
-    firestore
-      .collection("departments")
-      .add({
-        ...newDepart,
-        // authorId:authorId,
-        date: new Date(),
-      })
-      .then(() => {
-        dispatch({ type: ADD_DEPARTMENT, newDepart });
-      })
-      .catch((err) => {
-        dispatch({ type: ADD_DEPARTMENT_ERR, err });
-      });
-  };
-};
+// //Add new Department
+// export const AddDepart = (newDepart) => {
+//   return (dispatch, getState, { getFirebase }) => {
+//     const firestore = getFirebase().firestore();
+//     // const authorId = getState().firebase.auth.uid
+//     firestore
+//       .collection("departments")
+//       .add({
+//         ...newDepart,
+//         // authorId:authorId,
+//         date: new Date(),
+//       })
+//       .then(() => {
+//         dispatch({ type: ADD_DEPARTMENT, newDepart });
+//       })
+//       .catch((err) => {
+//         dispatch({ type: ADD_DEPARTMENT_ERR, err });
+//       });
+//   };
+// };
 
 //Add new user
 export const addPatient = (account) => {
