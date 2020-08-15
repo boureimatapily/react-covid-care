@@ -72,8 +72,8 @@ class Login extends React.Component {
                 Login
               </button>
             </form>
-            <h2>Admin email: hospitaln@admin.com</h2>
-            <h2>Admin password: admin@123*</h2>
+            <h2>Admin email: hospital@admin.com</h2>
+            <h2>Admin password: doctor@123*</h2>
             <h2>Doctor email: doctor@doctor.com</h2>
             <h2>Doctor password: doctor@123*</h2>
           </div>

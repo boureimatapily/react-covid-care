@@ -103,6 +103,7 @@ class DoctorProfile extends React.Component {
           <div className="col-6">
             <h3 className="text-center"> Profile Information</h3>
             <div className="card">
+            <h5>Email: {profile.email} </h5>
               <h5>Fullname: {profile.fullname} </h5>
               <h5>Role: {profile.role} </h5>
               <h5>Status: {profile.status} </h5>
