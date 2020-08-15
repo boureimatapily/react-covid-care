@@ -8,7 +8,9 @@ import {
   UPDATE_USER,
   UPDATE_USER_ERR,
   ADD_DEPARTMENT,
-  ADD_DEPARTMENT_ERR
+  ADD_DEPARTMENT_ERR,
+  ADD_TIME,
+  ADD_TIME_ERR
 } from "../Type";
 import { toast } from "react-toastify";
 
@@ -44,6 +46,13 @@ const UserReducer = (state = {}, action) => {
     case ADD_DEPARTMENT_ERR:
           toast.error("An error occured");
           return state;
+    case ADD_TIME:
+          toast.info("times added");
+          return state;
+    case ADD_TIME_ERR:
+          toast.error("An error occured");
+          return state;
+          
     default:
       return state;
   }

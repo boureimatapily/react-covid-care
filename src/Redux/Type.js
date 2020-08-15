@@ -9,6 +9,13 @@ export const UPDATE_USER = "UPDATE_USER";
 export const UPDATE_USER_ERR = "UPDATE_USER_ERR";
 export const ADD_DEPARTMENT = "ADD_DEPARTMENT";
 export const ADD_DEPARTMENT_ERR = "ADD_DEPARTMENT_ERR";
+export const ADD_TIME = "ADD_TIME";
+export const UPDATE_TIME = "UPDATE_TIME";
+export const ADD_TIME_ERR = "ADD_TIME_ERR";
+export const UPDATE_TIME_ERR = "UPDATE_TIME_ERR";
+
+
+
 
 // Auth Type
 export const LOG_IN = "LOG_IN";

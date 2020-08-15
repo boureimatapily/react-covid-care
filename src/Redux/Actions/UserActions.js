@@ -9,6 +9,8 @@ import {
   UPDATE_USER_ERR,
   ADD_DEPARTMENT,
   ADD_DEPARTMENT_ERR,
+  ADD_TIME,
+  ADD_TIME_ERR,
 } from "../Type";
 
 // export const checkedPatient = () => {
@@ -137,23 +139,42 @@ export const toggleChecked = (account) => {
   };
 };
 
-
 //ADD Doctor consult date
-export const addDays= (account) => {
+export const addDays = (times) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
     // const id = account.userId;
-      const id = getState().firebase.auth.uid
+    const id = getState().firebase.auth.uid;
     firestore
       .collection("users")
       .doc(id)
       .set(
         {
-          ...account,
-          
+          ...times,
         },
         { merge: true }
       )
+      .then(() => {
+        dispatch({ type: ADD_TIME}, times );
+      })
+      .catch((err) => {
+        dispatch({ type: ADD_TIME_ERR }, err);
+      });
+  };
+};
+
+//ADD Doctor consult update time
+export const addDaysUpdate = (account) => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firestore = getFirebase().firestore();
+    // const id = account.userId;
+    const id = getState().firebase.auth.uid;
+    firestore
+      .collection("users")
+      .doc(id)
+      .update({
+        ...account,
+      })
       .then(() => {
         dispatch({ type: TOGGLE_CHECKED, account });
       })
