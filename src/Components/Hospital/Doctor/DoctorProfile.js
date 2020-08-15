@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { addDays } from "../../../Redux/Actions/UserActions";
+import { addDays, addDaysUpdate } from "../../../Redux/Actions/UserActions";
 import Alldays from "./Alldays";
+import "./Doctor.css"
 
 class DoctorProfile extends React.Component {
   constructor(props) {
@@ -25,6 +26,8 @@ class DoctorProfile extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+
   }
 
   handleChange = (e) => {
@@ -52,6 +55,43 @@ class DoctorProfile extends React.Component {
         sundayclose: "",
     })
   };
+  handleUpdate = (e) =>{
+    e.preventDefault();
+    const alldata ={
+        mondayopen: this.state.mondayopen,
+        mondayclose: this.state.mondayclose,
+        tuesdayopen:this.state.tuesdayopen,
+        tuesdayclose: this.state.tuesdayclose,
+        wednesdayopen:this.state.wednesdayopen,
+        wednesdayclose: this.state.wednesdayclose,
+        thursdayopen: this.state.thursdayopen,
+        thursdayclose: this.state.thursdayclose,
+        fridayopen:this.state.fridayopen,
+        fridayclose:this.state.fridayclose,
+        saturdayopen: this.state.saturdayopen,
+        saturdayclose: this.state.saturdayclose,
+        sundayopen:this.state.sundayopen,
+        sundayclose:this.state.sundayclose,
+    }
+    this.props.addDaysUpdate(alldata);
+    this.setState({
+        mondayopen: "",
+        mondayclose: "",
+        tuesdayopen: "",
+        tuesdayclose: "",
+        wednesdayopen: "",
+        wednesdayclose: "",
+        thursdayopen: "",
+        thursdayclose: "",
+        fridayopen: "",
+        fridayclose: "",
+        saturdayopen: "",
+        saturdayclose: "",
+        sundayopen: "",
+        sundayclose: "",
+    })
+  }
+
 
   render() {
     const { uid, profile } = this.props;
@@ -61,12 +101,13 @@ class DoctorProfile extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-6">
+            <h3 className="text-center"> Profile Information</h3>
             <div className="card">
-              <h3>Fullname: {profile.fullname} </h3>
-              <h3>Role: {profile.role} </h3>
-              <h3>Status: {profile.status} </h3>
-              <h3>Department {profile.department} </h3>
-              <h3>speciality: {profile.speciality} </h3>
+              <h5>Fullname: {profile.fullname} </h5>
+              <h5>Role: {profile.role} </h5>
+              <h5>Status: {profile.status} </h5>
+              <h5>Department {profile.department} </h5>
+              <h5>speciality: {profile.speciality} </h5>
             </div>
           </div>
           <div className="col-6">
@@ -74,19 +115,23 @@ class DoctorProfile extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="col">
-            <h1 className="text-center">Availability </h1>
+        <div className="col">             
+            <h1 className="text-center"> Availability </h1>
+        </div>
+        </div>
+        <div className="row">
+          <div className="col-6">
             <div className="row g-3 align-items-center">
               {/* Monday */}
               <div className="col-auto">
                 <label htmlFor="monday" className="col-form-label">
-                  <h3> Monday</h3>
+                  <h6> Monday</h6>
                 </label>
               </div>
               <div className="col-auto">
                 <input
                   type="text"
-                  id="mondayopen"
+                  id="alldaystime"
                   name="mondayopen"
                   value={this.state.mondayopen}
                   onChange={this.handleChange}
@@ -97,7 +142,7 @@ class DoctorProfile extends React.Component {
               <div className="col-auto">
                 <input
                   type="text"
-                  id="mondayclose"
+                  id="alldaystime"
                   name="mondayclose"
                   value={this.state.mondayclose}
                   onChange={this.handleChange}
@@ -106,18 +151,17 @@ class DoctorProfile extends React.Component {
                 />
               </div>
             </div>
-
             <div className="row g-3 align-items-center">
               {/* Tuesday */}
               <div className="col-auto">
                 <label htmlFor="tuesday" className="col-form-label">
-                  <h3> tuesday</h3>
+                  <h6> tuesday</h6>
                 </label>
               </div>
               <div className="col-auto">
                 <input
                   type="text"
-                  id="tuesdayopen"
+                  id="alldaystime"
                   name="tuesdayopen"
                   value={this.state.tuesdayopen}
                   onChange={this.handleChange}
@@ -128,7 +172,7 @@ class DoctorProfile extends React.Component {
               <div className="col-auto">
                 <input
                   type="text"
-                  id="tuesdayclose"
+                  id="alldaystime"
                   name="tuesdayclose"
                   value={this.state.tuesdayclose}
                   onChange={this.handleChange}
@@ -141,13 +185,13 @@ class DoctorProfile extends React.Component {
               {/* Wednesday */}
               <div className="col-auto">
                 <label htmlFor="wednesday" className="col-form-label">
-                  <h3> wednesday</h3>
+                  <h6> wednesday</h6>
                 </label>
               </div>
               <div className="col-auto">
                 <input
                   type="text"
-                  id="wednesdayopen"
+                  id="alldaystime"
                   name="wednesdayopen"
                   value={this.state.wednesdayopen}
                   onChange={this.handleChange}
@@ -158,7 +202,7 @@ class DoctorProfile extends React.Component {
               <div className="col-auto">
                 <input
                   type="text"
-                  id="wednesdayclose"
+                  id="alldaystime"
                   name="wednesdayclose"
                   value={this.state.wednesdayclose}
                   onChange={this.handleChange}
@@ -171,13 +215,13 @@ class DoctorProfile extends React.Component {
               {/* thursday */}
               <div className="col-auto">
                 <label htmlFor="thursday" className="col-form-label">
-                  <h3> thursday</h3>
+                  <h6> thursday</h6>
                 </label>
               </div>
               <div className="col-auto">
                 <input
                   type="text"
-                  id="thursdayopen"
+                  id="alldaystime"
                   name="thursdayopen"
                   value={this.state.thursdayopen}
                   onChange={this.handleChange}
@@ -188,7 +232,7 @@ class DoctorProfile extends React.Component {
               <div className="col-auto">
                 <input
                   type="text"
-                  id="thursdayclose"
+                  id="alldaystime"
                   name="thursdayclose"
                   value={this.state.thursdayclose}
                   onChange={this.handleChange}
@@ -197,17 +241,19 @@ class DoctorProfile extends React.Component {
                 />
               </div>
             </div>
-            <div className="row g-3 align-items-center">
+           </div>
+          <div className="col-6">
+          <div className="row g-3 align-items-center">
               {/* Friday */}
               <div className="col-auto">
                 <label htmlFor="firday" className="col-form-label">
-                  <h3> firday</h3>
+                  <h6> firday</h6>
                 </label>
               </div>
               <div className="col-auto">
                 <input
                   type="text"
-                  id="fridayopen"
+                  id="alldaystime"
                   name="fridayopen"
                   value={this.state.fridayopen}
                   onChange={this.handleChange}
@@ -218,7 +264,7 @@ class DoctorProfile extends React.Component {
               <div className="col-auto">
                 <input
                   type="text"
-                  id="fridayclose"
+                  id="alldaystime"
                   name="fridayclose"
                   value={this.state.fridayclose}
                   onChange={this.handleChange}
@@ -231,13 +277,13 @@ class DoctorProfile extends React.Component {
               {/*Saturday */}
               <div className="col-auto">
                 <label htmlFor="saturday" className="col-form-label">
-                  <h3> saturday</h3>
+                  <h6> saturday</h6>
                 </label>
               </div>
               <div className="col-auto">
                 <input
                   type="text"
-                  id="saturdayopen"
+                  id="alldaystime"
                   name="saturdayopen"
                   value={this.state.saturdayopen}
                   onChange={this.handleChange}
@@ -248,7 +294,7 @@ class DoctorProfile extends React.Component {
               <div className="col-auto">
                 <input
                   type="text"
-                  id="saturdayclose"
+                  id="alldaystime"
                   name="saturdayclose"
                   value={this.state.saturdayclose}
                   onChange={this.handleChange}
@@ -261,13 +307,13 @@ class DoctorProfile extends React.Component {
               {/* Sunday*/}
               <div className="col-auto">
                 <label htmlFor="thursday" className="col-form-label">
-                  <h3> sunday</h3>
+                  <h6> sunday</h6>
                 </label>
               </div>
               <div className="col-auto">
                 <input
                   type="text"
-                  id="sundayopen"
+                  id="alldaystime"
                   name="sundayopen"
                   value={this.state.sundayopen}
                   onChange={this.handleChange}
@@ -278,7 +324,7 @@ class DoctorProfile extends React.Component {
               <div className="col-auto">
                 <input
                   type="text"
-                  id="sundayclose"
+                  id="alldaystime"
                   name="sundayclose"
                   value={this.state.sundayclose}
                   onChange={this.handleChange}
@@ -287,15 +333,24 @@ class DoctorProfile extends React.Component {
                 />
               </div>
             </div>
-            <div className="row g-3 align-items-center">
+            <div className="align-items-center">
               <button
                 type="submit"
-                className="btn btn-primary"
+                
+                className="btn btn-primary alldaystimebtn"
                 onClick={this.handleSubmit}
               >
                 Set times
               </button>
+              {/* <button
+                type="submit"
+                className="btn btn-primary alldaystimebtn"
+                onClick={this.handleUpdate}
+              >
+                Update times
+              </button> */}
             </div>
+          
           </div>
         </div>
       </div>
@@ -311,4 +366,4 @@ const mStp = (state) => {
   };
 };
 
-export default connect(mStp, { addDays })(DoctorProfile);
+export default connect(mStp, { addDays, addDaysUpdate })(DoctorProfile);
