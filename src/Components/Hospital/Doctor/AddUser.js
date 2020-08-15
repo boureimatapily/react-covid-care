@@ -11,11 +11,10 @@ class AddUser extends React.Component {
       password: "",
       fullname: "",
       role: "",
-      status:"",
-      department:"",
-      speciality:"",
-      
-
+      status: "",
+      department: "",
+      speciality: "",
+      days:[]
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,15 +32,15 @@ class AddUser extends React.Component {
       password: this.state.password,
       fullname: this.state.fullname,
       role: this.state.role,
-      status:this.state.status,
-      department:this.state.department,
-      speciality:this.state.speciality,
+      status: this.state.status,
+      department: this.state.department,
+      speciality: this.state.speciality,
     };
     this.props.register(creds);
     document.getElementById("form").reset();
   };
   render() {
-    console.log(this.state)
+    console.log(this.state);
     return (
       <div className="container">
         <div className="row">
@@ -73,21 +72,21 @@ class AddUser extends React.Component {
                   onChange={this.handleChange}
                 />
               </div>
-              
+
               <div className="row">
-              <div className="mb-2">
-                <label htmlFor="fullname" className="form-label">
-                  fullname
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="fullname"
-                  name="fullname"
-                  value={this.state.value}
-                  onChange={this.handleChange}
-                />
-              </div>
+                <div className="mb-2">
+                  <label htmlFor="fullname" className="form-label">
+                    fullname
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="fullname"
+                    name="fullname"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                  />
+                </div>
                 <div className="form-group col-md-4 mb-2">
                   <label htmlFor="department">Department</label>
                   <input
@@ -112,38 +111,38 @@ class AddUser extends React.Component {
                 </div>
               </div>
 
-
-              
               <div className="mb-2">
                 <label htmlFor="fullname" className="form-label">
                   Status
                 </label>
-                <select classNmae="form-select form-select-lg mb-3"
-                 aria-label="Default select example"
-                 name="status"
+                <select
+                  classNmae="form-select form-select-lg mb-3"
+                  aria-label="Default select example"
+                  name="status"
                   value={this.state.value}
-                  onChange={this.handleChange}>
+                  onChange={this.handleChange}
+                >
                   <option selected>Choose Doctor Status</option>
                   <option value="Quanrantine">Quanrantined</option>
                   <option value="Home">Home</option>
                   <option value="available">Availbable</option>
                 </select>
-               
               </div>
               <div className="mb-2">
                 <label htmlFor="role" className="form-label">
                   role
                 </label>
-                
-                <select classNmae="form-select form-select-lg mb-3"
-                 aria-label="Default select example"
-                 name="role"
+
+                <select
+                  classNmae="form-select form-select-lg mb-3"
+                  aria-label="Default select example"
+                  name="role"
                   value={this.state.value}
-                  onChange={this.handleChange}>
+                  onChange={this.handleChange}
+                >
                   <option selected>Choose role</option>
                   <option value="manager">manager</option>
                   <option value="doctor">doctor</option>
-                  
                 </select>
               </div>
               <button type="submit" className="btn btn-primary">
