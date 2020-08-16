@@ -44,34 +44,37 @@ class AddUser extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-xs-12 col-sm-12 col-md-8  col-md-offset-2 col-lg-8 col-lg-offset-2 col-xl-8 col-xl-offset-2 col-xxl-8 col-xxl-offset-2">
+          <div className="col-xs-12 col-sm-12 col-md-8 md-offset-2 col-lg-8 lg-offset-2 col-xl-8 offset-2 col-xxl-8 xxl-offset-2 card">
             <form onSubmit={this.handleSubmit} id="form">
-              <div className="mb-2">
+            <div className="row">
+            <div className="form-group col mb-2">
                 <label htmlFor="email" className="form-label">
                   Email address
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control inputsStyle"
                   id="email"
                   name="email"
                   value={this.state.value}
                   onChange={this.handleChange}
                 />
               </div>
-              <div className="mb-2">
+              <div className="form-group col mb-2">
                 <label htmlFor="password" className="form-label">
                   Password
                 </label>
                 <input
                   type="password"
-                  className="form-control"
+                  className="form-control inputsStyle"
                   id="password"
                   name="password"
                   value={this.state.password}
                   onChange={this.handleChange}
                 />
               </div>
+             </div>
+              
 
               <div className="row">
                 <div className="mb-2">
@@ -80,7 +83,7 @@ class AddUser extends React.Component {
                   </label>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control inputsStyle"
                     id="fullname"
                     name="fullname"
                     value={this.state.value}
@@ -95,7 +98,7 @@ class AddUser extends React.Component {
                     type="text"
                     id="department"
                     name="department"
-                    className="form-control"
+                    className="form-control inputsStyle"
                   />
                 </div>
                 <div className="form-group col-md-4 mb-2">
@@ -106,17 +109,17 @@ class AddUser extends React.Component {
                     type="text"
                     id="speciality"
                     name="speciality"
-                    className="form-control"
+                    className="form-control inputsStyle"
                   />
                 </div>
               </div>
 
               <div className="mb-2">
-                <label htmlFor="fullname" className="form-label">
+                <label htmlFor="fullname" className="form-label mr-3">
                   Status
                 </label>
                 <select
-                  classNmae="form-select form-select-lg mb-3"
+                  classNmae="form-select form-select-lg mb-3 inputsStyle"
                   aria-label="Default select example"
                   name="status"
                   value={this.state.value}
@@ -129,12 +132,12 @@ class AddUser extends React.Component {
                 </select>
               </div>
               <div className="mb-2">
-                <label htmlFor="role" className="form-label">
+                <label htmlFor="role" className="form-label mr-3">
                   role
                 </label>
 
                 <select
-                  classNmae="form-select form-select-lg mb-3"
+                  classNmae="form-select form-select-lg mb-3 inputsStyle"
                   aria-label="Default select example"
                   name="role"
                   value={this.state.value}
@@ -145,8 +148,8 @@ class AddUser extends React.Component {
                   <option value="doctor">doctor</option>
                 </select>
               </div>
-              <button type="submit" className="btn btn-primary">
-                ADD
+              <button type="submit" className="btn btn-primary navTabsBtn">
+                ADD DOCTOR
               </button>
             </form>
           </div>

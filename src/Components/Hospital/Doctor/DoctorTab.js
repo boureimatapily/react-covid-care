@@ -32,7 +32,7 @@ export default function DoctorTab() {
                 aria-controls="nav-profile"
                 aria-selected="false"
               >
-                ALL DoctorS List
+                ALL Doctors List
               </a>
               <a
                 className="nav-link navpatientTabsLink flex-fill"
@@ -76,7 +76,7 @@ export default function DoctorTab() {
               role="tabpanel"
               aria-labelledby="nav-home-tab"
             >
-              <h3 className="text-center">ADD Patient</h3>
+              <h3 className="text-center">ADD Doctor</h3>
               <AddUser />
             </div>
             <div
