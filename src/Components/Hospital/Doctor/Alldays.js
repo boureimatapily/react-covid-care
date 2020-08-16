@@ -10,7 +10,7 @@ export default function Alldays({ day }) {
             </div>
         </div>
       <div className="row">
-        <div className="col">
+        <div className="col d-flex flex-column">
           <h6>
             Monday: {day.mondayopen} | {day.mondayclose}{" "}
           </h6>
@@ -23,8 +23,6 @@ export default function Alldays({ day }) {
           <h6>
             Thursday: {day.thursdayopen} | {day.thursdayclose}
           </h6>
-        </div>
-        <div className="col">
           <h6>
             Friday: {day.fridayopen} | {day.fridayclose}
           </h6>
@@ -35,6 +33,7 @@ export default function Alldays({ day }) {
             Sunday: {day.sundayopen} | {day.sundayclose}
           </h6>
         </div>
+       
       </div>
     </div>
   );

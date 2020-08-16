@@ -11,9 +11,9 @@ export default function DoctorTab() {
       <div className="row">
         <div className="col">
           <nav>
-            <div className="nav nav-tabs" id="nav-tab" role="tablist">
+            <div className="nav nav-tabs navTabsContainer justify-content-evenly" id="nav-tab" role="tablist">
               <a
-                className="nav-link active"
+                className="nav-link active navpatientTabsLink flex-fill"
                 id="nav-home-tab"
                 data-toggle="tab"
                 href="#nav-home-doctor-tab"
@@ -24,7 +24,7 @@ export default function DoctorTab() {
                 ADD Doctor
               </a>
               <a
-                className="nav-link"
+                className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
                 data-toggle="tab"
                 href="#nav-doctor-list"
@@ -35,7 +35,7 @@ export default function DoctorTab() {
                 ALL DoctorS List
               </a>
               <a
-                className="nav-link"
+                className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
                 data-toggle="tab"
                 href="#nav-in-hospital-doctor-list"
@@ -46,7 +46,7 @@ export default function DoctorTab() {
                 In Hospital 
               </a>
               <a
-                className="nav-link"
+                className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
                 data-toggle="tab"
                 href="#nav-work-home-doctor-list"
@@ -57,7 +57,7 @@ export default function DoctorTab() {
                Work from Home  
               </a>
               <a
-                className="nav-link"
+                className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
                 data-toggle="tab"
                 href="#nav-quarantined-doctor-list"

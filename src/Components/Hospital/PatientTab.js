@@ -10,9 +10,9 @@ export default function PatientTab() {
       <div className="row">
         <div className="col">
           <nav>
-            <div className="nav nav-tabs" id="nav-tab" role="tablist">
+            <div className="nav nav-tabs navTabsContainer justify-content-evenly" id="nav-tab" role="tablist">
               <a
-                className="nav-link active"
+                className="nav-link active navpatientTabsLink flex-fill"
                 id="nav-home-tab"
                 data-toggle="tab"
                 href="#nav-home-patient"
@@ -23,7 +23,7 @@ export default function PatientTab() {
                 ADD Patient
               </a>
               <a
-                className="nav-link"
+                className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
                 data-toggle="tab"
                 href="#nav-profile-patient"
@@ -34,7 +34,7 @@ export default function PatientTab() {
                 All Patient
               </a>
               <a
-                className="nav-link"
+                className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
                 data-toggle="tab"
                 href="#nav-profile-non-patient"
@@ -45,7 +45,7 @@ export default function PatientTab() {
                 Non-Checked Patient
               </a>
               <a
-                className="nav-link"
+                className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
                 data-toggle="tab"
                 href="#nav-profile-checkedpatient"

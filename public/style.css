@@ -1,0 +1,28 @@
+.navTabsContainer{
+    background-color: rgb(3, 11, 51);
+    font-weight: bolder;
+}
+.navTabsLink{
+    color:white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2rem;
+}
+.navpatientTabsLink{
+    color:white;
+    font-weight: bolder;
+    text-align: center;
+    /* font-size: 2rem; */
+}
+.inputsStyle{
+    border: 2px solid #111130;
+}
+.inputslabelStyle{
+    font-weight: bolder;
+    color: black;
+}
+.navTabsBtn{
+    background-color: rgb(3, 11, 51);
+    font-weight: bolder;
+    color: white;
+}
