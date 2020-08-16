@@ -47,6 +47,7 @@ render(){
         <th>{patient.lastname}</th>
         <th>{patient.age}</th>
         <th>{patient.doctorName}</th>
+        <th>{patient.consultDate}</th>
         <th>
           <button type="button" className="btn btn-danger btnaction">
             {" "}

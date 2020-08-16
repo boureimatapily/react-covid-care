@@ -52,6 +52,7 @@ class NonCheckedPatientList extends React.Component{
                   <th scope="col">Lastname</th>
                   <th scope="col">Age</th>
                   <th scope="col">Doctor</th>
+                  <th scope="col">Consult Date</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
