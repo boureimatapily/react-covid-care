@@ -11,10 +11,10 @@ class CheckedPatientList extends React.Component{
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    // This will erase any local state updates!
-    this.setState({checked:nextProps.listItems})
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   // This will erase any local state updates!
+  //   this.setState({checked:nextProps.listItems})
+  // }
   componentDidMount() {
         firebase
           .firestore() //access firestore

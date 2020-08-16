@@ -11,11 +11,11 @@ class NonCheckedPatientList extends React.Component{
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    // This will erase any local state updates!
+  // componentWillReceiveProps(nextProps) {
+  //   // This will erase any local state updates!
   
-    this.setState({nonchecked:nextProps.listItems})
-  }
+  //   this.setState({nonchecked:nextProps.listItems})
+  // }
   componentDidMount() {
         firebase
           .firestore() //access firestore

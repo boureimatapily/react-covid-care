@@ -32,12 +32,12 @@ function AuthIsLoaded({ children }) {
   const auth = useSelector((state) => state.firebase.auth);
   if (!isLoaded(auth))
     return (
-      <div class="mx-auto">
+      <div className="mx-auto">
         <div
-          class="spinner-border loadinganim"
+          className="spinner-border loadinganim"
           role="status"
         >
-          <span class="sr-only">Loading...</span>
+          <span className="sr-only">Loading...</span>
         </div>
       </div>
     );

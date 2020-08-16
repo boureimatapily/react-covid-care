@@ -10,10 +10,10 @@ class QuarantinedDoctorsList extends React.Component{
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    // This will erase any local state updates!
-    this.setState({quanrantineddoctors:nextProps.listItems})
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   // This will erase any local state updates!
+  //   this.setState({quanrantineddoctors:nextProps.listItems})
+  // }
   componentDidMount() {
         firebase
           .firestore() //access firestore

@@ -10,10 +10,10 @@ class DoctorList extends React.Component{
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    // This will erase any local state updates!
-    this.setState({doctors:nextProps.listItems})
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   // This will erase any local state updates!
+  //   this.setState({doctors:nextProps.listItems})
+  // }
   componentDidMount() {
         firebase
           .firestore() //access firestore

@@ -10,10 +10,10 @@ class HomeDoctorsList extends React.Component{
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    // This will erase any local state updates!
-    this.setState({homedoctors:nextProps.listItems})
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   // This will erase any local state updates!
+  //   this.setState({homedoctors:nextProps.listItems})
+  // }
   componentDidMount() {
         firebase
           .firestore() //access firestore
