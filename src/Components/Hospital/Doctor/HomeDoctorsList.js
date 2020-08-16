@@ -40,7 +40,7 @@ class HomeDoctorsList extends React.Component{
           <div className="col d-flex flex-row flex-wrap">
             
             {homedoctors && homedoctors.map((doctor)=>(
-               <div key={doctor.fullname} className="col-4 mb-3">
+               <div key={doctor.fullname} className="col-sm-12 col-xs-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 mb-2">
               <SingleDoctor doctor={doctor}  />
                </div>
     ))}
