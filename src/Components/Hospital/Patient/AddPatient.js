@@ -11,9 +11,10 @@ class AddPatient extends React.Component {
       lastname: "",
       age: "",
       file: null,
-      doctorNote: "",
-      doctorName: "",
+      doctorNote: "Add doctor Note",
+      doctorName: " Add Doctor Name",
       checked: "false",
+      consultDate:""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,16 +27,19 @@ class AddPatient extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const { firstname, lastname, age, folderId, checked } = this.state;
+    const { firstname, lastname, age, folderId, checked, doctorName, doctorNote, consultDate } = this.state;
     const newPatient = {
       folderId: folderId,
       firstname: firstname,
       lastname: lastname,
       age: age,
       checked: checked,
+      doctorName: doctorName,
+      doctorNote: doctorNote,
+      consultDate:consultDate
     };
     this.props.addPatient(newPatient);
-    this.setState({ folderId: "", firstname: "", lastname: "", age: "" });
+    this.setState({ folderId: "", firstname: "", lastname: "", age: ""});
   };
   render() {
     return (

@@ -138,6 +138,30 @@ export const toggleChecked = (account) => {
       });
   };
 };
+//ADD Doctor Note
+export const addDoctorNote = (id, account) => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firestore = getFirebase().firestore();
+    // const id = account.userId;
+    firestore
+      .collection("patients")
+      .doc(id)
+      .set(
+        {
+          ...account,
+          doctorName: account.doctorName,
+          doctorNote: account.doctorNote
+        },
+        { merge: true }
+      )
+      .then(() => {
+        dispatch({ type: UPDATE_USER });
+      })
+      .catch((err) => {
+        dispatch({ type: UPDATE_USER_ERR, err });
+      });
+  };
+};
 
 //ADD Doctor consult date
 export const addDays = (times) => {
