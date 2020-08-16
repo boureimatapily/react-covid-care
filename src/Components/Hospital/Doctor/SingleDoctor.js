@@ -8,7 +8,7 @@ export default function SingleDoctor({ doctor }) {
     <div className="container">
       <div className="row">
         <div className="col">
-          <div className="card cardSize">
+          <div className="card cardSize text-center">
             <div className="card-body">
               <h6 className="card-title">Fullname: {doctor.fullname} </h6>
               <h4 className="card-subtitle mb-2 text-muted">

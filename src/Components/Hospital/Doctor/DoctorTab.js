@@ -112,7 +112,7 @@ export default function DoctorTab() {
               role="tabpanel"
               aria-labelledby="nav-profile-tab"
             >
-              <h3 className="text-center">quarantined Doctor list...</h3>
+              <h3 className="text-center">Quarantined Doctor list...</h3>
               <QuarantinedDoctorsList />
             </div>
           </div>
