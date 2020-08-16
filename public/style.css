@@ -26,3 +26,9 @@
     font-weight: bolder;
     color: white;
 }
+.navTabsBtnlogin{
+    background-color: rgb(3, 11, 51);
+    font-weight: bolder;
+    color: white;
+    width: 10rem;
+}

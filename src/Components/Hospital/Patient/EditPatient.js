@@ -73,8 +73,9 @@ class EditPatient extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="form-group col-md-4 mb-2">
-                <Link to= {profile.role === "manager" ? "/hospital" : "/doctor"}>
-                        <button type="submit" className="btn btn-primary m-20">
+                <Link 
+                to= {profile.role === "manager" ? "/hospital" : "/doctor"}>
+                        <button type="submit" className="btn btn-primary mt-3 navTabsBtnlogin">
                           Go Back
                         </button>
                     </Link>
@@ -87,7 +88,7 @@ class EditPatient extends React.Component {
                     type="text"
                     id="folderId"
                     name="folderId"
-                    className="form-control"
+                    className="form-control inputsStyle"
                   />
                 </div>
                 
@@ -101,7 +102,7 @@ class EditPatient extends React.Component {
                     type="text"
                     id="firstname"
                     name="firstname"
-                    className="form-control"
+                    className="form-control inputsStyle"
                   />
                 </div>
                 <div className="form-group col-md-4 mb-2">
@@ -112,7 +113,7 @@ class EditPatient extends React.Component {
                     type="text"
                     id="lastname"
                     name="lastname"
-                    className="form-control"
+                    className="form-control inputsStyle"
                   />
                 </div>
                 <div className="form-group col-md-4 mb-2">
@@ -123,7 +124,7 @@ class EditPatient extends React.Component {
                     type="text"
                     id="age"
                     name="age"
-                    className="form-control"
+                    className="form-control inputsStyle"
                   />
                 </div>
               </div>
@@ -136,12 +137,12 @@ class EditPatient extends React.Component {
                     type="text"
                     id="doctorName"
                     name="doctorName"
-                    className="form-control"
+                    className="form-control inputsStyle"
                   />
                 </div>
                 <div className="form-group col-md-6 mb-2">
                   <textarea
-                    className="form-control is-invalid"
+                    className="form-control is-invalid inputsStyle"
                     id="validationTextarea"
                     placeholder="Doctor Note"
                     name="doctorNote"
@@ -168,8 +169,8 @@ class EditPatient extends React.Component {
                 <button onClick={this.uploadHandler}>Upload!</button>
               </div> */}
 
-              <button type="submit" className="btn btn-primary m-20">
-                Update Patient Infos
+              <button type="submit" className="btn btn-primary mt-3 navTabsBtnlogin">
+                Update Infos
               </button>
             </form>
           </div>
