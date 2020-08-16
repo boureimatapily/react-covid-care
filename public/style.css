@@ -32,3 +32,11 @@
     color: white;
     width: 10rem;
 }
+.loadinganim{
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    top: 40%;
+    right: 50%;
+
+}
