@@ -14,7 +14,20 @@ class AddUser extends React.Component {
       status: "",
       department: "",
       speciality: "",
-      days: [],
+      mondayopen: "",
+      mondayclose: "",
+      tuesdayopen: "",
+      tuesdayclose: "",
+      wednesdayopen: "",
+      wednesdayclose: "",
+      thursdayopen: "",
+      thursdayclose: "",
+      fridayopen: "",
+      fridayclose: "",
+      saturdayopen: "",
+      saturdayclose: "",
+      sundayopen: "",
+      sundayclose: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,16 +40,7 @@ class AddUser extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const creds = {
-      email: this.state.email,
-      password: this.state.password,
-      fullname: this.state.fullname,
-      role: this.state.role,
-      status: this.state.status,
-      department: this.state.department,
-      speciality: this.state.speciality,
-    };
-    this.props.register(creds);
+    this.props.register(this.state);
     document.getElementById("form").reset();
   };
   render() {

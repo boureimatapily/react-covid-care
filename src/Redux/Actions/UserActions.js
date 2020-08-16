@@ -51,7 +51,7 @@ import {
 //   };
 // };
 
-//Add new user
+//Add new Patient
 export const addPatient = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
@@ -72,7 +72,7 @@ export const addPatient = (account) => {
       });
   };
 };
-//Delete user
+//Delete Patient
 export const deletePatient = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
@@ -91,7 +91,7 @@ export const deletePatient = (account) => {
   };
 };
 
-//Update user infos
+//Update user Patient infos
 export const updatePatient = (id, account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
@@ -114,7 +114,7 @@ export const updatePatient = (id, account) => {
   };
 };
 
-//mark patient consultation as don
+//mark patient consultation as done
 export const toggleChecked = (account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
