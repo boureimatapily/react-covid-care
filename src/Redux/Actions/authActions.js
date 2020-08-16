@@ -1,4 +1,11 @@
-import { LOG_IN, LOG_IN_ERR, SIGN_UP, SIGN_UP_ERR, LOG_OUT, LOG_OUT_ERR } from "../Type";
+import {
+  LOG_IN,
+  LOG_IN_ERR,
+  SIGN_UP,
+  SIGN_UP_ERR,
+  LOG_OUT,
+  LOG_OUT_ERR,
+} from "../Type";
 
 export const register = (creds) => {
   return (dispatch, getState, { getFirebase }) => {
@@ -8,24 +15,40 @@ export const register = (creds) => {
       .auth()
       .createUserWithEmailAndPassword(creds.email, creds.password)
       .then((res) => {
-        return(
-          firestore.collection("users").doc(res.user.uid).set({
-            fullname:creds.fullname,
-            email:creds.email,
-            role:creds.role,
-            department:creds.department,
-            speciality:creds.speciality,
+        return firestore
+          .collection("users")
+          .doc(res.user.uid)
+          .set({
+            fullname: creds.fullname,
+            email: creds.email,
+            role: creds.role,
+            department: creds.department,
+            speciality: creds.speciality,
             status: creds.status,
-            initials:creds.fullname[0] + creds.fullname[1]
-          })
-        )
-      }).then(()=>{
+            initials: creds.fullname[0] + creds.fullname[1],
+            mondayopen: creds.mondayopen,
+            mondayclose: creds.mondayclose,
+            tuesdayopen: creds.tuesdayopen,
+            tuesdayclose: creds.tuesdayclose,
+            wednesdayopen: creds.wednesdayopen,
+            wednesdayclose: creds.wednesdayclose,
+            thursdayopen: creds.thursdayopen,
+            thursdayclose: creds.thursdayclose,
+            fridayopen: creds.fridayopen,
+            fridayclose: creds.fridayclose,
+            saturdayopen: creds.saturdayopen,
+            saturdayclose: creds.saturdayclose,
+            sundayopen: creds.sundayopen,
+            sundayclose: creds.sundayclose,
+          });
+      })
+      .then(() => {
         dispatch({ type: SIGN_UP });
-      }).catch((err) => {
+      })
+      .catch((err) => {
         dispatch({ type: SIGN_UP_ERR }, err);
-        console.log(err)
+        console.log(err);
       });
-      
   };
 };
 
@@ -37,7 +60,6 @@ export const login = (creds) => {
       .signInWithEmailAndPassword(creds.email, creds.password)
       .then(() => {
         dispatch({ type: LOG_IN });
-        
       })
       .catch((err) => {
         dispatch({ type: LOG_IN_ERR }, err);
@@ -53,11 +75,11 @@ export const logout = () => {
       .auth()
       .signOut()
       .then(() => {
-        dispatch({ type: LOG_OUT })
+        dispatch({ type: LOG_OUT });
       })
       .catch((err) => {
-        dispatch({ type: LOG_OUT_ERR }, err)
-        console.log(err)
+        dispatch({ type: LOG_OUT_ERR }, err);
+        console.log(err);
       });
   };
 };

@@ -29,6 +29,25 @@ class DoctorProfile extends React.Component {
     this.handleUpdate = this.handleUpdate.bind(this);
   }
 
+  componentWillMount() {
+    this.setState({
+      mondayopen: this.props.profile.mondayopen,
+      mondayclose:this.props.profile.mondayclose,
+      tuesdayopen:this.props.profile.tuesdayopen,
+      tuesdayclose:this.props.profile.tuesdayclose,
+      wednesdayopen:this.props.profile.wednesdayopen,
+      wednesdayclose:this.props.profile.wednesdayclose,
+      thursdayopen:this.props.profile.thursdayopen,
+      thursdayclose:this.props.profile.thursdayclose,
+      fridayopen:this.props.profile.fridayopen,
+      fridayclose:this.props.profile.fridayclose,
+      saturdayopen:this.props.profile.saturdayopen,
+      saturdayclose:this.props.profile.saturdayclose,
+      sundayopen:this.props.profile.sundayopen,
+      sundayclose:this.props.profile.sundayclose,
+    });
+  }
+
   handleChange = (e) => {
     e.preventDefault();
     this.setState({ [e.target.name]: e.target.value });
@@ -37,22 +56,6 @@ class DoctorProfile extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addDays(this.state);
-    this.setState({
-      mondayopen: "",
-      mondayclose: "",
-      tuesdayopen: "",
-      tuesdayclose: "",
-      wednesdayopen: "",
-      wednesdayclose: "",
-      thursdayopen: "",
-      thursdayclose: "",
-      fridayopen: "",
-      fridayclose: "",
-      saturdayopen: "",
-      saturdayclose: "",
-      sundayopen: "",
-      sundayclose: "",
-    });
   };
   handleUpdate = (e) => {
     e.preventDefault();
@@ -334,23 +337,18 @@ class DoctorProfile extends React.Component {
                   </div>
                 </div>
                 <div className="form-group mb-2 col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-                <button
-                  type="submit"
-                  className="btn btn-primary navTabsBtn"
-                  
-                >
-                  Set times
-                </button>
-                {/* <button
+                  <button type="submit" className="btn btn-primary navTabsBtn">
+                    Set times
+                  </button>
+                  {/* <button
                 type="submit"
                 className="btn btn-primary alldaystimebtn"
                 onClick={this.handleUpdate}
               >
                 Update times
               </button> */}
+                </div>
               </div>
-              </div>
-              
             </form>
           </div>
         </div>
