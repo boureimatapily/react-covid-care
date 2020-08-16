@@ -10,13 +10,33 @@ import {
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-function AdminSinglePatient({ patient, deletePatient, toggleChecked }) {
-  const handleRemove = (patient) => {
-    deletePatient(patient);
+class AdminSinglePatient extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+        file:null
+    }
+    // this.fileChangedHandler = this.fileChangedHandler.bind(this)
+    // this.uploadHandler = this.uploadHandler.bind(this)
+  }
+   handleRemove = (patient) => {
+
+    this.props.deletePatient(patient);
   };
-  const handleChecked = (patient) => {
-    toggleChecked(patient);
+   handleChecked = (patient) => {
+    this.props.toggleChecked(patient);
   };
+//  fileChangedHandler = event => {
+//   event.preventDefault()
+//     this.setState({ file: event.target.files[0] })
+//   }
+  
+//   uploadHandler = () => {
+//     console.log(this.state.file)
+//   }
+
+render(){
+  const { patient } = this.props
 
   return (
     <>
@@ -37,7 +57,7 @@ function AdminSinglePatient({ patient, deletePatient, toggleChecked }) {
               width="20"
               height="20"
               title="delete"
-              onClick={() => handleRemove(patient)}
+              onClick={() => this.handleRemove(patient)}
             />{" "}
           </button>
           <Link to={"/edit/" + patient.id}> 
@@ -58,11 +78,28 @@ function AdminSinglePatient({ patient, deletePatient, toggleChecked }) {
             value={patient.checked}
             defaultChecked={patient.checked}
             id="checkbox"
-            onClick={() => handleChecked(patient)}
+            onClick={() => this.handleChecked(patient)}
           />
+            {/* <div>
+                <div className="form-file col-md-4 p-10 ">
+                  <input
+                    type="file"
+                    value={this.state.file}
+                    onChange={this.fileChangedHandler}
+                    name="file"
+                    className="form-file-input"
+                    id="customFile"
+                  />
+                  <label className="form-file-label" for="customFile">
+                    <span className="form-file-text">Choose file...</span>
+                    <span className="form-file-button">Browse</span>
+                  </label>
+                </div>
+                <button onClick={this.uploadHandler}>Upload!</button>
+              </div> */}
         </th>
       </tr>
     </>
   );
-}
+}}
 export default connect(null, { deletePatient, toggleChecked })(AdminSinglePatient);

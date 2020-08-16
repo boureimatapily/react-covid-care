@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { updatePatient } from "../../../Redux/Actions/UserActions";
+import { updatePatient, addDoctorNote } from "../../../Redux/Actions/UserActions";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { Link } from "react-router-dom";
-import "./patient.css"
+import "./patient.css";
 
 class EditPatient extends React.Component {
   constructor(props) {
@@ -14,13 +14,13 @@ class EditPatient extends React.Component {
       firstname: "",
       lastname: "",
       age: "",
-      file: null,
       doctorNote: "",
       doctorName: "",
-      
+      consultDate:""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDoctorSubmit = this.handleDoctorSubmit.bind(this)
   }
 
   componentWillMount() {
@@ -32,7 +32,7 @@ class EditPatient extends React.Component {
       age: this.props.patient.age,
       doctorNote: this.props.patient.doctorNote,
       doctorName: this.props.patient.doctorName,
-      
+      consultDate: this.props.patient.consultDate
     });
   }
 
@@ -42,7 +42,15 @@ class EditPatient extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const { firstname, lastname, age, folderId, doctorNote, doctorName } = this.state;
+    const {
+      firstname,
+      lastname,
+      age,
+      folderId,
+      doctorNote,
+      doctorName,
+      consultDate
+    } = this.state;
     const newPatient = {
       folderId: folderId,
       firstname: firstname,
@@ -50,17 +58,25 @@ class EditPatient extends React.Component {
       age: age,
       doctorNote: doctorNote,
       doctorName: doctorName,
-     
+      consultDate:consultDate
     };
     this.props.updatePatient(this.props.patientId, newPatient);
   };
-  fileChangedHandler = event => {
-    this.setState({ file: event.target.files[0] })
+
+  handleDoctorSubmit = (e) =>{
+    e.preventDefault();
+    const {
+      doctorNote,
+      doctorName,
+    } = this.state;
+    const adddoctorNote = {
+      doctorNote: doctorNote,
+      doctorName: doctorName,
+    };
+    this.props.addDoctorNote(this.props.patientId, adddoctorNote);
+
   }
-  
-  uploadHandler = () => {
-    console.log(this.state.file)
-  }
+
   render() {
     const { patient, profile } = this.props;
 
@@ -72,15 +88,25 @@ class EditPatient extends React.Component {
           <div className="col">
             <form onSubmit={this.handleSubmit}>
               <div className="row">
-                <div className="form-group col-md-4 mb-2">
-                <Link 
-                to= {profile.role === "manager" ? "/hospital" : "/doctor"}>
-                        <button type="submit" className="btn btn-primary mt-3 navTabsBtnlogin">
-                          Go Back
-                        </button>
-                    </Link>
-                 
+                <div className="col">
+                <Link
+                    to={profile.role === "manager" ? "/hospital" : "/doctor"}
+                  >
+                    <button
+                      type="submit"
+                      className="btn btn-primary mt-3 navTabsBtnlogin"
+                    >
+                      Go Back
+                    </button>
+                  </Link>
+
                   <h2> Update Patient folder </h2>
+                </div>
+
+              </div>
+              <div className="row">
+                <div className="form-group col-md-4 mb-2">
+               
                   <label htmlFor="folderId">Patient Folder ID</label>
                   <input
                     value={this.state.folderId}
@@ -91,7 +117,17 @@ class EditPatient extends React.Component {
                     className="form-control inputsStyle"
                   />
                 </div>
-                
+                <div className="form-group col-md-4 mb-2">
+                  <label htmlFor="age">Consulting Date</label>
+                  <input
+                    value={this.state.consultDate}
+                    onChange={this.handleChange}
+                    type="date"
+                    id="consultDate"
+                    name="consultDate"
+                    className="form-control inputsStyle"
+                  />
+                </div>
               </div>
               <div className="row">
                 <div className="form-group col-md-4 mb-2">
@@ -128,52 +164,49 @@ class EditPatient extends React.Component {
                   />
                 </div>
               </div>
-              <div className="row">
-              <div className="form-group col-md-4 mb-2">
-                  <label htmlFor="doctorName">Doctor Name</label>
-                  <input
-                    value={this.state.doctorName}
-                    onChange={this.handleChange}
-                    type="text"
-                    id="doctorName"
-                    name="doctorName"
-                    className="form-control inputsStyle"
-                  />
-                </div>
-                <div className="form-group col-md-6 mb-2">
-                  <textarea
-                    className="form-control is-invalid inputsStyle"
-                    id="validationTextarea"
-                    placeholder="Doctor Note"
-                    name="doctorNote"
-                    value={this.state.doctorNote}
-                    onChange={this.handleChange}
-                  ></textarea>
-                </div>
-              </div>
               {/* <div className="row">
-                <div className="form-file col-md-4 p-10 ">
-                  <input
-                    type="file"
-                    value={this.state.file}
-                    onChange={this.fileChangedHandler}
-                    name="file"
-                    className="form-file-input"
-                    id="customFile"
-                  />
-                  <label className="form-file-label" for="customFile">
-                    <span className="form-file-text">Choose file...</span>
-                    <span className="form-file-button">Browse</span>
-                  </label>
-                </div>
-                <button onClick={this.uploadHandler}>Upload!</button>
-              </div> */}
+           
 
-              <button type="submit" className="btn btn-primary mt-3 navTabsBtnlogin">
+              </div> */}
+              <button
+                type="submit"
+                className="btn btn-primary mt-3 navTabsBtnlogin"
+              >
                 Update Infos
               </button>
             </form>
           </div>
+        </div>
+        <div className="row">
+          <form onSubmit={this.handleDoctorSubmit}>
+            <div className="form-group col-md-4 mb-2">
+              <label htmlFor="doctorName">Doctor Name</label>
+              <input
+                value={this.state.doctorName} 
+                onChange={this.handleChange}
+                type="text"
+                id="doctorName"
+                name="doctorName"
+                className="form-control inputsStyle"
+              />
+            </div>
+            <div className="form-group col-md-6 mb-2">
+              <textarea
+                className="form-control is-invalid inputsStyle"
+                id="validationTextarea"
+                placeholder="Doctor Note"
+                name="doctorNote"
+                value={this.state.doctorNote}
+                onChange={this.handleChange}
+              ></textarea>
+            </div>
+            <button
+                type="submit"
+                className="btn btn-primary mt-3 navTabsBtnlogin"
+              >
+                Add Doctor Note
+              </button>
+          </form>
         </div>
       </div>
     );
@@ -189,12 +222,12 @@ const mStp = (state, ownProps) => {
   return {
     patientId: id,
     patient: patient,
-    profile: profile
+    profile: profile,
   };
 };
 
 export default compose(
-  connect(mStp, { updatePatient }),
+  connect(mStp, { updatePatient, addDoctorNote }),
   firestoreConnect((ownProps) => [
     // listen and get data form the patients collection
     {
