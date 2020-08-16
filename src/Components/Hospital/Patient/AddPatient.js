@@ -14,7 +14,8 @@ class AddPatient extends React.Component {
       doctorNote: "Add doctor Note",
       doctorName: " Add Doctor Name",
       checked: "false",
-      consultDate:""
+      consultDate: "",
+      consultLink:"Add consult Link",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +28,17 @@ class AddPatient extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    const { firstname, lastname, age, folderId, checked, doctorName, doctorNote, consultDate } = this.state;
+    const {
+      firstname,
+      lastname,
+      age,
+      folderId,
+      checked,
+      doctorName,
+      doctorNote,
+      consultDate,
+      consultLink,
+    } = this.state;
     const newPatient = {
       folderId: folderId,
       firstname: firstname,
@@ -36,10 +47,11 @@ class AddPatient extends React.Component {
       checked: checked,
       doctorName: doctorName,
       doctorNote: doctorNote,
-      consultDate:consultDate
+      consultDate: consultDate,
+      consultLink: consultLink,
     };
     this.props.addPatient(newPatient);
-    this.setState({ folderId: "", firstname: "", lastname: "", age: ""});
+    this.setState({ folderId: "", firstname: "", lastname: "", age: "" });
   };
   render() {
     return (
@@ -49,7 +61,9 @@ class AddPatient extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="form-group col-md-4 mb-2">
-                  <label htmlFor="folderId" className="inputslabelStyle">Patient Folder ID</label>
+                  <label htmlFor="folderId" className="inputslabelStyle">
+                    Patient Folder ID
+                  </label>
                   <input
                     value={this.state.folderId}
                     onChange={this.handleChange}
@@ -62,7 +76,9 @@ class AddPatient extends React.Component {
               </div>
               <div className="row">
                 <div className="form-group col-md-4 mb-2">
-                  <label htmlFor="firstname" className="inputslabelStyle">firstname</label>
+                  <label htmlFor="firstname" className="inputslabelStyle">
+                    firstname
+                  </label>
                   <input
                     value={this.state.firstname}
                     onChange={this.handleChange}
@@ -73,7 +89,9 @@ class AddPatient extends React.Component {
                   />
                 </div>
                 <div className="form-group col-md-4 mb-2">
-                  <label htmlFor="lastname" className="inputslabelStyle">lastname</label>
+                  <label htmlFor="lastname" className="inputslabelStyle">
+                    lastname
+                  </label>
                   <input
                     value={this.state.lastname}
                     onChange={this.handleChange}
@@ -84,7 +102,9 @@ class AddPatient extends React.Component {
                   />
                 </div>
                 <div className="form-group col-md-4 mb-2">
-                  <label htmlFor="age" className="inputslabelStyle">age</label>
+                  <label htmlFor="age" className="inputslabelStyle">
+                    age
+                  </label>
                   <input
                     value={this.state.age}
                     onChange={this.handleChange}

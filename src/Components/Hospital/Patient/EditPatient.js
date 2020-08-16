@@ -16,7 +16,8 @@ class EditPatient extends React.Component {
       age: "",
       doctorNote: "",
       doctorName: "",
-      consultDate:""
+      consultDate:"",
+      consultLink:""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,7 +33,8 @@ class EditPatient extends React.Component {
       age: this.props.patient.age,
       doctorNote: this.props.patient.doctorNote,
       doctorName: this.props.patient.doctorName,
-      consultDate: this.props.patient.consultDate
+      consultDate: this.props.patient.consultDate,
+       consultLink: this.props.patient.consultLink
     });
   }
 
@@ -49,7 +51,8 @@ class EditPatient extends React.Component {
       folderId,
       doctorNote,
       doctorName,
-      consultDate
+      consultDate,
+      consultLink
     } = this.state;
     const newPatient = {
       folderId: folderId,
@@ -58,7 +61,8 @@ class EditPatient extends React.Component {
       age: age,
       doctorNote: doctorNote,
       doctorName: doctorName,
-      consultDate:consultDate
+      consultDate: consultDate,
+      consultLink:  consultLink
     };
     this.props.updatePatient(this.props.patientId, newPatient);
   };
@@ -118,7 +122,7 @@ class EditPatient extends React.Component {
                   />
                 </div>
                 <div className="form-group col-md-4 mb-2">
-                  <label htmlFor="age">Consulting Date</label>
+                  <label htmlFor="consultDate">Consulting Date</label>
                   <input
                     value={this.state.consultDate}
                     onChange={this.handleChange}
@@ -164,10 +168,19 @@ class EditPatient extends React.Component {
                   />
                 </div>
               </div>
-              {/* <div className="row">
-           
-
-              </div> */}
+              <div className="row">
+              <div className="form-group col-md-4 mb-2">
+                  <label htmlFor="consultLink">Consult Link</label>
+                  <input
+                    value={this.state.consultLink}
+                    onChange={this.handleChange}
+                    type="text"
+                    id="consultLink"
+                    name="consultLink"
+                    className="form-control inputsStyle"
+                  />
+                </div>
+              </div>
               <button
                 type="submit"
                 className="btn btn-primary mt-3 navTabsBtnlogin"
