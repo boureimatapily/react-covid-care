@@ -95,7 +95,7 @@ class Login extends React.Component {
             </form>
             <h4>Admin email: hospital@admin.com</h4>
             <h4>Admin password: doctor@123*</h4>
-            <h4>Doctor email: doctor@doctor.com</h4>
+            <h4>Doctor email: awal@doctor.com</h4>
             <h4>Doctor password: doctor@123*</h4>
           </div>
         </div>
