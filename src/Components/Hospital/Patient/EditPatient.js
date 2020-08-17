@@ -27,7 +27,7 @@ class EditPatient extends React.Component {
     this.handleDoctorSubmit = this.handleDoctorSubmit.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     console.log(this.props);
     this.setState({
       firstname: this.props.patient.firstname,
