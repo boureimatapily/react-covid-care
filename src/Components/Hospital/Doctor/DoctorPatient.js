@@ -18,8 +18,8 @@ class DoctorPatient extends React.Component {
   componentDidMount() {
     firebase
       .firestore() //access firestore
-      .collection("users") //access "items" collection
-      .where("doctorName", "==", "Doctor")
+      .collection("patients") //access "items" collection
+      .where("doctorName", "==", "Awal Mubarak")
       .onSnapshot((snapshot) => {
         //You can "listen" to a document with the onSnapshot() method.
         const listItems = snapshot.docs.map((doc) => ({
@@ -33,7 +33,7 @@ class DoctorPatient extends React.Component {
 
   render() {
     const { checked } = this.state;
-
+    console.log("doctor patient");
     console.log(this.state);
     return (
       <div className="container">
@@ -49,6 +49,7 @@ class DoctorPatient extends React.Component {
                   <th scope="col">Lastname</th>
                   <th scope="col">age</th>
                   <th scope="col">Doctor</th>
+                  <th scope="col">Consult Date</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
@@ -66,6 +67,7 @@ class DoctorPatient extends React.Component {
   }
 }
 const mStp = (state) => {
+  console.log(state)
   const uid = state.firebase.auth.uid;
   const profile = state.firebase.profile;
   return {
