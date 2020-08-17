@@ -37,7 +37,8 @@
     height: 6rem;
     position: absolute;
     top: 40%;
-    right: 40%;
-    
-
+    right: 50%;
+}
+.doctorNoteInput{
+    height: 200px;
 }

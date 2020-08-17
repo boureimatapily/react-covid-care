@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { updatePatient, addDoctorNote } from "../../../Redux/Actions/UserActions";
+import {
+  updatePatient,
+  addDoctorNote,
+} from "../../../Redux/Actions/UserActions";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { Link } from "react-router-dom";
@@ -16,12 +19,12 @@ class EditPatient extends React.Component {
       age: "",
       doctorNote: "",
       doctorName: "",
-      consultDate:"",
-      consultLink:""
+      consultDate: "",
+      consultLink: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDoctorSubmit = this.handleDoctorSubmit.bind(this)
+    this.handleDoctorSubmit = this.handleDoctorSubmit.bind(this);
   }
 
   componentWillMount() {
@@ -34,7 +37,7 @@ class EditPatient extends React.Component {
       doctorNote: this.props.patient.doctorNote,
       doctorName: this.props.patient.doctorName,
       consultDate: this.props.patient.consultDate,
-       consultLink: this.props.patient.consultLink
+      consultLink: this.props.patient.consultLink,
     });
   }
 
@@ -52,7 +55,7 @@ class EditPatient extends React.Component {
       doctorNote,
       doctorName,
       consultDate,
-      consultLink
+      consultLink,
     } = this.state;
     const newPatient = {
       folderId: folderId,
@@ -62,24 +65,20 @@ class EditPatient extends React.Component {
       doctorNote: doctorNote,
       doctorName: doctorName,
       consultDate: consultDate,
-      consultLink:  consultLink
+      consultLink: consultLink,
     };
     this.props.updatePatient(this.props.patientId, newPatient);
   };
 
-  handleDoctorSubmit = (e) =>{
+  handleDoctorSubmit = (e) => {
     e.preventDefault();
-    const {
-      doctorNote,
-      doctorName,
-    } = this.state;
+    const { doctorNote, doctorName } = this.state;
     const adddoctorNote = {
       doctorNote: doctorNote,
       doctorName: doctorName,
     };
     this.props.addDoctorNote(this.props.patientId, adddoctorNote);
-
-  }
+  };
 
   render() {
     const { patient, profile } = this.props;
@@ -93,7 +92,7 @@ class EditPatient extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="col">
-                <Link
+                  <Link
                     to={profile.role === "manager" ? "/hospital" : "/doctor"}
                   >
                     <button
@@ -106,11 +105,9 @@ class EditPatient extends React.Component {
 
                   <h2> Update Patient folder </h2>
                 </div>
-
               </div>
               <div className="row">
                 <div className="form-group col-md-4 mb-2">
-               
                   <label htmlFor="folderId">Patient Folder ID</label>
                   <input
                     value={this.state.folderId}
@@ -169,7 +166,7 @@ class EditPatient extends React.Component {
                 </div>
               </div>
               <div className="row">
-              <div className="form-group col-md-4 mb-2">
+                <div className="form-group col-md-4 mb-2">
                   <label htmlFor="consultLink">Consult Link</label>
                   <input
                     value={this.state.consultLink}
@@ -192,10 +189,11 @@ class EditPatient extends React.Component {
         </div>
         <div className="row">
           <form onSubmit={this.handleDoctorSubmit}>
+            <div className="row">
             <div className="form-group col-md-4 mb-2">
               <label htmlFor="doctorName">Doctor Name</label>
               <input
-                value={this.state.doctorName} 
+                value={this.state.doctorName}
                 onChange={this.handleChange}
                 type="text"
                 id="doctorName"
@@ -205,7 +203,7 @@ class EditPatient extends React.Component {
             </div>
             <div className="form-group col-md-6 mb-2">
               <textarea
-                className="form-control is-invalid inputsStyle"
+                className="form-control is-invalid inputsStyle doctorNoteInput "
                 id="validationTextarea"
                 placeholder="Doctor Note"
                 name="doctorNote"
@@ -213,12 +211,14 @@ class EditPatient extends React.Component {
                 onChange={this.handleChange}
               ></textarea>
             </div>
+            </div>
+            
             <button
-                type="submit"
-                className="btn btn-primary mt-3 navTabsBtnlogin"
-              >
-                Add Doctor Note
-              </button>
+              type="submit"
+              className="btn btn-primary mt-3 navTabsBtnlogin"
+            >
+              Add Doctor Note
+            </button>
           </form>
         </div>
       </div>

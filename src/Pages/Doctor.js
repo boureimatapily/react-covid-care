@@ -16,9 +16,9 @@ function Doctor({ uid }) {
       <div className="row">
         <div className="col">
           <nav>
-            <div className="nav nav-tabs" id="nav-tab" role="tablist">
+            <div className="nav nav-tabs navTabsContainer" id="nav-tab" role="tablist">
               <a
-                className="nav-link active"
+                className="nav-link active navTabsLink flex-fill"
                 id="nav-home-tab"
                 data-toggle="tab"
                 href="#nav-home"
@@ -29,7 +29,7 @@ function Doctor({ uid }) {
                 Profile
               </a>
               <a
-                className="nav-link"
+                className="nav-link navTabsLink flex-fill"
                 id="nav-profile-tab"
                 data-toggle="tab"
                 href="#nav-profile"
