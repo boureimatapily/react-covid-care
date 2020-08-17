@@ -29,7 +29,7 @@ class DoctorProfile extends React.Component {
     this.handleUpdate = this.handleUpdate.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
       mondayopen: this.props.profile.mondayopen,
       mondayclose:this.props.profile.mondayclose,
@@ -133,7 +133,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimemondayopen"
                       name="mondayopen"
                       value={this.state.mondayopen}
                       onChange={this.handleChange}
@@ -144,7 +144,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimemondayclose"
                       name="mondayclose"
                       value={this.state.mondayclose}
                       onChange={this.handleChange}
@@ -163,7 +163,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimetuesdayopen"
                       name="tuesdayopen"
                       value={this.state.tuesdayopen}
                       onChange={this.handleChange}
@@ -174,7 +174,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimetuesdayclose"
                       name="tuesdayclose"
                       value={this.state.tuesdayclose}
                       onChange={this.handleChange}
@@ -193,7 +193,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimewednesdayopen"
                       name="wednesdayopen"
                       value={this.state.wednesdayopen}
                       onChange={this.handleChange}
@@ -204,7 +204,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimewednesdayclose"
                       name="wednesdayclose"
                       value={this.state.wednesdayclose}
                       onChange={this.handleChange}
@@ -223,7 +223,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimethursdayopen"
                       name="thursdayopen"
                       value={this.state.thursdayopen}
                       onChange={this.handleChange}
@@ -234,7 +234,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimethursdayclose"
                       name="thursdayclose"
                       value={this.state.thursdayclose}
                       onChange={this.handleChange}
@@ -256,7 +256,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimefridayopen"
                       name="fridayopen"
                       value={this.state.fridayopen}
                       onChange={this.handleChange}
@@ -267,7 +267,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimefridayclose"
                       name="fridayclose"
                       value={this.state.fridayclose}
                       onChange={this.handleChange}
@@ -286,7 +286,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimesaturdayopen"
                       name="saturdayopen"
                       value={this.state.saturdayopen}
                       onChange={this.handleChange}
@@ -297,7 +297,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimesaturdayclose"
                       name="saturdayclose"
                       value={this.state.saturdayclose}
                       onChange={this.handleChange}
@@ -316,7 +316,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimesundayopen"
                       name="sundayopen"
                       value={this.state.sundayopen}
                       onChange={this.handleChange}
@@ -327,7 +327,7 @@ class DoctorProfile extends React.Component {
                   <div className="col-auto">
                     <input
                       type="text"
-                      id="alldaystime"
+                      id="alldaystimesundayclose"
                       name="sundayclose"
                       value={this.state.sundayclose}
                       onChange={this.handleChange}
