@@ -42,3 +42,8 @@
 .doctorNoteInput{
     height: 200px;
 }
+.doctorActionButton{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}

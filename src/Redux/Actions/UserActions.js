@@ -51,6 +51,26 @@ import {
 //   };
 // };
 
+//Delete Doctor
+export const deleteDoctor = (account) => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firestore = getFirebase().firestore();
+    // const id = account.userId;
+    firestore
+      .collection("users")
+      .doc(account.id)
+      .delete()
+      .then(() => {
+        dispatch({ type: DELETE_USER });
+      })
+      .catch((err) => {
+        dispatch({ type: DELETE_USER_ERR, err });
+        console.log(err);
+      });
+  };
+};
+
+
 //Add new Patient
 export const addPatient = (account) => {
   return (dispatch, getState, { getFirebase }) => {
