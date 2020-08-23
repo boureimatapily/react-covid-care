@@ -28,7 +28,6 @@ class EditPatient extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     this.setState({
       firstname: this.props.patient.firstname,
       lastname: this.props.patient.lastname,
@@ -81,9 +80,7 @@ class EditPatient extends React.Component {
   };
 
   render() {
-    const { patient, profile } = this.props;
-
-    console.log(patient);
+    const {  profile } = this.props;
 
     return (
       <div className="container">
