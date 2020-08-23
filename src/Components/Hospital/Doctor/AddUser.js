@@ -41,7 +41,16 @@ class AddUser extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.register(this.state);
-    document.getElementById("form").reset();
+    // document.getElementById("form").reset();
+    this.setState({
+      email: "",
+      password: "",
+      fullname: "",
+      role: "",
+      status: "",
+      department: "",
+      speciality: "",
+    })
   };
   render() {
     console.log(this.state);
@@ -60,7 +69,7 @@ class AddUser extends React.Component {
                     className="form-control inputsStyle"
                     id="email"
                     name="email"
-                    value={this.state.value}
+                    value={this.state.email}
                     onChange={this.handleChange}
                   />
                 </div>
@@ -89,7 +98,7 @@ class AddUser extends React.Component {
                     className="form-control inputsStyle"
                     id="fullname"
                     name="fullname"
-                    value={this.state.value}
+                    value={this.state.fullname}
                     onChange={this.handleChange}
                   />
                 </div>
@@ -125,7 +134,7 @@ class AddUser extends React.Component {
                     className="form-select form-select-lg mb-3 inputsStyle"
                     aria-label="Default select example"
                     name="status"
-                    value={this.state.value}
+                    value={this.state.status}
                     onChange={this.handleChange}
                   >
                     <option defaultValue>Choose Doctor Status</option>
@@ -143,7 +152,7 @@ class AddUser extends React.Component {
                     className="form-select form-select-lg mb-3 inputsStyle"
                     aria-label="Default select example"
                     name="role"
-                    value={this.state.value}
+                    value={this.state.role}
                     onChange={this.handleChange}
                   >
                     <option selected>Choose role</option>

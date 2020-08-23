@@ -1,17 +1,17 @@
 import React from "react";
-import AddPatient from "./Patient/AddPatient"; // Adding patient
+// import AddPatient from "./Patient/AddPatient"; // Adding patient
 import PatientList from "./Patient/PatientList"; // Patient list
-import NonCheckedPatientList from "./Patient/NonCheckedPatientList";
+// import NonCheckedPatientList from "./Patient/NonCheckedPatientList";
 import CheckedPatientList from "./Patient/CheckedPatientList";
 
-export default function PatientTab() {
+export default function PatientTab({doctorid}) {
   return (
     <div className="container">
       <div className="row">
         <div className="col">
           <nav>
             <div className="nav nav-tabs navTabsContainer justify-content-evenly" id="nav-tab" role="tablist">
-              <a
+              {/* <a
                 className="nav-link active navpatientTabsLink flex-fill"
                 id="nav-home-tab"
                 data-toggle="tab"
@@ -21,7 +21,7 @@ export default function PatientTab() {
                 aria-selected="true"
               >
                 ADD Patient
-              </a>
+              </a> */}
               <a
                 className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
@@ -29,11 +29,11 @@ export default function PatientTab() {
                 href="#nav-profile-patient"
                 role="tab"
                 aria-controls="nav-profile"
-                aria-selected="false"
+                aria-selected="true"
               >
                 All Patient
               </a>
-              <a
+              {/* <a
                 className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
                 data-toggle="tab"
@@ -43,7 +43,7 @@ export default function PatientTab() {
                 aria-selected="false"
               >
                 Non-Checked Patient
-              </a>
+              </a> */}
               <a
                 className="nav-link navpatientTabsLink flex-fill"
                 id="nav-profile-tab"
@@ -58,7 +58,7 @@ export default function PatientTab() {
             </div>
           </nav>
           <div className="tab-content" id="nav-tabContent">
-            <div
+            {/* <div
               className="tab-pane fade show active"
               id="nav-home-patient"
               role="tabpanel"
@@ -66,9 +66,9 @@ export default function PatientTab() {
             >
               <h3 className="text-center">ADD Patient</h3>
               <AddPatient />
-            </div>
+            </div> */}
             <div
-              className="tab-pane fade"
+              className="tab-pane fade show active"
               id="nav-profile-patient"
               role="tabpanel"
               aria-labelledby="nav-profile-tab"
@@ -76,7 +76,7 @@ export default function PatientTab() {
               <h3 className="text-center"> All Patient </h3>
               <PatientList />
             </div>
-            <div
+            {/* <div
               className="tab-pane fade"
               id="nav-profile-non-patient"
               role="tabpanel"
@@ -84,7 +84,7 @@ export default function PatientTab() {
             >
               <h3 className="text-center"> Non-Checked Patient </h3>
                 <NonCheckedPatientList />
-            </div>
+            </div> */}
             <div
               className="tab-pane fade"
               id="nav-profile-checkedpatient"
@@ -92,7 +92,7 @@ export default function PatientTab() {
               aria-labelledby="nav-profile-tab"
             >
               <h3 className="text-center"> Checked Patient </h3>
-                <CheckedPatientList />
+                <CheckedPatientList  />
             </div>
           </div>
         </div>
