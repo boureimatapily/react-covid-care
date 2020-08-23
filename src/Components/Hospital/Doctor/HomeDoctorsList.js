@@ -32,8 +32,7 @@ class HomeDoctorsList extends React.Component{
 
   render() {
     const { homedoctors } = this.state;
-   
-    console.log(this.state);
+  
     return (
       <div className="container">
         <div className="row">

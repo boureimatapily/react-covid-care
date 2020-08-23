@@ -5,6 +5,7 @@ import pencil from "../../../Images/icons/pencil.svg";
 import trash from "../../../Images/icons/trash-fill.svg";
 import { deleteDoctor } from "../../../Redux/Actions/UserActions";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 function SingleDoctor({ doctor, deleteDoctor }) {
@@ -29,7 +30,7 @@ function SingleDoctor({ doctor, deleteDoctor }) {
                     onClick={() => handleRemove(doctor)}
                   />{" "}
                 </button>
-                {/* <Link to={"/edit/" + patient.id}>  */}
+                <Link to={"/editdoctor/" + doctor.id}> 
                 <button type="button" className="btn btn-secondary btnaction">
                   <img
                     src={pencil}
@@ -40,7 +41,7 @@ function SingleDoctor({ doctor, deleteDoctor }) {
                     title="delete"
                   />
                 </button>
-                {/* </Link> */}
+                </Link>
               </div>
             <div className="card-body">
               <h6 className="card-title">Fullname: {doctor.fullname} </h6>

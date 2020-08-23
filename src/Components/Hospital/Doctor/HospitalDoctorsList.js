@@ -33,7 +33,7 @@ class HospitalDoctorsList extends React.Component{
   render() {
     const {  hospitaldoctors } = this.state;
    
-    console.log(this.state);
+
     return (
       <div className="container">
         <div className="row">

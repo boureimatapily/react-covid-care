@@ -33,7 +33,6 @@ class QuarantinedDoctorsList extends React.Component{
   render() {
     const { quanrantineddoctors } = this.state;
    
-    console.log(this.state);
     return (
       <div className="container">
         <div className="row">
