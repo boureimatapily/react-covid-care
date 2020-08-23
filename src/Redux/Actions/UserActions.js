@@ -70,18 +70,42 @@ export const deleteDoctor = (account) => {
   };
 };
 
-
-//Add new Patient
-export const addPatient = (account) => {
+//Update user doctor infos
+export const updateDoctor = (id, account) => {
   return (dispatch, getState, { getFirebase }) => {
     const firestore = getFirebase().firestore();
-    const authorId = getState().firebase.auth.uid;
     // const id = account.userId;
+    firestore
+      .collection("users")
+      .doc(id)
+      .set(
+        {
+          ...account,
+        },
+        { merge: true }
+      )
+      .then(() => {
+        dispatch({ type: UPDATE_USER });
+      })
+      .catch((err) => {
+        dispatch({ type: UPDATE_USER_ERR, err });
+      });
+  };
+};
+
+
+//Add new Patient
+export const addPatient = (doctorid,account) => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firestore = getFirebase().firestore();
+    // const authorId = getState().firebase.auth.uid;
+    
     firestore
       .collection("patients")
       .add({
         ...account,
-        authorId: authorId,
+        authorId: doctorid,
+        dId: doctorid,
         date: new Date(),
       })
       .then(() => {

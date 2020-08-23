@@ -19,6 +19,7 @@ export const register = (creds) => {
           .collection("users")
           .doc(res.user.uid)
           .set({
+            userid:res.user.uid,
             fullname: creds.fullname,
             email: creds.email,
             role: creds.role,
