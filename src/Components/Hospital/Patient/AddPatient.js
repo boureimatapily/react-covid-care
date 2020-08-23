@@ -13,7 +13,7 @@ class AddPatient extends React.Component {
       file: null,
       doctorNote: "Add doctor Note",
       doctorName: " Add Doctor Name",
-      checked: "false",
+      checked: "",
       consultDate: "",
       consultLink:"Add consult Link",
     };
@@ -50,10 +50,12 @@ class AddPatient extends React.Component {
       consultDate: consultDate,
       consultLink: consultLink,
     };
-    this.props.addPatient(newPatient);
+
+    this.props.addPatient(this.props.doctorid, newPatient);
     this.setState({ folderId: "", firstname: "", lastname: "", age: "" });
   };
   render() {
+    
     return (
       <div className="container">
         <div className="row">

@@ -16,10 +16,11 @@ class DoctorPatient extends React.Component {
   //   this.setState({ checked: nextProps.listItems });
   // }
   componentDidMount() {
+    const uid = this.props.uid
     firebase
       .firestore() //access firestore
       .collection("patients") //access "items" collection
-      .where("doctorName", "==", "Awal Mubarak")
+      .where("authorId", "==", uid)
       .onSnapshot((snapshot) => {
         //You can "listen" to a document with the onSnapshot() method.
         const listItems = snapshot.docs.map((doc) => ({

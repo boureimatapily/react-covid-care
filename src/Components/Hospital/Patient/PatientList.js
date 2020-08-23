@@ -1,24 +1,50 @@
 import React from "react";
-//import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { compose } from "redux";
-import { firestoreConnect } from "react-redux-firebase";
-import AdminSinglePatient from "./AdminSinglePatient";
+import SinglePatient from "./SinglePatient";
+import firebase from "../../../Config/fbconfig"
 
-class PatientList extends React.Component {
+
+class PatientList extends React.Component{
+  constructor(props){
+    super(props);
+    this.state ={
+      checked:[]
+    }
+  }
+
+  // componentWillReceiveProps(nextProps) {
+  //   // This will erase any local state updates!
+  //   this.setState({checked:nextProps.listItems})
+  // }
+ 
+  componentDidMount() {
+    // const doctorId = this.props.match.params.id;
+        firebase
+          .firestore() //access firestore
+          .collection("patients") //access "items" collection
+          // .where("authorId", "==", this.props.doctorid)
+          .onSnapshot(snapshot => {
+            //You can "listen" to a document with the onSnapshot() method.
+            const listItems = snapshot.docs.map(doc => ({
+              //map each document into snapshot
+              id: doc.id, //id and data pushed into items array
+              ...doc.data() //spread operator merges data to id.
+            }));
+            this.setState({checked:listItems}) //items is equal to listItems
+          });
+  }
+
   render() {
-    const { patients } = this.props;
-    // console.log(patients);
+    const { checked } = this.state;
+  
     return (
       <div className="container">
         <div className="row">
           <div className="col">
             <h1>Patient List </h1>
-
             <table className="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">Date</th>
+                 <th scope="col">Date</th>
                   <th scope="col">FolderId</th>
                   <th scope="col">Firstname</th>
                   <th scope="col">Lastname</th>
@@ -29,9 +55,11 @@ class PatientList extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                {patients &&
-                  patients.map((patient) => (
-                    <AdminSinglePatient patient={patient} key={patient.folderId} />
+                {checked  &&
+                  checked.map((patient) => (
+                 
+                    <SinglePatient patient={patient} key={patient.folderId} />
+                    
                   ))}
               </tbody>
             </table>
@@ -42,26 +70,6 @@ class PatientList extends React.Component {
   }
 }
 
-const mStp = (state) => {
-  // console.log(state);
-  const patients = state.firestore.ordered.patients; // patients collection state
-  return {
-    patients: patients,
-  };
-};
 
-export default compose(
-  connect(mStp),
-  firestoreConnect((ownProps) => [
-    // listen and get data form the patients collection
-    {
-      collection: "patients",
-      // where : ["authorId", "==", ownProps.uid],
-      // where: [
-      //   ['checked', '==', true],
-      //   ['checked', '==', false],
-      // ],
-      orderBy: ["date", "desc"],
-    },
-  ])
-)(PatientList);
+
+export default PatientList
