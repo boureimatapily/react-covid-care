@@ -263,10 +263,10 @@ class EditPatient extends React.Component {
               {({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
                 <section className="container">
                   <div {...getRootProps({ className: "dropzone" })}>
-                    <input {...getInputProps()} />
-                    <h6>
-                      Drag 'n' drop some files here, or click to select files
-                    </h6>
+                    <input {...getInputProps()}/>
+                    <h3 className="fileuploadinput text-center"> 
+                       Click to select files
+                    </h3>
                   </div>
                   <aside>
                     <h4>Files</h4>

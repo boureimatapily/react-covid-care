@@ -114,3 +114,11 @@
     width: 15rem;
     
 }
+.fileuploadinput{
+    border: 2px solid #111130;
+    margin-top: 5px;
+    height: 2em;
+    align-content: center;
+    margin: 5px;
+    background-color: #e3e3e3;
+}
