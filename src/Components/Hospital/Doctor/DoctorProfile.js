@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { addDays, addDaysUpdate } from "../../../Redux/Actions/UserActions";
 import Alldays from "./Alldays";
 import "./Doctor.css";
+import pencil from "../../../Images/icons/pencil.svg";
+
 
 class DoctorProfile extends React.Component {
   constructor(props) {
@@ -32,19 +34,19 @@ class DoctorProfile extends React.Component {
   componentDidMount() {
     this.setState({
       mondayopen: this.props.profile.mondayopen,
-      mondayclose:this.props.profile.mondayclose,
-      tuesdayopen:this.props.profile.tuesdayopen,
-      tuesdayclose:this.props.profile.tuesdayclose,
-      wednesdayopen:this.props.profile.wednesdayopen,
-      wednesdayclose:this.props.profile.wednesdayclose,
-      thursdayopen:this.props.profile.thursdayopen,
-      thursdayclose:this.props.profile.thursdayclose,
-      fridayopen:this.props.profile.fridayopen,
-      fridayclose:this.props.profile.fridayclose,
-      saturdayopen:this.props.profile.saturdayopen,
-      saturdayclose:this.props.profile.saturdayclose,
-      sundayopen:this.props.profile.sundayopen,
-      sundayclose:this.props.profile.sundayclose,
+      mondayclose: this.props.profile.mondayclose,
+      tuesdayopen: this.props.profile.tuesdayopen,
+      tuesdayclose: this.props.profile.tuesdayclose,
+      wednesdayopen: this.props.profile.wednesdayopen,
+      wednesdayclose: this.props.profile.wednesdayclose,
+      thursdayopen: this.props.profile.thursdayopen,
+      thursdayclose: this.props.profile.thursdayclose,
+      fridayopen: this.props.profile.fridayopen,
+      fridayclose: this.props.profile.fridayclose,
+      saturdayopen: this.props.profile.saturdayopen,
+      saturdayclose: this.props.profile.saturdayclose,
+      sundayopen: this.props.profile.sundayopen,
+      sundayclose: this.props.profile.sundayclose,
     });
   }
 
@@ -102,7 +104,23 @@ class DoctorProfile extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-            <h3 className="text-center"> Profile Information</h3>
+          <h3 className="text-center"> Profile Information</h3>
+            <div className="doctorActionButton">
+            
+              <Link to={"editsingledoctor/" + uid}> 
+              <button type="button" className="btn btn-secondary btnaction">
+                <img
+                  src={pencil}
+                  alt="pencil"
+                  id="pencil"
+                  width="20"
+                  height="20"
+                  title="delete"
+                />
+              </button>
+              </Link>
+            </div>
+
             <div className="card">
               <h5>Email: {profile.email} </h5>
               <h5>Fullname: {profile.fullname} </h5>

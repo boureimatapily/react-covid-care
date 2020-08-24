@@ -2,11 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import firebase from "../../../Config/fbconfig";
 import { updateDoctor } from "../../../Redux/Actions/UserActions";
-import PatientTab from "../PatientTab"
-import AddPatient from "../Patient/AddPatient";
-// import PatientList from "../Patient/PatientList";
 
-class EditDoctor extends React.Component {
+
+class EditSingleDoctor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,29 +35,28 @@ class EditDoctor extends React.Component {
       //   .where("status", "==", "Home")
       .onSnapshot((snapshot) => {
         //You can "listen" to a document with the onSnapshot() method.
-        const editDoc = snapshot.docs.map((doc) => ({
+        const singleDoctor = snapshot.docs.map((doc) => ({
           //map each document into snapshot
           id: doc.id, //id and data pushed into items array
           ...doc.data(), //spread operator merges data to id.
         }));
         const id = this.props.match.params.id;
-        let doctors = editDoc.find((item) => {
+        let Edoctor = singleDoctor.find((item) => {
           return item.id === id;
         });
 
         this.setState({
-          fullname: doctors.fullname,
-          status: doctors.status,
-          department: doctors.department,
-          speciality: doctors.speciality,
-          userid: doctors.userid
+          fullname: Edoctor.fullname,
+          status: Edoctor.status,
+          department: Edoctor.department,
+          speciality: Edoctor.speciality,
+          userid: Edoctor.userid
         }); //items is equal to listItems
       });
   }
 
   render() {
-    const doctorid = this.props.match.params.id;
-    // console.log(this.state)
+   
     return (
       <div className="container">
         <div className="row">
@@ -132,20 +129,11 @@ class EditDoctor extends React.Component {
             </form>
           </div>
         </div>
-        <div className="row">
-          <div className="col">
-            <AddPatient doctorid={doctorid} />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-              <PatientTab doctorid={doctorid} userid={this.state.userid}/>
-              {/* <PatientList doctorid={doctorid} /> */}
-          </div>
-        </div>
+       
+  
       </div>
     );
   }
 }
 
-export default connect(null, { updateDoctor })(EditDoctor);
+export default connect(null, { updateDoctor })(EditSingleDoctor);

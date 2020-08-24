@@ -7,7 +7,6 @@ import { deleteDoctor } from "../../../Redux/Actions/UserActions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-
 function SingleDoctor({ doctor, deleteDoctor }) {
   const handleRemove = (doctor) => {
     deleteDoctor(doctor);
@@ -17,20 +16,20 @@ function SingleDoctor({ doctor, deleteDoctor }) {
       <div className="row">
         <div className="col">
           <div className="card cardSize text-center">
-          <div className="doctorActionButton">
-                <button type="button" className="btn btn-danger btnaction">
-                  {" "}
-                  <img
-                    src={trash}
-                    alt="trash"
-                    id="trash"
-                    width="20"
-                    height="20"
-                    title="delete"
-                    onClick={() => handleRemove(doctor)}
-                  />{" "}
-                </button>
-                <Link to={"/editdoctor/" + doctor.id}> 
+            <div className="doctorActionButton">
+              <button type="button" className="btn btn-danger btnaction">
+                {" "}
+                <img
+                  src={trash}
+                  alt="trash"
+                  id="trash"
+                  width="20"
+                  height="20"
+                  title="delete"
+                  onClick={() => handleRemove(doctor)}
+                />{" "}
+              </button>
+              <Link to={"/editdoctor/" + doctor.id}>
                 <button type="button" className="btn btn-secondary btnaction">
                   <img
                     src={pencil}
@@ -41,8 +40,8 @@ function SingleDoctor({ doctor, deleteDoctor }) {
                     title="delete"
                   />
                 </button>
-                </Link>
-              </div>
+              </Link>
+            </div>
             <div className="card-body">
               <h6 className="card-title">Fullname: {doctor.fullname} </h6>
               <h4 className="card-subtitle mb-2 text-muted">
@@ -68,5 +67,4 @@ function SingleDoctor({ doctor, deleteDoctor }) {
     </div>
   );
 }
-export default connect(null, { deleteDoctor})(SingleDoctor)
-
+export default connect(null, { deleteDoctor })(SingleDoctor);
