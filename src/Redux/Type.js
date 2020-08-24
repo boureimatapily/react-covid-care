@@ -13,6 +13,9 @@ export const ADD_TIME = "ADD_TIME";
 export const UPDATE_TIME = "UPDATE_TIME";
 export const ADD_TIME_ERR = "ADD_TIME_ERR";
 export const UPDATE_TIME_ERR = "UPDATE_TIME_ERR";
+export const UPLOAD_FILE = "UPLOAD_FILE";
+export const UPLOAD_FILE_ERR = "UPLOAD_FILE_ERR";
+
 
 
 

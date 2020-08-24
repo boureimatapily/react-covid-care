@@ -11,24 +11,30 @@ import {
   // ADD_DEPARTMENT_ERR,
   ADD_TIME,
   ADD_TIME_ERR,
+  UPLOAD_FILE,
+  UPLOAD_FILE_ERR
 } from "../Type";
 
-// export const checkedPatient = () => {
-//   return(dispatch, getState, { getFirebase }) =>{
-//     const firestore = getFirebase().firestore()
-//     firestore.collection("departments").where("checked", "==", true)
-//     .get()
-//     .then(function(querySnapshot) {
-//         querySnapshot.forEach(function(doc) {
-//             // doc.data() is never undefined for query doc snapshots
-//             console.log(doc.id, " => ", doc.data());
-//         });
-//     })
-//     .catch(function(error) {
-//         console.log("Error getting documents: ", error);
-//     });
-//   }
-// }
+export const uploadfiles = (path, files) => {
+  return(dispatch, getState, { getFirebase }) =>{
+    const firebase = getFirebase()
+    for (const file of files) {
+      firebase
+        .storage()
+        .ref(path)
+        .child(file.name)
+        .put(file)
+        .then(() => {
+          dispatch({ type: UPLOAD_FILE, file });
+        })
+        .catch((err) => {
+          dispatch({ type: UPLOAD_FILE_ERR, err });
+        });
+    }
+    
+    
+  }
+}
 
 // //Add new Department
 // export const AddDepart = (newDepart) => {

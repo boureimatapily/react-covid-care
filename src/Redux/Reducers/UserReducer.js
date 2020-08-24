@@ -10,7 +10,9 @@ import {
   ADD_DEPARTMENT,
   ADD_DEPARTMENT_ERR,
   ADD_TIME,
-  ADD_TIME_ERR
+  ADD_TIME_ERR,
+  UPLOAD_FILE,
+  UPLOAD_FILE_ERR
 } from "../Type";
 import { toast } from "react-toastify";
 
@@ -18,6 +20,12 @@ const UserReducer = (state = {}, action) => {
   switch (action.type) {
     case ADD_USER_INFO:
       toast.success("Patient infos added");
+      return state;
+    case UPLOAD_FILE:
+      toast.success("file uploaded");
+      return state;
+    case UPLOAD_FILE_ERR:
+      toast.error("file upload error");
       return state;
     case ADD_USER_INFO_ERR:
       toast.error("an error occured");
