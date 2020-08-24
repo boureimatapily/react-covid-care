@@ -1,13 +1,14 @@
 import React from "react";
-import SinglePatient from "./SinglePatient";
 import firebase from "../../../Config/fbconfig"
+import { connect } from "react-redux";
+import SinglePatient from "../Patient/SinglePatient";
 
 
-class NonCheckedPatientList extends React.Component{
+class DoctorCheckedPatientList extends React.Component{
   constructor(props){
     super(props);
     this.state ={
-      nonchecked:[]
+      DoctorcheckedPatient:[]
     }
   }
 
@@ -17,10 +18,12 @@ class NonCheckedPatientList extends React.Component{
   //   this.setState({nonchecked:nextProps.listItems})
   // }
   componentDidMount() {
+    const uid = this.props.uid
         firebase
           .firestore() //access firestore
           .collection("patients") //access "items" collection
-          .where("checked", "==", false)
+          .where("authorId", "==", uid)
+          .where("checked", "==", true)
           .onSnapshot(snapshot => {
             //You can "listen" to a document with the onSnapshot() method.
             const listItems = snapshot.docs.map(doc => ({
@@ -28,7 +31,7 @@ class NonCheckedPatientList extends React.Component{
               id: doc.id, //id and data pushed into items array
               ...doc.data() //spread operator merges data to id.
             }));
-            this.setState({nonchecked:listItems}) //items is equal to listItems
+            this.setState({DoctorcheckedPatient:listItems}) //items is equal to listItems
           });
   }
 
@@ -36,8 +39,8 @@ class NonCheckedPatientList extends React.Component{
   // const listItem = useItems();
   // console.log(listItem)
   render() {
-    const { nonchecked } = this.state;
-    console.log(this.state);
+    const { DoctorcheckedPatient } = this.state;
+    
     return (
       <div className="container">
         <div className="row">
@@ -57,8 +60,8 @@ class NonCheckedPatientList extends React.Component{
                 </tr>
               </thead>
               <tbody>
-                {nonchecked  &&
-                  nonchecked.map((patient) => (
+                {DoctorcheckedPatient  &&
+                  DoctorcheckedPatient.map((patient) => (
                     <SinglePatient patient={patient} key={patient.folderId} />
                   ))}
               </tbody>
@@ -69,6 +72,16 @@ class NonCheckedPatientList extends React.Component{
     );
   }
 }
+const mStp = (state) => {
+  console.log(state)
+  const uid = state.firebase.auth.uid;
+  const profile = state.firebase.profile;
+  return {
+    uid: uid,
+    profile: profile,
+  };
+};
+
+export default connect(mStp)(DoctorCheckedPatientList);
 
 
-export default NonCheckedPatientList
