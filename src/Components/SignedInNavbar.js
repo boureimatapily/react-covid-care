@@ -58,6 +58,11 @@ function SignedInNavbar({logout, uid, profile}) {
                       </Link>
                     </li>
                     <li className="nav-item whiteColor ">
+                      <Link to="/adminpatienttab" className="NavBtnLink">
+                        Patient
+                      </Link>
+                    </li>
+                    <li className="nav-item whiteColor ">
                       <Link to="/" className="NavBtnLink" onClick={logout}>
                         Log Out
                       </Link>
