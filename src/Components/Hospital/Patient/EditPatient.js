@@ -11,7 +11,7 @@ import { compose } from "redux";
 import "./patient.css";
 import firebase from "../../../Config/fbconfig";
 import Dropzone from "react-dropzone"; //Drop zone for image upload
-// import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 class EditPatient extends React.Component {
   constructor(props) {
@@ -260,13 +260,13 @@ class EditPatient extends React.Component {
         <div className="row">
           <div className="col mb-2 inputsStyle">
             <Dropzone onDrop={this.onDrop}>
-              {({ getRootProps, getInputProps }) => (
+              {({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
                 <section className="container">
                   <div {...getRootProps({ className: "dropzone" })}>
                     <input {...getInputProps()} />
-                    <p>
+                    <h6>
                       Drag 'n' drop some files here, or click to select files
-                    </p>
+                    </h6>
                   </div>
                   <aside>
                     <h4>Files</h4>
@@ -340,15 +340,10 @@ class EditPatient extends React.Component {
   }
 }
 // const mStp = (state, ownProps) => {
-//   const id = ownProps.match.params.id;
-//   const patients = state.firestore.ordered.patients; // patients collection state
-//   let patient = patients.find((item) => {
-//     return item.id === id;
-//   });
+ 
 //   const profile = state.firebase.profile;
 //   return {
-//     patientId: id,
-//     patient: patient,
+   
 //     profile: profile,
 //   };
 // };

@@ -52,3 +52,65 @@
     font-size: 20px;
     font-weight: bolder;
 }
+
+
+
+
+
+
+.navTabsContainer{
+    background-color: rgb(3, 11, 51);
+    font-weight: bolder;
+}
+.navTabsLink{
+    color:white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2rem;
+}
+.navpatientTabsLink{
+    color:white;
+    font-weight: bolder;
+    text-align: center;
+    /* font-size: 2rem; */
+}
+.inputsStyle{
+    border: 2px solid #111130;
+}
+.inputslabelStyle{
+    font-weight: bolder;
+    color: black;
+}
+.navTabsBtn{
+    background-color: rgb(3, 11, 51);
+    font-weight: bolder;
+    color: white;
+}
+.navTabsBtnlogin{
+    background-color: rgb(3, 11, 51);
+    font-weight: bolder;
+    color: white;
+    width: 10rem;
+}
+.loadinganim{
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    top: 40%;
+    right: 50%;
+}
+.doctorNoteInput{
+    height: 200px;
+}
+.doctorActionButton{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.navTabsBtneditdoctor{
+    background-color: rgb(3, 11, 51);
+    font-weight: bolder;
+    color: white;
+    width: 15rem;
+    
+}
