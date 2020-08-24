@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import DoctorProfile from "../Components/Hospital/Doctor/DoctorProfile";
 import DoctorPatient from "../Components/Hospital/Doctor/DoctorPatient";
+import DoctorCheckedPatientList from "../Components/Hospital/Doctor/DoctorCheckedPatientList";
 
 function Doctor({ uid }) {
   if (!uid) return <Redirect to="/login" />;
@@ -16,7 +17,11 @@ function Doctor({ uid }) {
       <div className="row">
         <div className="col">
           <nav>
-            <div className="nav nav-tabs navTabsContainer" id="nav-tab" role="tablist">
+            <div
+              className="nav nav-tabs navTabsContainer"
+              id="nav-tab"
+              role="tablist"
+            >
               <a
                 className="nav-link active navTabsLink flex-fill"
                 id="nav-home-tab"
@@ -39,7 +44,17 @@ function Doctor({ uid }) {
               >
                 Patient List
               </a>
-              {/* <a className="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">ADD User</a> */}
+              <a
+                className="nav-link navTabsLink flex-fill"
+                id="nav-contact-tab"
+                data-toggle="tab"
+                href="#nav-contact"
+                role="tab"
+                aria-controls="nav-contact"
+                aria-selected="false"
+              >
+                Checked Patient
+              </a>
             </div>
           </nav>
           <div className="tab-content" id="nav-tabContent">
@@ -62,6 +77,17 @@ function Doctor({ uid }) {
               {/* <Department/> */}
               <h3 className="text-center">Patient List</h3>
               <DoctorPatient />
+            </div>
+
+            <div
+              className="tab-pane fade"
+              id="nav-contact"
+              role="tabpanel"
+              aria-labelledby="nav-contact-tab"
+            >
+              {/* <Department/> */}
+              <h3 className="text-center">Checked Patient List</h3>
+              <DoctorCheckedPatientList />
             </div>
           </div>
         </div>

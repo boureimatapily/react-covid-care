@@ -5,9 +5,11 @@ import {
   addDoctorNote,
 } from "../../../Redux/Actions/UserActions";
 import { compose } from "redux";
-import { firestoreConnect } from "react-redux-firebase";
-import { Link } from "react-router-dom";
+// import { firestoreConnect } from "react-redux-firebase";
+// import { Link } from "react-router-dom";
 import "./patient.css";
+import firebase from "../../../Config/fbconfig";
+
 
 class EditPatient extends React.Component {
   constructor(props) {
@@ -27,17 +29,47 @@ class EditPatient extends React.Component {
     this.handleDoctorSubmit = this.handleDoctorSubmit.bind(this);
   }
 
+  // componentDidMount() {
+  //   this.setState({
+  //     firstname: this.props.patient.firstname,
+  //     lastname: this.props.patient.lastname,
+  //     folderId: this.props.patient.folderId,
+  //     age: this.props.patient.age,
+  //     doctorNote: this.props.patient.doctorNote,
+  //     doctorName: this.props.patient.doctorName,
+  //     consultDate: this.props.patient.consultDate,
+  //     consultLink: this.props.patient.consultLink,
+  //   });
+  // }
   componentDidMount() {
-    this.setState({
-      firstname: this.props.patient.firstname,
-      lastname: this.props.patient.lastname,
-      folderId: this.props.patient.folderId,
-      age: this.props.patient.age,
-      doctorNote: this.props.patient.doctorNote,
-      doctorName: this.props.patient.doctorName,
-      consultDate: this.props.patient.consultDate,
-      consultLink: this.props.patient.consultLink,
-    });
+    // const doctorId = this.props.match.params.id;
+    firebase
+      .firestore() //access firestore
+      .collection("patients") //access "items" collection
+      // .where("authorId", "==", this.props.doctorid)
+      .onSnapshot((snapshot) => {
+        //You can "listen" to a document with the onSnapshot() method.
+        const listEditPatient = snapshot.docs.map((doc) => ({
+          //map each document into snapshot
+          id: doc.id, //id and data pushed into items array
+          ...doc.data(), //spread operator merges data to id.
+        }));
+        const id = this.props.match.params.id;
+        let listPatients = listEditPatient.find((item) => {
+          return item.id === id;
+        });
+
+        this.setState({
+          folderId: listPatients.folderId,
+          firstname: listPatients.firstname,
+          lastname: listPatients.lastname,
+          age: listPatients.age,
+          doctorNote: listPatients.doctorNote,
+          doctorName: listPatients.doctorName,
+          consultDate: listPatients.consultDate,
+          consultLink: listPatients.consultLink,
+        }); //items is equal to listItems
+      });
   }
 
   handleChange = (e) => {
@@ -66,7 +98,8 @@ class EditPatient extends React.Component {
       consultDate: consultDate,
       consultLink: consultLink,
     };
-    this.props.updatePatient(this.props.patientId, newPatient);
+    const patientId = this.props.match.params.id;
+    this.props.updatePatient(patientId, newPatient);
   };
 
   handleDoctorSubmit = (e) => {
@@ -76,11 +109,12 @@ class EditPatient extends React.Component {
       doctorNote: doctorNote,
       doctorName: doctorName,
     };
-    this.props.addDoctorNote(this.props.patientId, adddoctorNote);
+    const patientId = this.props.match.params.id;
+    this.props.addDoctorNote(patientId, adddoctorNote);
   };
 
   render() {
-    const {  profile } = this.props;
+    // const { profile } = this.props;
 
     return (
       <div className="container">
@@ -89,7 +123,7 @@ class EditPatient extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="col">
-                  <Link
+                  {/* <Link
                     to={profile.role === "manager" ? "/hospital" : "/doctor"}
                   >
                     <button
@@ -98,7 +132,7 @@ class EditPatient extends React.Component {
                     >
                       Go Back
                     </button>
-                  </Link>
+                  </Link> */}
 
                   <h2> Update Patient folder </h2>
                 </div>
@@ -187,29 +221,29 @@ class EditPatient extends React.Component {
         <div className="row">
           <form onSubmit={this.handleDoctorSubmit}>
             <div className="row">
-            <div className="form-group col-md-4 mb-2">
-              <label htmlFor="doctorName">Doctor Name</label>
-              <input
-                value={this.state.doctorName}
-                onChange={this.handleChange}
-                type="text"
-                id="doctorName"
-                name="doctorName"
-                className="form-control inputsStyle"
-              />
+              <div className="form-group col-md-4 mb-2">
+                <label htmlFor="doctorName">Doctor Name</label>
+                <input
+                  value={this.state.doctorName}
+                  onChange={this.handleChange}
+                  type="text"
+                  id="doctorName"
+                  name="doctorName"
+                  className="form-control inputsStyle"
+                />
+              </div>
+              <div className="form-group col-md-6 mb-2">
+                <textarea
+                  className="form-control is-invalid inputsStyle doctorNoteInput "
+                  id="validationTextarea"
+                  placeholder="Doctor Note"
+                  name="doctorNote"
+                  value={this.state.doctorNote}
+                  onChange={this.handleChange}
+                ></textarea>
+              </div>
             </div>
-            <div className="form-group col-md-6 mb-2">
-              <textarea
-                className="form-control is-invalid inputsStyle doctorNoteInput "
-                id="validationTextarea"
-                placeholder="Doctor Note"
-                name="doctorNote"
-                value={this.state.doctorNote}
-                onChange={this.handleChange}
-              ></textarea>
-            </div>
-            </div>
-            
+
             <button
               type="submit"
               className="btn btn-primary mt-3 navTabsBtnlogin"
@@ -222,28 +256,28 @@ class EditPatient extends React.Component {
     );
   }
 }
-const mStp = (state, ownProps) => {
-  const id = ownProps.match.params.id;
-  const patients = state.firestore.ordered.patients; // patients collection state
-  let patient = patients.find((item) => {
-    return item.id === id;
-  });
-  const profile = state.firebase.profile;
-  return {
-    patientId: id,
-    patient: patient,
-    profile: profile,
-  };
-};
+// const mStp = (state, ownProps) => {
+//   const id = ownProps.match.params.id;
+//   const patients = state.firestore.ordered.patients; // patients collection state
+//   let patient = patients.find((item) => {
+//     return item.id === id;
+//   });
+//   const profile = state.firebase.profile;
+//   return {
+//     patientId: id,
+//     patient: patient,
+//     profile: profile,
+//   };
+// };
 
 export default compose(
-  connect(mStp, { updatePatient, addDoctorNote }),
-  firestoreConnect((ownProps) => [
-    // listen and get data form the patients collection
-    {
-      collection: "patients",
-      // where : ["authorId", "==", ownProps.uid],
-      orderBy: ["date", "desc"],
-    },
-  ])
+  connect(null, { updatePatient, addDoctorNote }),
+  // firestoreConnect((ownProps) => [
+  //   // listen and get data form the patients collection
+  //   {
+  //     collection: "patients",
+  //     // where : ["authorId", "==", ownProps.uid],
+  //     orderBy: ["date", "desc"],
+  //   },
+  // ])
 )(EditPatient);

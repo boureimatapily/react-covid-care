@@ -18,10 +18,12 @@ class PatientList extends React.Component{
  
   componentDidMount() {
     // const doctorId = this.props.match.params.id;
+    // const {doctorid} = this.props
         firebase
           .firestore() //access firestore
           .collection("patients") //access "items" collection
-          // .where("authorId", "==", this.props.doctorid)
+          // .where("authorId", "==", doctorid)
+          // .where("dId", "==", userid)
           .onSnapshot(snapshot => {
             //You can "listen" to a document with the onSnapshot() method.
             const listItems = snapshot.docs.map(doc => ({
