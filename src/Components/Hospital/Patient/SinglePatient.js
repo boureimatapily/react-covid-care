@@ -21,7 +21,7 @@ function SinglePatient({ patient, deletePatient, toggleChecked }) {
   return (
     <>
       <tr>
-        <th> {moment(patient.date).calendar()} </th>
+        {/* <th> {moment(patient.date).calendar()} </th> */}
         <th>{patient.folderId}</th>
         <th>{patient.firstname}</th>
         <th>{patient.lastname}</th>

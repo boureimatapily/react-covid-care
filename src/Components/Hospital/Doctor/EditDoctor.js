@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import firebase from "../../../Config/fbconfig";
 import { updateDoctor } from "../../../Redux/Actions/UserActions";
-//import PatientTab from "../PatientTab"
+import PatientTab from "../PatientTab"
 import AddPatient from "../Patient/AddPatient";
 import PatientList from "../Patient/PatientList";
 
@@ -139,8 +139,8 @@ class EditDoctor extends React.Component {
         </div>
         <div className="row">
           <div className="col">
-              {/* <PatientTab doctorid={doctorid} userid={this.state.userid}/> */}
-              <PatientList doctorid={doctorid} />
+              <PatientTab doctorid={doctorid} userid={this.state.userid}/>
+              {/* <PatientList doctorid={doctorid} /> */}
           </div>
         </div>
       </div>
