@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import {
   updatePatient,
   addDoctorNote,
+  uploadfiles,
 } from "../../../Redux/Actions/UserActions";
 import { compose } from "redux";
 // import { firestoreConnect } from "react-redux-firebase";
@@ -10,6 +11,7 @@ import { compose } from "redux";
 import "./patient.css";
 import firebase from "../../../Config/fbconfig";
 import Dropzone from "react-dropzone"; //Drop zone for image upload
+// import { Link } from "react-router-dom";
 
 class EditPatient extends React.Component {
   constructor(props) {
@@ -24,12 +26,13 @@ class EditPatient extends React.Component {
       consultDate: "",
       consultLink: "",
       files: [],
+      filesUrl: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDoctorSubmit = this.handleDoctorSubmit.bind(this);
-    
+    this.handleUploadFiles = this.handleUploadFiles.bind(this);
   }
 
   // componentDidMount() {
@@ -115,18 +118,41 @@ class EditPatient extends React.Component {
     const patientId = this.props.match.params.id;
     this.props.addDoctorNote(patientId, adddoctorNote);
   };
+  // uploads patient folder images
+  handleUploadFiles = (e) => {
+    e.preventDefault();
+    const { folderId, files } = this.state;
+    this.props.uploadfiles(folderId, files);
+  };
+  // dropzone claaback function
   onDrop = (files) => {
     this.setState({ files });
   };
 
+  getAllImage = (e) => {
+    const { folderId } = this.state;
+    e.preventDefault();
+    firebase
+      .storage()
+      .ref(folderId)
+      .listAll()
+      .then((snap) => {
+        snap.items.forEach((itemRef) => {
+          itemRef.getDownloadURL().then((imgUrl) => {
+            console.log(imgUrl);
+            this.setState({ filesUrl: imgUrl });
+          });
+        });
+      });
+  };
+
   render() {
     // const { profile } = this.props;
-    const files = this.state.files.map(file => (
+    const files = this.state.files.map((file) => (
       <li key={file.name}>
         {file.name} - {file.size} bytes
       </li>
     ));
-    console.log(this.state.files)
 
     return (
       <div className="container">
@@ -221,10 +247,10 @@ class EditPatient extends React.Component {
                   />
                 </div>
               </div>
-             
+
               <button
                 type="submit"
-                className="btn btn-primary mt-3 navTabsBtnlogin"
+                className="btn btn-primary mt-3 navTabsBtnlogin  mb-2"
               >
                 Update Infos
               </button>
@@ -232,26 +258,49 @@ class EditPatient extends React.Component {
           </div>
         </div>
         <div className="row">
-                <div className="col-md-6 mb-2">
-                  <Dropzone onDrop={this.onDrop}  multiple>
-                    {({ getRootProps, getInputProps }) => (
-                      <section className="container">
-                        <div {...getRootProps({ className: "dropzone" })}>
-                          <input {...getInputProps()} />
-                          <p>
-                            Drag 'n' drop some files here, or click to select
-                            files
-                          </p>
-                        </div>
-                        <aside>
-                          <h4>Files</h4>
-                          <ul>{files}</ul>
-                        </aside>
-                      </section>
-                    )}
-                  </Dropzone>
-                </div>
-              </div>
+          <div className="col mb-2 inputsStyle">
+            <Dropzone onDrop={this.onDrop}>
+              {({ getRootProps, getInputProps }) => (
+                <section className="container">
+                  <div {...getRootProps({ className: "dropzone" })}>
+                    <input {...getInputProps()} />
+                    <p>
+                      Drag 'n' drop some files here, or click to select files
+                    </p>
+                  </div>
+                  <aside>
+                    <h4>Files</h4>
+                    <ul>{files}</ul>
+                  </aside>
+                </section>
+              )}
+            </Dropzone>
+            <button
+              type="submit"
+              className="btn btn-primary mt-3 navTabsBtnlogin"
+              onClick={this.handleUploadFiles}
+            >
+              Upload files
+            </button>
+          </div>
+          <div className="col mb-2 inputsStyle">
+            <div>
+                <a href={this.state.filesUrl} target="_blank" rel="noopener noreferrer" >{this.state.filesUrl}</a>
+            </div>
+            <button
+              type="submit"
+              className="btn btn-primary mt-3 navTabsBtnlogin"
+              onClick={this.getAllImage}
+            >
+              Get all Images
+            </button>
+            
+          </div>
+        </div>
+
+        {/* <div className="row">
+         
+        </div> */}
         <div className="row">
           <form onSubmit={this.handleDoctorSubmit}>
             <div className="row">
@@ -305,7 +354,7 @@ class EditPatient extends React.Component {
 // };
 
 export default compose(
-  connect(null, { updatePatient, addDoctorNote })
+  connect(null, { updatePatient, addDoctorNote, uploadfiles })
   // firestoreConnect((ownProps) => [
   //   // listen and get data form the patients collection
   //   {

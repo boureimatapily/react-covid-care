@@ -4,7 +4,7 @@ import firebase from "../../../Config/fbconfig";
 import { updateDoctor } from "../../../Redux/Actions/UserActions";
 import PatientTab from "../PatientTab"
 import AddPatient from "../Patient/AddPatient";
-import PatientList from "../Patient/PatientList";
+// import PatientList from "../Patient/PatientList";
 
 class EditDoctor extends React.Component {
   constructor(props) {
