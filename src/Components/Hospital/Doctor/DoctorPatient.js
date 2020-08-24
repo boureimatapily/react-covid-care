@@ -44,7 +44,7 @@ class DoctorPatient extends React.Component {
             <table className="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">Date</th>
+                  {/* <th scope="col">Date</th> */}
                   <th scope="col">FolderId</th>
                   <th scope="col">Firstname</th>
                   <th scope="col">Lastname</th>

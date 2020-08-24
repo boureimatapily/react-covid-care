@@ -39,11 +39,11 @@ class CheckedPatientList extends React.Component{
       <div className="container">
         <div className="row">
           <div className="col">
-            <h1>Patient List </h1>
+            <h1>Checked Patient List </h1>
             <table className="table table-striped">
               <thead>
                 <tr>
-                 <th scope="col">Date</th>
+                 {/* <th scope="col">Date</th> */}
                   <th scope="col">FolderId</th>
                   <th scope="col">Firstname</th>
                   <th scope="col">Lastname</th>
