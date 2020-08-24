@@ -9,7 +9,7 @@ import { compose } from "redux";
 // import { Link } from "react-router-dom";
 import "./patient.css";
 import firebase from "../../../Config/fbconfig";
-
+import Dropzone from "react-dropzone"; //Drop zone for image upload
 
 class EditPatient extends React.Component {
   constructor(props) {
@@ -23,10 +23,13 @@ class EditPatient extends React.Component {
       doctorName: "",
       consultDate: "",
       consultLink: "",
+      files: [],
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDoctorSubmit = this.handleDoctorSubmit.bind(this);
+    
   }
 
   // componentDidMount() {
@@ -112,9 +115,18 @@ class EditPatient extends React.Component {
     const patientId = this.props.match.params.id;
     this.props.addDoctorNote(patientId, adddoctorNote);
   };
+  onDrop = (files) => {
+    this.setState({ files });
+  };
 
   render() {
     // const { profile } = this.props;
+    const files = this.state.files.map(file => (
+      <li key={file.name}>
+        {file.name} - {file.size} bytes
+      </li>
+    ));
+    console.log(this.state.files)
 
     return (
       <div className="container">
@@ -154,7 +166,7 @@ class EditPatient extends React.Component {
                   <input
                     value={this.state.consultDate}
                     onChange={this.handleChange}
-                    type="date"
+                    type="datetime-local"
                     id="consultDate"
                     name="consultDate"
                     className="form-control inputsStyle"
@@ -209,6 +221,7 @@ class EditPatient extends React.Component {
                   />
                 </div>
               </div>
+             
               <button
                 type="submit"
                 className="btn btn-primary mt-3 navTabsBtnlogin"
@@ -218,6 +231,27 @@ class EditPatient extends React.Component {
             </form>
           </div>
         </div>
+        <div className="row">
+                <div className="col-md-6 mb-2">
+                  <Dropzone onDrop={this.onDrop}  multiple>
+                    {({ getRootProps, getInputProps }) => (
+                      <section className="container">
+                        <div {...getRootProps({ className: "dropzone" })}>
+                          <input {...getInputProps()} />
+                          <p>
+                            Drag 'n' drop some files here, or click to select
+                            files
+                          </p>
+                        </div>
+                        <aside>
+                          <h4>Files</h4>
+                          <ul>{files}</ul>
+                        </aside>
+                      </section>
+                    )}
+                  </Dropzone>
+                </div>
+              </div>
         <div className="row">
           <form onSubmit={this.handleDoctorSubmit}>
             <div className="row">
@@ -271,7 +305,7 @@ class EditPatient extends React.Component {
 // };
 
 export default compose(
-  connect(null, { updatePatient, addDoctorNote }),
+  connect(null, { updatePatient, addDoctorNote })
   // firestoreConnect((ownProps) => [
   //   // listen and get data form the patients collection
   //   {
