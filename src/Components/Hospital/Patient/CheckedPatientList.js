@@ -16,9 +16,12 @@ class CheckedPatientList extends React.Component{
   //   this.setState({checked:nextProps.listItems})
   // }
   componentDidMount() {
+    const {doctorid} = this.props
         firebase
           .firestore() //access firestore
           .collection("patients") //access "items" collection
+          .where("authorId", "==", doctorid)
+          .where("dId", "==", doctorid)
           .where("checked", "==", true)
           .onSnapshot(snapshot => {
             //You can "listen" to a document with the onSnapshot() method.

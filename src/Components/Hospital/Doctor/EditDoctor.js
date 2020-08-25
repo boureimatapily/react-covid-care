@@ -4,7 +4,7 @@ import firebase from "../../../Config/fbconfig";
 import { updateDoctor } from "../../../Redux/Actions/UserActions";
 import PatientTab from "../PatientTab"
 import AddPatient from "../Patient/AddPatient";
-// import PatientList from "../Patient/PatientList";
+//import PatientList from "../Patient/PatientList";
 
 class EditDoctor extends React.Component {
   constructor(props) {
@@ -29,32 +29,35 @@ class EditDoctor extends React.Component {
     const doctorId = this.props.match.params.id;
     this.props.updateDoctor(doctorId, this.state);
   };
+  getUsers =()=>(
+    firebase
+    .firestore() //access firestore
+    .collection("users") //access "items" collection
+    //   .where("status", "==", "Home")
+    .onSnapshot((snapshot) => {
+      //You can "listen" to a document with the onSnapshot() method.
+      const editDoc = snapshot.docs.map((doc) => ({
+        //map each document into snapshot
+        id: doc.id, //id and data pushed into items array
+        ...doc.data(), //spread operator merges data to id.
+      }));
+      const id = this.props.match.params.id;
+      let doctors = editDoc.find((item) => {
+        return item.id === id;
+      });
+
+      this.setState({
+        fullname: doctors.fullname,
+        status: doctors.status,
+        department: doctors.department,
+        speciality: doctors.speciality,
+        userid: doctors.userid
+      }); //items is equal to listItems
+    })
+  )
 
   componentDidMount() {
-    firebase
-      .firestore() //access firestore
-      .collection("users") //access "items" collection
-      //   .where("status", "==", "Home")
-      .onSnapshot((snapshot) => {
-        //You can "listen" to a document with the onSnapshot() method.
-        const editDoc = snapshot.docs.map((doc) => ({
-          //map each document into snapshot
-          id: doc.id, //id and data pushed into items array
-          ...doc.data(), //spread operator merges data to id.
-        }));
-        const id = this.props.match.params.id;
-        let doctors = editDoc.find((item) => {
-          return item.id === id;
-        });
-
-        this.setState({
-          fullname: doctors.fullname,
-          status: doctors.status,
-          department: doctors.department,
-          speciality: doctors.speciality,
-          userid: doctors.userid
-        }); //items is equal to listItems
-      });
+    this.getUsers()
   }
 
   render() {
@@ -139,7 +142,7 @@ class EditDoctor extends React.Component {
         </div>
         <div className="row">
           <div className="col">
-              <PatientTab doctorid={doctorid} userid={this.state.userid}/>
+              <PatientTab doctorid={doctorid} />
               {/* <PatientList doctorid={doctorid} /> */}
           </div>
         </div>
