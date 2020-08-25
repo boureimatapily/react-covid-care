@@ -4,7 +4,7 @@ import PatientList from "./Patient/PatientList"; // Patient list
 // import NonCheckedPatientList from "./Patient/NonCheckedPatientList";
 import CheckedPatientList from "./Patient/CheckedPatientList";
 
-export default function PatientTab({doctorid,userid}) {
+export default function PatientTab({doctorid}) {
   return (
     <div className="container">
       <div className="row">
@@ -74,7 +74,7 @@ export default function PatientTab({doctorid,userid}) {
               aria-labelledby="nav-profile-tab"
             >
               <h3 className="text-center"> All Patient </h3>
-              <PatientList doctorid={doctorid} userid={userid} />
+              <PatientList doctorid={doctorid} />
             </div>
             {/* <div
               className="tab-pane fade"
@@ -92,7 +92,7 @@ export default function PatientTab({doctorid,userid}) {
               aria-labelledby="nav-profile-tab"
             >
               <h3 className="text-center"> Checked Patient </h3>
-                <CheckedPatientList  />
+                <CheckedPatientList doctorid={doctorid} />
             </div>
           </div>
         </div>
