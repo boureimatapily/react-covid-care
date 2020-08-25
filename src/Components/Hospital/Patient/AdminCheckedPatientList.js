@@ -1,5 +1,5 @@
 import React from "react";
-import SinglePatient from "./SinglePatient";
+import AdminTabSinglePatient from "./AdminTabSinglePatient";
 import firebase from "../../../Config/fbconfig"
 
 
@@ -57,7 +57,7 @@ class AdminCheckedPatientList extends React.Component{
                 {checked  &&
                   checked.map((patient) => (
                  
-                    <SinglePatient patient={patient} key={patient.folderId} />
+                    <AdminTabSinglePatient patient={patient} key={patient.folderId} />
                     
                   ))}
               </tbody>
