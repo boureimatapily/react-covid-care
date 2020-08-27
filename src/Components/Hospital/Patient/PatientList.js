@@ -24,7 +24,6 @@ class PatientList extends React.Component{
           .collection("patients") //access "items" collection
           .where("authorId", "==", doctorid)
           .where("dId", "==", doctorid)
-          .where("checked", "==", false)
           .onSnapshot(snapshot => {
             //You can "listen" to a document with the onSnapshot() method.
             const listItems = snapshot.docs.map(doc => ({
