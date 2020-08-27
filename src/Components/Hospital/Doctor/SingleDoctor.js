@@ -30,7 +30,7 @@ function SingleDoctor({ doctor, deleteDoctor }) {
                 />{" "}
               </button>
               <Link to={"/editdoctor/" + doctor.id}>
-                <button type="button" className="btn btn-secondary btnaction">
+                <button type="button" className="btn btn-secondary btnaction font-weight-bolder">
                   <img
                     src={pencil}
                     alt="pencil"
@@ -38,12 +38,12 @@ function SingleDoctor({ doctor, deleteDoctor }) {
                     width="20"
                     height="20"
                     title="delete"
-                  />
+                  /> ADD PATIENTS
                 </button>
               </Link>
             </div>
             <div className="card-body">
-              <h6 className="card-title">Fullname: {doctor.fullname} </h6>
+              <h6 className="card-title font-weight-bolder">Fullname: {doctor.fullname} </h6>
               <h4 className="card-subtitle mb-2 text-muted">
                 {" "}
                 Status: {doctor.status}{" "}

@@ -7,6 +7,7 @@ class DoctorList extends React.Component {
     super(props);
     this.state = {
       doctors: [],
+    
     };
   }
 
@@ -30,6 +31,7 @@ class DoctorList extends React.Component {
       });
   }
 
+
   render() {
     const { doctors } = this.state;
 
@@ -37,6 +39,7 @@ class DoctorList extends React.Component {
     return (
       <div className="container">
         <div className="row">
+          
           <div className="col d-flex flex-row flex-wrap">
             {doctors &&
               doctors.map((doctor) => (

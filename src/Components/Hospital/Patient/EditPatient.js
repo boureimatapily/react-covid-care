@@ -172,7 +172,7 @@ class EditPatient extends React.Component {
                     </button>
                   </Link> */}
 
-                  <h2> Update Patient folder </h2>
+                  <h2 className="text-center"> Update Patient folder </h2>
                 </div>
               </div>
               <div className="row">
@@ -259,13 +259,14 @@ class EditPatient extends React.Component {
         </div>
         <div className="row">
           <div className="col mb-2 inputsStyle">
+          <h2 className="text-center"> Upload Patient Folder </h2>
             <Dropzone onDrop={this.onDrop}>
               {({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
                 <section className="container">
                   <div {...getRootProps({ className: "dropzone" })}>
                     <input {...getInputProps()}/>
                     <h3 className="fileuploadinput text-center"> 
-                       Click to select files
+                       Click Here to select the file
                     </h3>
                   </div>
                   <aside>
@@ -280,7 +281,7 @@ class EditPatient extends React.Component {
               className="btn btn-primary mt-3 navTabsBtnlogin"
               onClick={this.handleUploadFiles}
             >
-              Upload files
+              Upload Folder
             </button>
           </div>
           <div className="col mb-2 inputsStyle">
@@ -292,7 +293,7 @@ class EditPatient extends React.Component {
               className="btn btn-primary mt-3 navTabsBtnlogin"
               onClick={this.getAllImage}
             >
-              Get all Images
+              Click here to Get Patient Folder
             </button>
             
           </div>
@@ -302,6 +303,7 @@ class EditPatient extends React.Component {
          
         </div> */}
         <div className="row">
+        <h2 className="text-center"> DOCTOR NOTE  </h2>
           <form onSubmit={this.handleDoctorSubmit}>
             <div className="row">
               <div className="form-group col-md-4 mb-2">

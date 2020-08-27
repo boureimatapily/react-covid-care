@@ -137,6 +137,7 @@ class EditDoctor extends React.Component {
         </div>
         <div className="row">
           <div className="col">
+            <h2 className="text-center">ADD PATIENT</h2>
             <AddPatient doctorid={doctorid} />
           </div>
         </div>
