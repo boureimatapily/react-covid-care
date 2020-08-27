@@ -22,6 +22,7 @@ class AdminPatientList extends React.Component{
         firebase
           .firestore() //access firestore
           .collection("patients") //access "items" collection
+          .where("checked", "==", false)
           // .where("authorId", "==", doctorid)
           // .where("dId", "==", userid)
           .onSnapshot(snapshot => {
