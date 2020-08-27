@@ -153,7 +153,7 @@ class EditDoctor extends React.Component {
         </div>
         <div className="row">
           <div className="col">
-            <PatientTab doctorid={doctorid} />
+            <PatientTab doctorid={doctorid} fullname={this.state.fullname}/>
             {/* <PatientList doctorid={doctorid} /> */}
           </div>
         </div>
