@@ -67,6 +67,7 @@ class EditDoctor extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col">
+          <h2 className="text-center">DOCTOR INFOS</h2>
             <form onSubmit={this.handleSubmit} id="form">
               <div className="row">
                 <div className="mb-2">

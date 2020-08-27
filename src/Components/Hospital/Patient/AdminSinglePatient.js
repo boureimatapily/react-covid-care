@@ -69,7 +69,7 @@ render(){
               id="pencil"
               width="20"
               height="20"
-              title="delete"
+              title="edit"
             />
           </button>
           </Link>

@@ -235,7 +235,7 @@ class EditPatient extends React.Component {
                 </div>
               </div>
               <div className="row">
-                <div className="form-group col-md-4 mb-2">
+                <div className="form-group col-md-8 mb-2">
                   <label htmlFor="consultLink">Consult Link</label>
                   <input
                     value={this.state.consultLink}
@@ -243,7 +243,7 @@ class EditPatient extends React.Component {
                     type="text"
                     id="consultLink"
                     name="consultLink"
-                    className="form-control inputsStyle"
+                    className="form-control inputsStyle ConsultlinkInput"
                   />
                 </div>
               </div>

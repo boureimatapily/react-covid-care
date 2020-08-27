@@ -49,7 +49,7 @@ function SinglePatient({ patient, deletePatient, toggleChecked }) {
               id="pencil"
               width="20"
               height="20"
-              title="delete"
+              title="edit"
             />
           </button>
           </Link>
