@@ -21,7 +21,6 @@ class DoctorPatient extends React.Component {
       .firestore() //access firestore
       .collection("patients") //access "items" collection
       .where("authorId", "==", uid)
-      .where("checked", "==", false)
       .onSnapshot((snapshot) => {
         //You can "listen" to a document with the onSnapshot() method.
         const listItems = snapshot.docs.map((doc) => ({
