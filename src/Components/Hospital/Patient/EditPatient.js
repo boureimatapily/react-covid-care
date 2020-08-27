@@ -287,6 +287,7 @@ class EditPatient extends React.Component {
           <div className="col mb-2 inputsStyle">
             <div>
                 <a href={this.state.filesUrl} target="_blank" rel="noopener noreferrer" >{this.state.filesUrl}</a>
+                {/* <img src={this.state.filesUrl} alt="imgfolder" dowload /> */}
             </div>
             <button
               type="submit"
