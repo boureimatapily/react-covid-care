@@ -304,7 +304,7 @@ class EditPatient extends React.Component {
          
         </div> */}
         <div className="row">
-        <h2 className="text-center"> DOCTOR NOTE  </h2>
+        <h2 className="text-center"> DOCTOR NOTE (Reserved for Doctor) </h2>
           <form onSubmit={this.handleDoctorSubmit}>
             <div className="row">
               <div className="form-group col-md-4 mb-2">
