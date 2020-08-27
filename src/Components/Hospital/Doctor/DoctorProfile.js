@@ -108,15 +108,15 @@ class DoctorProfile extends React.Component {
             <div className="doctorActionButton">
             
               <Link to={"editsingledoctor/" + uid}> 
-              <button type="button" className="btn btn-secondary btnaction">
+              <button type="button" className="btn btn-secondary btnaction font-weight-bolder">
                 <img
                   src={pencil}
                   alt="pencil"
                   id="pencil"
                   width="20"
                   height="20"
-                  title="delete"
-                />
+                  title="edit"
+                /> EDIT
               </button>
               </Link>
             </div>

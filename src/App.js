@@ -12,6 +12,7 @@ import PatientList from "./Components/Hospital/Patient/PatientList";
 import EditDoctor from "./Components/Hospital/Doctor/EditDoctor";
 import EditSingleDoctor from "./Components/Hospital/Doctor/EditSingleDoctor";
 import AdminPatientTab from "./Components/Hospital/AdminPatientTab";
+import DoctorTab from "./Components/Hospital/Doctor/DoctorTab";
 
 
 
@@ -23,6 +24,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/doctor" component={Doctor} />
+        <Route exact path="/doctortab" component={DoctorTab} />
         <Route exact path="/adminpatienttab" component={AdminPatientTab} />
         <Route exact path="/hospital" component={Hospital} />
         <Route exact path="/login" component={Login} />

@@ -37,7 +37,7 @@ function SingleDoctor({ doctor, deleteDoctor }) {
                     id="pencil"
                     width="20"
                     height="20"
-                    title="delete"
+                    title="edit"
                   /> ADD PATIENTS
                 </button>
               </Link>

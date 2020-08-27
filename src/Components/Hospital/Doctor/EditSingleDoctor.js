@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import firebase from "../../../Config/fbconfig";
 import { updateDoctor } from "../../../Redux/Actions/UserActions";
+import { Link } from "react-router-dom";
 
 
 class EditSingleDoctor extends React.Component {
@@ -61,6 +62,14 @@ class EditSingleDoctor extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col">
+          <Link to="/doctor">
+            <button
+              type="submit"
+              className="btn btn-primary mt-3 navTabsBtnlogin  mb-2"
+            >
+              Go BACK
+            </button>
+            </Link>
             <form onSubmit={this.handleSubmit} id="form">
               <div className="row">
                 <div className="mb-2">
