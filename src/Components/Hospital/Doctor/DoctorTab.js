@@ -8,10 +8,15 @@ import HospitalDoctorsList from "./HospitalDoctorsList";
 export default function DoctorTab() {
   return (
     <div className="container">
+   
       <div className="row">
         <div className="col">
           <nav>
-            <div className="nav nav-tabs navTabsContainer justify-content-evenly" id="nav-tab" role="tablist">
+            <div
+              className="nav nav-tabs navTabsContainer justify-content-evenly"
+              id="nav-tab"
+              role="tablist"
+            >
               <a
                 className="nav-link active navpatientTabsLink flex-fill"
                 id="nav-home-tab"
@@ -43,7 +48,7 @@ export default function DoctorTab() {
                 aria-controls="nav-profile"
                 aria-selected="false"
               >
-                In Hospital 
+                In Hospital
               </a>
               <a
                 className="nav-link navpatientTabsLink flex-fill"
@@ -54,7 +59,7 @@ export default function DoctorTab() {
                 aria-controls="nav-profile"
                 aria-selected="false"
               >
-               Work from Home  
+                Work from Home
               </a>
               <a
                 className="nav-link navpatientTabsLink flex-fill"
@@ -65,7 +70,7 @@ export default function DoctorTab() {
                 aria-controls="nav-profile"
                 aria-selected="false"
               >
-               Quarantined Doctors 
+                Quarantined Doctors
               </a>
             </div>
           </nav>
@@ -106,7 +111,7 @@ export default function DoctorTab() {
               <h3 className="text-center">home Doctor list...</h3>
               <HomeDoctorsList />
             </div>
-             <div
+            <div
               className="tab-pane fade"
               id="nav-quarantined-doctor-list"
               role="tabpanel"

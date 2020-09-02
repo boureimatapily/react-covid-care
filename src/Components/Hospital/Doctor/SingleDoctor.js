@@ -23,8 +23,8 @@ function SingleDoctor({ doctor, deleteDoctor }) {
                   src={trash}
                   alt="trash"
                   id="trash"
-                  width="20"
-                  height="20"
+                  width="15"
+                  height="15"
                   title="delete"
                   onClick={() => handleRemove(doctor)}
                 />{" "}
@@ -44,17 +44,18 @@ function SingleDoctor({ doctor, deleteDoctor }) {
             </div>
             <div className="card-body">
               <h6 className="card-title font-weight-bolder">Fullname: {doctor.fullname} </h6>
-              <h4 className="card-subtitle mb-2 text-muted">
+              {/* <h4 className="card-subtitle mb-2 text-muted">
                 {" "}
                 Status: {doctor.status}{" "}
-              </h4>
+              </h4> */}
               <div className="card-text">
-                <h6>Email: {doctor.email}</h6>
+                {/* <h6>Email: {doctor.email}</h6> */}
                 <h6>Department: {doctor.department}</h6>
-                <h6>Role: {doctor.role}</h6>
+                {/* <h6>Role: {doctor.role}</h6> */}
                 <h6>Speciality: {doctor.speciality}</h6>
               </div>
               <div className="mb-2">
+             
                 <Alldays day={doctor} />
               </div>
             </div>
