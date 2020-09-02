@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 import DoctorTab from "../Components/Hospital/Doctor/DoctorTab";
 
 function Hospital({uid}) {
-  if(!uid) return <Redirect to="/login" />
+  if(!uid) return <Redirect to="/" />
   return (
     <div className="container">
       <div className="row">

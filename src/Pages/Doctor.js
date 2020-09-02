@@ -6,7 +6,7 @@ import DoctorPatient from "../Components/Hospital/Doctor/DoctorPatient";
 import DoctorCheckedPatientList from "../Components/Hospital/Doctor/DoctorCheckedPatientList";
 
 function Doctor({ uid }) {
-  if (!uid) return <Redirect to="/login" />;
+  if (!uid) return <Redirect to="/" />;
   return (
     <div className="container">
       <div className="row">

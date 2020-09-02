@@ -4,7 +4,7 @@ import { login } from "../Redux/Actions/authActions";
 import { Redirect } from "react-router-dom";
 
 
-class Login extends React.Component {
+class DoctorLogin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +32,7 @@ class Login extends React.Component {
   render() {
     const { uid} = this.props;
     if (uid){
-      return <Redirect to="/hospital" />
+      return <Redirect to="/doctor" />
     };
     return (
       <div className="container-fluid">
@@ -112,4 +112,4 @@ const mStp = (state) => {
   };
 };
 
-export default connect(mStp,{login})(Login);
+export default connect(mStp,{login})(DoctorLogin);

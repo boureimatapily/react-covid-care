@@ -8,7 +8,7 @@ import { logout } from "../Redux/Actions/authActions";
 function SignedOutNavbar({logout, uid, profile}) {
   
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col">
             <nav className="navbar navbar-expand-lg navbar-light NavColor">
@@ -46,8 +46,8 @@ function SignedOutNavbar({logout, uid, profile}) {
                   <ul className="navbar-nav mr-auto mb-2 mb-lg-0 ">
                     
                     <li className="nav-item whiteColor ">
-                      <Link to="/login" className="NavBtnLink">
-                        Login
+                      <Link to="/" className="NavBtnLink">
+                        Home
                       </Link>
                     </li>
                    
