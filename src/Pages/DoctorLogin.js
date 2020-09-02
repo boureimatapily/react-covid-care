@@ -30,15 +30,16 @@ class DoctorLogin extends React.Component {
 
   };
   render() {
-    const { uid} = this.props;
+    const {  uid} = this.props;
     if (uid){
       return <Redirect to="/doctor" />
     };
+   
     return (
       <div className="container-fluid">
          <div className="row sectionOne">
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
-              <h2>Fight COVID-19 With Codetrain and Covid Care Platform</h2>
+              <h2>Fight COVID-19 With  Covid Care Platform</h2>
               <span>Work from home, do everything remotly</span>
             </div>
             <div className="col d-flex flex-row justify-content-evenly align-items-center ">
@@ -58,9 +59,9 @@ class DoctorLogin extends React.Component {
             </div>
           </div>
         <div className="row">
-        <div className="col justify-content-center align-items-center">
-            <h1 className="text-center"> Login Page</h1>
-            <form onSubmit={this.handleSubmit} id="form">
+        <div className="col-xs-12 col-sm-12 col-md-6  offset-md-3 col-lg-6  offset-lg-3 col-xl-6  offset-xl-3col-xxl-6  offset-xxl-3 ">
+            <h1 className="text-center"> Doctor Login  </h1>
+            <form onSubmit={this.handleSubmit} id="form" className="loginFormcenter justify-content-center align-items-center">
               <div className="mb-3">
                 <label htmlFor="email" className="form-label inputslabelStyle">
                   Email address
@@ -93,8 +94,6 @@ class DoctorLogin extends React.Component {
                 Login
               </button>
             </form>
-            <h4>Admin email: admin@admin.com</h4>
-            <h4>Admin password: doctor@123*</h4>
             <h4>Doctor email: awal@doctor.com</h4>
             <h4>Doctor password: doctor@123*</h4>
           </div>

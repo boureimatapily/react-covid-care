@@ -7,52 +7,49 @@ import { connect } from "react-redux";
 class Home extends Component {
   render() {
     const { uid, profile } = this.props;
-    if (uid){
-       if (profile.role === "manager"){
+    if (uid) {
+      if (profile.role === "manager") {
         return <Redirect to="/hospital" />;
-       }else{
+      } else {
         return <Redirect to="/doctor" />;
-       }
+      }
     }
-      return (
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
-              <div>
-              <h2>Fight COVID-19 With Codetrain and Covid Care Platform</h2>
+    return (
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
+            <div className="covidText">
+              <h2 className="font-weight-bolder display-5">
+                Fight COVID-19 with Covid Care Platform
+              </h2>
               <span>Work from home, do everything remotly</span>
-              </div>
-              
-              <div>
-              <Link to="/login" className="btn btn-primary navTabsBtnlogin text-center">
-                   
-                      Hospital Manager
-                   
-                  </Link>
-                  <Link to="/doctor" className="btn btn-primary navTabsBtnlogin text-center">
-                   
-                      Docotor 
-                   
-                  </Link>
-              </div>
             </div>
-            <div className="col d-flex flex-row justify-content-evenly align-items-center ">
-              <img
-                src={require("../Images/phone.JPG")}
-                alt="covid"
-                id="covid_imgOne"
-                className="d-none d-md-block"
-              />
 
-              <img
-                src={require("../Images/phone.JPG")}
-                alt="covid"
-                id="covid_img"
-                className="d-none d-md-block"
-              />
+            <div>
+              <Link
+                to="/login"
+                className="btn btn-primary navTabsBtnHome text-center"
+              >
+                Hospital Manager
+              </Link>
+              <Link
+                to="/doctorlogin"
+                className="btn btn-primary navTabsBtnHome text-center"
+              >
+                Docotor
+              </Link>
             </div>
           </div>
-          {/* <div className="row sectionTwo">
+          <div className="col d-flex flex-row justify-content-evenly align-items-center ">
+            <img
+              src={require("../Images/bgO.jpg")}
+              alt="covid"
+              id="covid_img_Home"
+              className="d-none d-md-block"
+            />
+          </div>
+        </div>
+        {/* <div className="row sectionTwo">
             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 col-xxl-12 d-flex flex-row justify-content-center align-items-center">
               <div className="card cardstyle d-flex flex-column justify-content-center align-items-center">
                 <img
@@ -72,9 +69,8 @@ class Home extends Component {
               </div>
             </div>
           </div> */}
-        </div>
-      );
-    
+      </div>
+    );
   }
 }
 const mStp = (state) => {
