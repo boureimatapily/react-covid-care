@@ -5,7 +5,9 @@ import HomeDoctorsList from "./HomeDoctorsList";
 import QuarantinedDoctorsList from "./QuarantinedDoctorsList";
 import HospitalDoctorsList from "./HospitalDoctorsList";
 
+
 export default function DoctorTab() {
+ 
   return (
     <div className="container">
    
