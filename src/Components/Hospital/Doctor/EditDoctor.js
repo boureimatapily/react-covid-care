@@ -147,13 +147,11 @@ class EditDoctor extends React.Component {
               </div>
             </form>
           </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <h2 className="text-center">ADD PATIENT</h2>
+          <div className="col alldaysmargin">
             <Alldays day={this.state.doctor} />
           </div>
         </div>
+       
         <div className="row">
           <div className="col">
             <h2 className="text-center">ADD PATIENT</h2>

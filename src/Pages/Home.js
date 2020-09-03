@@ -20,23 +20,26 @@ class Home extends Component {
           <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
             <div className="covidText">
               <h2 className="font-weight-bolder display-5">
-                Fight COVID-19 with Covid Care Platform
+                Fight COVID-19 with Fly doctor  Platform
               </h2>
-              <span>Work from home, do everything remotly</span>
+              <h3>work from the comfort of your homes with fly doctor</h3>
+              
             </div>
 
             <div className="homebtmContainer">
+           
               <Link
                 to="/login"
                 className="btn btn-primary navTabsBtnHome text-center"
               >
-                Hospital Manager
+                
+               <h4> Hospital Manager</h4>
               </Link>
               <Link
                 to="/doctorlogin"
                 className="btn btn-primary navTabsBtnHome text-center"
               >
-                Docotor
+               <h4> Docotor</h4>
               </Link>
             </div>
           </div>

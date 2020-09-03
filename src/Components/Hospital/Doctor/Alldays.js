@@ -5,7 +5,7 @@ export default function Alldays({ day }) {
     <div className="container">
         <div className="row">
             <div className="col">
-            <h3 className="text-center">Availability</h3>
+            <h2 className="text-center"> AVAILABILITY</h2>
 
             </div>
         </div>

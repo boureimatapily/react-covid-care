@@ -113,6 +113,9 @@
     color: white;
     width: 10rem;
 }
+.alldaysmargin{
+    margin-top: 4rem;
+}
 .covidText{
     display: flex;
     flex-direction: column;

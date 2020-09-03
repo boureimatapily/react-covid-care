@@ -14,7 +14,7 @@ function SignedOutNavbar({logout, uid, profile}) {
             <nav className="navbar navbar-expand-lg navbar-light NavColor">
               <div className="container-fluid">
                 <Link className="navbar-brand brandColor" to="#">
-                  Covid Care
+                Fly Doctor 
                 </Link>
                 <button
                   className="navbar-toggler"
