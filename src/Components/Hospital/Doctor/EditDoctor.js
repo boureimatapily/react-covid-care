@@ -5,6 +5,7 @@ import { updateDoctor } from "../../../Redux/Actions/UserActions";
 import PatientTab from "../PatientTab";
 import AddPatient from "../Patient/AddPatient";
 import { Link } from "react-router-dom";
+import Alldays from "./Alldays";
 //import PatientList from "../Patient/PatientList";
 
 class EditDoctor extends React.Component {
@@ -16,6 +17,7 @@ class EditDoctor extends React.Component {
       department: "",
       speciality: "",
       userid: "",
+      doctor:""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -53,6 +55,7 @@ class EditDoctor extends React.Component {
           department: doctors.department,
           speciality: doctors.speciality,
           userid: doctors.userid,
+          doctor:doctors
         }); //items is equal to listItems
       });
 
@@ -143,6 +146,12 @@ class EditDoctor extends React.Component {
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <h2 className="text-center">ADD PATIENT</h2>
+            <Alldays day={this.state.doctor} />
           </div>
         </div>
         <div className="row">

@@ -54,10 +54,10 @@ function SingleDoctor({ doctor, deleteDoctor }) {
                 {/* <h6>Role: {doctor.role}</h6> */}
                 <h6>Speciality: {doctor.speciality}</h6>
               </div>
-              <div className="mb-2">
+              {/* <div className="mb-2">
              
                 <Alldays day={doctor} />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
