@@ -67,7 +67,7 @@ export default function PatientTab({doctorid, fullname}) {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-3">
        <div className="row">
         <div className="col">
           <div className={classes.root}>
@@ -89,12 +89,12 @@ export default function PatientTab({doctorid, fullname}) {
             </AppBar>
          
             <TabPanel value={value} index={0}>
-            <h3 className="text-center"> All Patient </h3>
+           
               <PatientList doctorid={doctorid}  />
              
             </TabPanel>
             <TabPanel value={value} index={1}>
-            <h3 className="text-center"> Checked Patient </h3>
+           
                 <CheckedPatientList doctorid={doctorid} />
              
             </TabPanel>

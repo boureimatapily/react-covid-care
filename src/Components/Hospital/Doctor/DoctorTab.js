@@ -107,7 +107,7 @@ export default function DoctorTab() {
     <div className="container">
       <div className="row">
         <div classNmae="col">
-          <div>
+          <div className="mb-3">
             <button
               type="button"
               className="btn btn-success"

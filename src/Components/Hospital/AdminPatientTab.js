@@ -66,7 +66,7 @@ export default function AdminPatientTab({doctorid,userid}) {
     setValue(newValue);
   };
   return (
-    <div className="container">
+    <div className="containe mt-3">
       <div className="row">
         <div className="col">
           <div className={classes.root}>
