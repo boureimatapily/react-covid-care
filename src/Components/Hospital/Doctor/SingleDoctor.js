@@ -1,5 +1,5 @@
 import React from "react";
-import Alldays from "./Alldays";
+// import Alldays from "./Alldays";
 import "./Doctor.css";
 import pencil from "../../../Images/icons/pencil.svg";
 import trash from "../../../Images/icons/trash-fill.svg";
