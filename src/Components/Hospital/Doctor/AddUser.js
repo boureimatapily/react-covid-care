@@ -167,10 +167,7 @@ class AddUser extends React.Component {
                 </div>
               </div>
             </form>
-            <button type="button" data-toggle="modal" data-target="#modalhello">Launch modal</button>
-            <div className="modal-dialog modal-dialog-centered" id="modalhello">
-                <h1>hello</h1>
-              </div>
+           
           </div>
         </div>
       </div>
