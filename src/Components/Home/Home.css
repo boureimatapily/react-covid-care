@@ -120,6 +120,10 @@
     justify-content: center;
     margin-top: 3rem;
 }
+.homebtmContainer{
+    display: flex;
+    flex-direction: row;
+}
 .navTabsBtnHome{
     background-color: rgb(3, 11, 51);
     font-weight: bolder;

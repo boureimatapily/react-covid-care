@@ -25,7 +25,7 @@ class Home extends Component {
               <span>Work from home, do everything remotly</span>
             </div>
 
-            <div>
+            <div className="homebtmContainer">
               <Link
                 to="/login"
                 className="btn btn-primary navTabsBtnHome text-center"
