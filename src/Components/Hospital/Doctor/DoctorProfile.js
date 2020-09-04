@@ -208,7 +208,7 @@ class DoctorProfile extends React.Component {
               <TabPanel value={this.state.tabvalue} index={1}>
                 <div className="row">
                   <div className="col">
-                    <h1 className="text-center"> Availability </h1>
+                  
                     <Alldays day={profile} />
                   </div>
 
