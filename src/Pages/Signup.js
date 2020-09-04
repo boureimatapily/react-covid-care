@@ -2,9 +2,10 @@ import React from "react";
 import { connect } from "react-redux"
 import { login } from "../Redux/Actions/authActions";
 import { Redirect } from "react-router-dom";
+import DoctorAddUser from "../Components/Hospital/Doctor/DoctorAddUser";
 
 
-class DoctorLogin extends React.Component {
+class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,11 +31,15 @@ class DoctorLogin extends React.Component {
 
   };
   render() {
-    const {  uid} = this.props;
-    if (uid){
-      return <Redirect to="/doctor" />
-    };
-   
+    
+    const { uid, profile } = this.props;
+    if (uid) {
+      if (profile.role === "manager") {
+        return <Redirect to="/hospital" />;
+      } else {
+        return <Redirect to="/doctor" />;
+      }
+    }
     return (
       <div className="container-fluid">
          <div className="row sectionOne">
@@ -42,8 +47,9 @@ class DoctorLogin extends React.Component {
             <h2 className="font-weight-bolder">
                 Fight COVID-19 with Fly doctor  Platform
               </h2>
-              <h5>work from the comfort of your homes with fly doctor</h5>
-               </div>
+              <h3>work from the comfort of your homes with fly doctor</h3>
+              
+            </div>
             <div className="col d-flex flex-row justify-content-evenly align-items-center ">
               <img
                 src={require("../Images/phone.JPG")}
@@ -62,42 +68,8 @@ class DoctorLogin extends React.Component {
           </div>
         <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-6  offset-md-3 col-lg-6  offset-lg-3 col-xl-6  offset-xl-3col-xxl-6  offset-xxl-3 ">
-            <h1 className="text-center"> Doctor Login  </h1>
-            <form onSubmit={this.handleSubmit} id="form" className="loginFormcenter justify-content-center align-items-center">
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label inputslabelStyle">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  className="form-control inputsStyle"
-                  id="email"
-                  name="email"
-                  value={this.state.value}
-                  onChange={this.handleChange}
-                  
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="password" className="form-label inputslabelStyle">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  className="form-control inputsStyle"
-                  id="password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.handleChange}
-                />
-              </div>
-
-              <button type="submit" className="btn btn-primary navTabsBtnlogin text-center">
-                Login
-              </button>
-            </form>
-            <h4>Doctor email: awal@doctor.com</h4>
-            <h4>Doctor password: doctor@123*</h4>
+     
+            <DoctorAddUser />
           </div>
         </div>
       </div>
@@ -113,4 +85,4 @@ const mStp = (state) => {
   };
 };
 
-export default connect(mStp,{login})(DoctorLogin);
+export default connect(mStp,{login})(Signup)

@@ -172,10 +172,12 @@ class EditPatient extends React.Component {
                     </button>
                   </Link> */}
 
-                  <h2 className="text-center"> Update Patient folder </h2>
+                  <h2>  Patient folder </h2>
                 </div>
               </div>
               <div className="row">
+              <h2 className="text-center">  PATIENT INFORMATION </h2>
+
                 <div className="form-group col-md-4 mb-2">
                   <label htmlFor="folderId">Patient Folder ID</label>
                   <input
@@ -185,6 +187,7 @@ class EditPatient extends React.Component {
                     id="folderId"
                     name="folderId"
                     className="form-control inputsStyle"
+                    
                   />
                 </div>
                 <div className="form-group col-md-4 mb-2">
@@ -250,7 +253,7 @@ class EditPatient extends React.Component {
 
               <button
                 type="submit"
-                className="btn btn-primary mt-3 navTabsBtnlogin  mb-2"
+                className="btn btn-primary mt-3 navTabsBtnlogin  mb-3"
               >
                 Update Infos
               </button>
@@ -258,16 +261,22 @@ class EditPatient extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="col mb-2 inputsStyle">
-          <h2 className="text-center"> Upload Patient Folder </h2>
+        <h2 className="text-center">  PATIENT FOLDER IMAGE </h2>
+          <div className="col-4 mb-2 mr-3 inputsStyle">
+            <h2 className="text-center"> Upload Patient Folder </h2>
             <Dropzone onDrop={this.onDrop}>
-              {({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
+              {({
+                getRootProps,
+                getInputProps,
+                isDragActive,
+                isDragReject,
+              }) => (
                 <section className="container">
                   <div {...getRootProps({ className: "dropzone" })}>
-                    <input {...getInputProps()}/>
-                    <h3 className="fileuploadinput text-center"> 
-                       Click Here to select the file
-                    </h3>
+                    <input {...getInputProps()} />
+                    <h5 className="fileuploadinput text-center">
+                      Click Here to select the file
+                    </h5>
                   </div>
                   <aside>
                     <h4>Files</h4>
@@ -278,16 +287,28 @@ class EditPatient extends React.Component {
             </Dropzone>
             <button
               type="submit"
-              className="btn btn-primary mt-3 navTabsBtnlogin"
+              className="btn btn-primary mt-3 mb-3 navTabsBtnlogin"
               onClick={this.handleUploadFiles}
             >
               Upload Folder
             </button>
           </div>
-          <div className="col mb-2 inputsStyle">
+          <div className="col mb-2 inputsStyle patientfolderimg">
             <div>
-                <a href={this.state.filesUrl} target="_blank" rel="noopener noreferrer" >{this.state.filesUrl}</a>
-                {/* <img src={this.state.filesUrl} alt="imgfolder" dowload /> */}
+              <a
+                href={this.state.filesUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+               
+              >
+                {/* {this.state.filesUrl} */}
+                <img
+                  src={this.state.filesUrl}
+                  style={{ width: 200, height: 100 }}
+                  alt="imgfolder"
+                  title="click to download"
+                />
+              </a>
             </div>
             <button
               type="submit"
@@ -296,7 +317,6 @@ class EditPatient extends React.Component {
             >
               Click here to Get Patient Folder
             </button>
-            
           </div>
         </div>
 
@@ -304,7 +324,7 @@ class EditPatient extends React.Component {
          
         </div> */}
         <div className="row">
-        <h2 className="text-center"> DOCTOR NOTE (Reserved for Doctor) </h2>
+          <h2 className="text-center"> DOCTOR NOTE (Reserved for Doctor) </h2>
           <form onSubmit={this.handleDoctorSubmit}>
             <div className="row">
               <div className="form-group col-md-4 mb-2">
@@ -317,6 +337,12 @@ class EditPatient extends React.Component {
                   name="doctorName"
                   className="form-control inputsStyle"
                 />
+                  <button
+              type="submit"
+              className="btn btn-primary mt-3 navTabsBtnlogin"
+            >
+              Add Doctor Note
+            </button>
               </div>
               <div className="form-group col-md-6 mb-2">
                 <textarea
@@ -330,12 +356,7 @@ class EditPatient extends React.Component {
               </div>
             </div>
 
-            <button
-              type="submit"
-              className="btn btn-primary mt-3 navTabsBtnlogin"
-            >
-              Add Doctor Note
-            </button>
+          
           </form>
         </div>
       </div>
@@ -343,10 +364,10 @@ class EditPatient extends React.Component {
   }
 }
 // const mStp = (state, ownProps) => {
- 
+
 //   const profile = state.firebase.profile;
 //   return {
-   
+
 //     profile: profile,
 //   };
 // };

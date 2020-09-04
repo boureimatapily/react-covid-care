@@ -1,6 +1,13 @@
 /* .appContainer{
     background-color: rgb(3, 11, 51);  
 } */
+.navTabsBtnSignup{
+    background-color: rgb(3, 11, 51);
+    font-weight: bolder;
+    color: white;
+    width: 12rem;
+    height: 3rem;
+}
 
 .MuiTab-wrapper {
     width: 100%;
@@ -14,6 +21,13 @@
 .loginForm{
     align-self: "center";
 }
+.homeDoctorRegis{
+    margin-top: 5rem;
+}
+.homeBackground{
+    background: url('../../Images/bgO.jpg') no-repeat right;
+    background-size: 500px 450px;
+}
 
 #covid_img_Home{
     width: 30rem;
@@ -23,15 +37,15 @@
     /* transform: rotate(20deg); */
 }
 #covid_img{
-    width: 100px;
-    height: 180px;
+    width: 80px;
+    height: 140px;
     margin-bottom: 20px;
     border-radius: 10px;
     transform: rotate(20deg);
 }
 #covid_imgOne{
-    width: 100px;
-    height: 180px;
+    width: 80px;
+    height: 140px;
     margin-bottom: 20px;
     border-radius: 10px;
     transform: rotate(-20deg);
@@ -115,6 +129,12 @@
 }
 .alldaysmargin{
     margin-top: 4rem;
+}
+.patientfolderimg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .covidText{
     display: flex;

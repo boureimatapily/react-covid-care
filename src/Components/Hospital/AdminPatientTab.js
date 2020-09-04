@@ -88,12 +88,10 @@ export default function AdminPatientTab({doctorid,userid}) {
             </AppBar>
          
             <TabPanel value={value} index={0}>
-            <h3 className="text-center"> All Patient </h3>
             <AdminPatientList  />
              
             </TabPanel>
             <TabPanel value={value} index={1}>
-            <h3 className="text-center"> Checked Patient </h3>
             <AdminCheckedPatientList  />
              
             </TabPanel>

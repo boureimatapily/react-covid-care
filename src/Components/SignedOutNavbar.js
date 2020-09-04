@@ -50,6 +50,11 @@ function SignedOutNavbar({logout, uid, profile}) {
                         Home
                       </Link>
                     </li>
+                    <li className="nav-item whiteColor ">
+                      <Link to="/signup" className="NavBtnLink">
+                        Sign up
+                      </Link>
+                    </li>
                    
                     {/* <li className="nav-item whiteColor ">
                       <Link to="/" className="NavBtnLink" onClick={logout}>

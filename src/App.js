@@ -14,6 +14,7 @@ import EditSingleDoctor from "./Components/Hospital/Doctor/EditSingleDoctor";
 import AdminPatientTab from "./Components/Hospital/AdminPatientTab";
 import DoctorTab from "./Components/Hospital/Doctor/DoctorTab";
 import DoctorLogin from "./Pages/DoctorLogin";
+import Signup from "./Pages/Signup";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/signup" component={Signup} />
         <Route exact path="/doctor" component={Doctor} />
         <Route exact path="/doctortab" component={DoctorTab} />
         <Route exact path="/adminpatienttab" component={AdminPatientTab} />
