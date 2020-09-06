@@ -58,7 +58,7 @@ class Login extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-xs-12 col-sm-12 col-md-6  offset-md-3 col-lg-6  offset-lg-3 col-xl-6  offset-xl-3col-xxl-6  offset-xxl-3 ">
+          <div className="col-xs-12 col-sm-12 col-md-6  offset-md-3 col-lg-6  offset-lg-3 col-xl-6  offset-xl-3 col-xxl-6  offset-xxl-3 ">
             <h1 className="text-center"> Hospital Manager</h1>
             <form
               onSubmit={this.handleSubmit}
