@@ -261,7 +261,7 @@ class EditPatient extends React.Component {
           </div>
         </div>
         <div className="row">
-        <h2 className="text-center">  PATIENT FOLDER IMAGE </h2>
+        <h2 className="text-center">  PATIENT FOLDER FILES </h2>
           <div className="col-4 mb-2 mr-3 inputsStyle">
             <h2 className="text-center"> Upload Patient Folder </h2>
             <Dropzone onDrop={this.onDrop}>
@@ -324,7 +324,7 @@ class EditPatient extends React.Component {
          
         </div> */}
         <div className="row">
-          <h2 className="text-center"> DOCTOR NOTE (Reserved for Doctor) </h2>
+          <h2 className="text-center"> RESERVED FOR DOCTOR</h2>
           <form onSubmit={this.handleDoctorSubmit}>
             <div className="row">
               <div className="form-group col-md-4 mb-2">

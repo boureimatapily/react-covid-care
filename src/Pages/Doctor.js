@@ -88,7 +88,7 @@ function Doctor({ uid }) {
               </Tabs>
             </AppBar>
             <TabPanel value={value} index={0}>
-              <h3 className="text-center">Profile</h3>
+              {/* <h3 className="text-center">Profile</h3> */}
               <DoctorProfile />
             </TabPanel>
             <TabPanel value={value} index={1}>

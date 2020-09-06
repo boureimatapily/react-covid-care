@@ -165,7 +165,7 @@ class DoctorProfile extends React.Component {
                   aria-label="scrollable auto tabs example"
 
                 >
-                  <Tab label="Profile" {...a11yProps(0)} />
+                  <Tab label="Profile Informations" {...a11yProps(0)} />
                   <Tab label="Availability" {...a11yProps(1)} />
                   
                 </Tabs>
@@ -173,8 +173,8 @@ class DoctorProfile extends React.Component {
               <TabPanel value={this.state.tabvalue} index={0}>
                 <div className="row">
                   <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                    <h3 className="text-center"> Profile Information</h3>
-                    <div className="doctorActionButton">
+                    {/* <h3 className="text-center"> Profile Information</h3> */}
+                    <div className="doctorActionButton mb-3">
                       <Link to={"editsingledoctor/" + uid}>
                         <button
                           type="button"
@@ -193,7 +193,7 @@ class DoctorProfile extends React.Component {
                       </Link>
                     </div>
 
-                    <div className="card">
+                    <div>
                       <h5>Email: {profile.email} </h5>
                       <h5>Fullname: {profile.fullname} </h5>
                       <h5>Role: {profile.role} </h5>
