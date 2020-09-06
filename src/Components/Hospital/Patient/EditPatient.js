@@ -305,8 +305,8 @@ class EditPatient extends React.Component {
                 <img
                   src={this.state.filesUrl}
                   style={{ width: 200, height: 100 }}
-                  alt="imgfolder"
-                  title="click to download"
+                  alt="folder"
+                  title="click to download folder"
                 />
               </a>
             </div>

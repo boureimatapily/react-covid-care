@@ -18,16 +18,18 @@ class Home extends Component {
     return (
       <div className="container-fluid homeBackground">
         <div className="row">
-          <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
-            <div className="covidText">
+          <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-left">
+            <div className="covidText text-left">
               <h2 className="font-weight-bolder display-5">
-                Fight COVID-19 with Fly doctor Platform
+                FIGHT COVID-19 WITH FlyDoctor PLATFORM
               </h2>
-              <h3>work from the comfort of your homes with fly doctor</h3>
-              <div className="d-flex mt-5">
-                <h5 className="mr-3 font-weight-bolder">Already have an account ? Get Started Here </h5>
-                
-              </div>
+              <p>
+              <h2>WORK FROM THE COMFORT OF YOUR HOMES WITH FlyDoctor </h2>
+              <h3 className="mt-5 ml-0 pl-0 font-weight-bolder">
+                Already have an account ? Get Started 
+              </h3>
+              </p>
+             
             </div>
 
             <div className="homebtmContainer">
@@ -59,7 +61,6 @@ class Home extends Component {
             />
           </div> */}
         </div>
-       
       </div>
     );
   }

@@ -1,6 +1,7 @@
 /* .appContainer{
     background-color: rgb(3, 11, 51);  
 } */
+
 .navTabsBtnSignup{
     background-color: rgb(3, 11, 51);
     font-weight: bolder;
@@ -22,11 +23,11 @@
     align-self: "center";
 }
 .homeDoctorRegis{
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 .homeBackground{
     background: url('../../Images/bgO.jpg') no-repeat right;
-    background-size: 500px 450px;
+    background-size: 18rem 30rem;
 }
 
 #covid_img_Home{
@@ -41,14 +42,14 @@
     height: 140px;
     margin-bottom: 20px;
     border-radius: 10px;
-    transform: rotate(20deg);
+    transform: rotate(-20deg);
 }
 #covid_imgOne{
     width: 80px;
     height: 140px;
     margin-bottom: 20px;
     border-radius: 10px;
-    transform: rotate(-20deg);
+    transform: rotate(20deg);
 }
 
 .sectionOne{

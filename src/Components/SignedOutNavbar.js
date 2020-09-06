@@ -13,8 +13,8 @@ function SignedOutNavbar({logout, uid, profile}) {
           <div className="col">
             <nav className="navbar navbar-expand-lg navbar-light NavColor">
               <div className="container-fluid">
-                <Link className="navbar-brand brandColor" to="#">
-                Fly Doctor 
+                <Link className="navbar-brand brandColor" to="/">
+                FlyDoctor 
                 </Link>
                 <button
                   className="navbar-toggler"

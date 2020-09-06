@@ -60,7 +60,7 @@ class DoctorAddUser extends React.Component {
           <div className="col">
             <form onSubmit={this.handleSubmit} id="form">
               <div className="row">
-                <div className="form-group col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
+                <div className="form-group text-left col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
                   <label htmlFor="email" className="form-label font-weight-bolder">
                     Email address
                   </label>
@@ -73,7 +73,7 @@ class DoctorAddUser extends React.Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="form-group col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
+                <div className="form-group  text-left col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
                   <label htmlFor="password" className="form-label font-weight-bolder">
                     Password
                   </label>
@@ -89,7 +89,7 @@ class DoctorAddUser extends React.Component {
               </div>
 
               <div className="row">
-                <div className="mb-2">
+                <div className="mb-2 text-left">
                   <label htmlFor="fullname" className="form-label font-weight-bolder">
                     fullname
                   </label>
@@ -102,7 +102,7 @@ class DoctorAddUser extends React.Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                <div className="form-group col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
+                <div className="form-group text-left col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
                   <label htmlFor="department" className="font-weight-bolder">Department</label>
                   <input
                     value={this.state.department}
@@ -113,7 +113,7 @@ class DoctorAddUser extends React.Component {
                     className="form-control inputsStyle"
                   />
                 </div>
-                <div className="form-group col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
+                <div className="form-group text-left col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
                   <label htmlFor="speciality" className="font-weight-bolder">speciality</label>
                   <input
                     value={this.state.speciality}
@@ -126,12 +126,12 @@ class DoctorAddUser extends React.Component {
                 </div>
               </div>
               <div className="row align-items-center">
-                <div className="form-group col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
+                <div className="form-group text-left col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
                   <label htmlFor="fullname" className="form-label mr-3 font-weight-bolder">
                     Status
                   </label>
                   <select
-                    className="form-select form-select-lg mb-3 inputsStyle"
+                    className="form-select  form-select-lg mb-3 inputsStyle"
                     aria-label="Default select example"
                     name="status"
                     value={this.state.status}
@@ -143,7 +143,7 @@ class DoctorAddUser extends React.Component {
                     <option value="Hospital">Availbable(In Hospital)</option>
                   </select>
                 </div>
-                <div className="form-group col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
+                <div className="form-group text-left col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
                   <label htmlFor="role" className="form-label mr-3 font-weight-bolder">
                     role
                   </label>

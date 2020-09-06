@@ -60,7 +60,7 @@ class AddUser extends React.Component {
           <div className="col card">
             <form onSubmit={this.handleSubmit} id="form">
               <div className="row">
-                <div className="form-group col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
+                <div className="form-group  col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
                   <label htmlFor="email" className="form-label">
                     Email address
                   </label>

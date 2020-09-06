@@ -1,8 +1,7 @@
 import React from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import { login } from "../Redux/Actions/authActions";
 import { Redirect } from "react-router-dom";
-
 
 class Login extends React.Component {
   constructor(props) {
@@ -27,43 +26,45 @@ class Login extends React.Component {
       password: this.state.password,
     };
     this.props.login(creds);
-
   };
   render() {
-    const { uid} = this.props;
-    if (uid){
-      return <Redirect to="/hospital" />
-    };
+    const { uid } = this.props;
+    if (uid) {
+      return <Redirect to="/hospital" />;
+    }
     return (
       <div className="container-fluid">
-         <div className="row sectionOne">
-            <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
+        <div className="row sectionOne">
+          <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
             <h2 className="font-weight-bolder">
-                Fight COVID-19 with Fly doctor  Platform
-              </h2>
-              <h5>work from the comfort of your homes with fly doctor</h5>
-              
-            </div>
-            <div className="col d-flex flex-row justify-content-evenly align-items-center ">
-              <img
-                src={require("../Images/phone.JPG")}
-                alt="covid"
-                id="covid_imgOne"
-                className="d-none d-md-block"
-              />
-
-              <img
-                src={require("../Images/phone.JPG")}
-                alt="covid"
-                id="covid_img"
-                className="d-none d-md-block"
-              />
-            </div>
+              FIGHT COVID-19 WITH FlyDoctor PLATFORM
+            </h2>
+            <h5>WORK FROM THE COMFORT OF YOUR HOMES WITH FlyDoctor</h5>
           </div>
+          <div className="col d-flex flex-row justify-content-evenly align-items-center ">
+            <img
+              src={require("../Images/phone.JPG")}
+              alt="covid"
+              id="covid_imgOne"
+              className="d-none d-md-block"
+            />
+
+            <img
+              src={require("../Images/phone.JPG")}
+              alt="covid"
+              id="covid_img"
+              className="d-none d-md-block"
+            />
+          </div>
+        </div>
         <div className="row">
-        <div className="col-xs-12 col-sm-12 col-md-6  offset-md-3 col-lg-6  offset-lg-3 col-xl-6  offset-xl-3col-xxl-6  offset-xxl-3 ">
-            <h1 className="text-center">  Hospital Manager</h1>
-            <form onSubmit={this.handleSubmit} id="form" className="loginFormcenter justify-content-center align-items-center">
+          <div className="col-xs-12 col-sm-12 col-md-6  offset-md-3 col-lg-6  offset-lg-3 col-xl-6  offset-xl-3col-xxl-6  offset-xxl-3 ">
+            <h1 className="text-center"> Hospital Manager</h1>
+            <form
+              onSubmit={this.handleSubmit}
+              id="form"
+              className="loginFormcenter justify-content-center align-items-center"
+            >
               <div className="mb-3">
                 <label htmlFor="email" className="form-label inputslabelStyle">
                   Email address
@@ -75,11 +76,13 @@ class Login extends React.Component {
                   name="email"
                   value={this.state.value}
                   onChange={this.handleChange}
-                  
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="password" className="form-label inputslabelStyle">
+                <label
+                  htmlFor="password"
+                  className="form-label inputslabelStyle"
+                >
                   Password
                 </label>
                 <input
@@ -92,7 +95,10 @@ class Login extends React.Component {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary navTabsBtnlogin text-center">
+              <button
+                type="submit"
+                className="btn btn-primary navTabsBtnlogin text-center"
+              >
                 Login
               </button>
             </form>
@@ -109,8 +115,8 @@ const mStp = (state) => {
   const profile = state.firebase.profile;
   return {
     uid: uid,
-    profile: profile
+    profile: profile,
   };
 };
 
-export default connect(mStp,{login})(Login);
+export default connect(mStp, { login })(Login);

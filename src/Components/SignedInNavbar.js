@@ -14,7 +14,7 @@ function SignedInNavbar({logout, uid, profile}) {
             <nav className="navbar navbar-expand-lg navbar-light NavColor">
               <div className="container-fluid">
                 <Link className="navbar-brand brandColor" to="/">
-                    Fly Doctor 
+                    FlyDoctor 
                 </Link>
                 <button
                   className="navbar-toggler"

@@ -40,9 +40,9 @@ class DoctorLogin extends React.Component {
          <div className="row sectionOne">
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
             <h2 className="font-weight-bolder">
-                Fight COVID-19 with Fly doctor  Platform
+            FIGHT COVID-19 WITH FlyDoctor PLATFORM
               </h2>
-              <h5>work from the comfort of your homes with fly doctor</h5>
+              <h5>WORK FROM THE COMFORT OF YOUR HOMES WITH FlyDoctor</h5>
                </div>
             <div className="col d-flex flex-row justify-content-evenly align-items-center ">
               <img
