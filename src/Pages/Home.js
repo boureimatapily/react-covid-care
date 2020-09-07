@@ -21,10 +21,10 @@ class Home extends Component {
           <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-left">
             <div className="covidText text-left">
               <h2 className="font-weight-bolder display-5">
-                FIGHT COVID-19 WITH FlyDoctor PLATFORM
+                Fight COVID-19 With FlyDoctor Platform
               </h2>
               <p>
-              <h2>WORK FROM THE COMFORT OF YOUR HOMES WITH FlyDoctor </h2>
+              <h2>Work From The Comfort Of Your Homes With FlyDoctor </h2>
               <h3 className="mt-5 ml-0 pl-0 font-weight-bolder">
                 Already have an account ? Get Started 
               </h3>

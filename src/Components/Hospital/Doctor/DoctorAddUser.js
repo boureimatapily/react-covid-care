@@ -91,7 +91,7 @@ class DoctorAddUser extends React.Component {
               <div className="row">
                 <div className="mb-2 text-left">
                   <label htmlFor="fullname" className="form-label font-weight-bolder">
-                    fullname
+                    Fullname
                   </label>
                   <input
                     type="text"
@@ -114,7 +114,7 @@ class DoctorAddUser extends React.Component {
                   />
                 </div>
                 <div className="form-group text-left col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
-                  <label htmlFor="speciality" className="font-weight-bolder">speciality</label>
+                  <label htmlFor="speciality" className="font-weight-bolder">Speciality</label>
                   <input
                     value={this.state.speciality}
                     onChange={this.handleChange}
@@ -145,7 +145,7 @@ class DoctorAddUser extends React.Component {
                 </div>
                 <div className="form-group text-left col-sm-12 col-xs-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-2">
                   <label htmlFor="role" className="form-label mr-3 font-weight-bolder">
-                    role
+                    Role
                   </label>
 
                   <select

@@ -37,9 +37,9 @@ class Login extends React.Component {
         <div className="row sectionOne">
           <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center">
             <h2 className="font-weight-bolder">
-              FIGHT COVID-19 WITH FlyDoctor PLATFORM
+            Fight COVID-19 With FlyDoctor Platform
             </h2>
-            <h5>WORK FROM THE COMFORT OF YOUR HOMES WITH FlyDoctor</h5>
+            <h5>Work From The Comfort Of Your Homes With FlyDoctor</h5>
           </div>
           <div className="col d-flex flex-row justify-content-evenly align-items-center ">
             <img
