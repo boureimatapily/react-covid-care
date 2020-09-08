@@ -113,17 +113,9 @@ function SignedInNavbar({logout, uid, profile}) {
                   id="navbarSupportedContent"
                 >
                   <ul className="navbar-nav mr-auto mb-2 mb-lg-0 ">
-                    {/* <li className="nav-item whiteColor ">
-                      <Link
-                        className=" active"
-                        aria-current="page"
-                        to="/"
-                      >
-                        Home
-                      </Link>
-                    </li> */}
+                   
                     <li className="nav-item whiteColor">
-                      <Link className="NavBtnLink" to="/doctor">
+                      <Link className="NavBtnLink" to="/">
                         Dashboard
                       </Link>
                     </li>
