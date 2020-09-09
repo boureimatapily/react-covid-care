@@ -1,7 +1,10 @@
 /* .appContainer{
     background-color: rgb(3, 11, 51);  
 } */
-
+.avatar{
+    width:8rem;
+    height: 8rem;
+}
 .navTabsBtnSignup{
     background-color: rgb(3, 11, 51);
     font-weight: bolder;

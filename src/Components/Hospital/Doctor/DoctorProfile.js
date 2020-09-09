@@ -163,36 +163,21 @@ class DoctorProfile extends React.Component {
                   textColor="primary"
                   centered
                   aria-label="scrollable auto tabs example"
-
                 >
                   <Tab label="Profile Informations" {...a11yProps(0)} />
                   <Tab label="Availability" {...a11yProps(1)} />
-                  
                 </Tabs>
               </AppBar>
               <TabPanel value={this.state.tabvalue} index={0}>
                 <div className="row">
-                  <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                  <div className="col-xs-12 col-sm-12 col-md-6  offset-md-3 col-lg-6  offset-lg-3 col-xl-6  offset-xl-3 col-xxl-6  offset-xxl-3">
                     {/* <h3 className="text-center"> Profile Information</h3> */}
-                    <div className="doctorActionButton mb-3">
-                      <Link to={"editsingledoctor/" + uid}>
-                        <button
-                          type="button"
-                          className="btn btn-secondary btnaction font-weight-bolder"
-                        >
-                          <img
-                            src={pencil}
-                            alt="pencil"
-                            id="pencil"
-                            width="20"
-                            height="20"
-                            title="edit"
-                          />{" "}
-                          EDIT
-                        </button>
-                      </Link>
-                    </div>
-
+                    <img
+                      src={require("../../../Images/avatar.png")}
+                      alt="covid"
+                      id="avatar"
+                      className="avatar"
+                    />
                     <div>
                       <h5>Email: {profile.email} </h5>
                       <h5>Fullname: {profile.fullname} </h5>
@@ -201,14 +186,31 @@ class DoctorProfile extends React.Component {
                       <h5>Department {profile.department} </h5>
                       <h5>speciality: {profile.speciality} </h5>
                     </div>
+                    <div className="doctorActionButton mb-3">
+                    <Link to={"editsingledoctor/" + uid}>
+                      <button
+                        type="button"
+                        className="btn btn-secondary btnaction font-weight-bolder"
+                      >
+                        <img
+                          src={pencil}
+                          alt="pencil"
+                          id="pencil"
+                          width="20"
+                          height="20"
+                          title="edit"
+                        />{" "}
+                        EDIT
+                      </button>
+                    </Link>
                   </div>
-                 
+                  </div>
+                  
                 </div>
               </TabPanel>
               <TabPanel value={this.state.tabvalue} index={1}>
                 <div className="row">
                   <div className="col">
-                  
                     <Alldays day={profile} />
                   </div>
 
