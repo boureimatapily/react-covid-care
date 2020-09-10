@@ -43,7 +43,7 @@ class Home extends Component {
                 to="/doctorlogin"
                 className="btn btn-primary navTabsBtnHome text-center"
               >
-                <h4> Docotor</h4>
+                <h4> Doctor</h4>
               </Link>
             </div>
           </div>
