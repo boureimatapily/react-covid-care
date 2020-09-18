@@ -24,12 +24,11 @@ class Home extends Component {
                 Fight COVID-19 With FlyDoctor Platform
               </h2>
               <p>
-              <h2>Work From The Comfort Of Your Homes With FlyDoctor </h2>
-              <h3 className="mt-5 ml-0 pl-0 font-weight-bolder">
-                Already have an account ? Get Started 
-              </h3>
+                <h2>Work From The Comfort Of Your Homes With FlyDoctor </h2>
+                <h3 className="mt-5 ml-0 pl-0 font-weight-bolder">
+                  Already have an account ? Get Started
+                </h3>
               </p>
-             
             </div>
 
             <div className="homebtmContainer">
@@ -48,14 +47,22 @@ class Home extends Component {
             </div>
           </div>
           <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center homeDoctorRegis">
-          {/* <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center homeDoctorRegis"> */}
+            {/* <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center homeDoctorRegis"> */}
             <img
               src={require("../Images/hdocto.PNG")}
               alt="covid"
               id="covid_img_Home"
               className="d-none d-md-block"
             />
-             <h3>Doctor Registration</h3>
+            <h3>Consult Online From Anywhere</h3>
+            {/* <div className="homebtmContainer">
+              <Link
+                to="/doctorlogin"
+                className="btn btn-primary navTabsBtnHome text-center"
+              >
+                <h6> Sign up from here</h6>
+              </Link>
+            </div> */}
 
             {/* <DoctorAddUser /> */}
           </div>
