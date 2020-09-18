@@ -25,16 +25,16 @@
 .loginForm{
     align-self: "center";
 }
-.homeDoctorRegis{
+/* .homeDoctorRegis{
     margin-top: 3rem;
-}
-.homeBackground{
+} */
+/* .homeBackground{
     background: url('../../Images/bgO.jpg') no-repeat right;
     background-size: 18rem 30rem;
-}
+} */
 
 #covid_img_Home{
-    width: 30rem;
+    width: 40rem;
     height: 30rem;
     margin-bottom: 20px;
     border-radius: 10px;

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "../Components/Home/Home.css";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import DoctorAddUser from "../Components/Hospital/Doctor/DoctorAddUser";
+// import DoctorAddUser from "../Components/Hospital/Doctor/DoctorAddUser";
 
 class Home extends Component {
   render() {
@@ -48,8 +48,16 @@ class Home extends Component {
             </div>
           </div>
           <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center homeDoctorRegis">
-            <h3>Doctor Registration</h3>
-            <DoctorAddUser />
+          {/* <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-center homeDoctorRegis"> */}
+            <img
+              src={require("../Images/hdocto.PNG")}
+              alt="covid"
+              id="covid_img_Home"
+              className="d-none d-md-block"
+            />
+             <h3>Doctor Registration</h3>
+
+            {/* <DoctorAddUser /> */}
           </div>
 
           {/* <div className="col d-flex flex-row justify-content-evenly align-items-center ">
