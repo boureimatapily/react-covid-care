@@ -6,7 +6,7 @@ import "firebase/database";
 import "firebase/storage";
 import "firebase/analytics";
 
-var firebaseConfig = {
+var firebaseConfig = { // firebase config 
   apiKey: "AIzaSyB9sIGOPZPiI4aRh3n5YEu7wRA79lBn0eY",
   authDomain: "covid-care-a267c.firebaseapp.com",
   databaseURL: "https://covid-care-a267c.firebaseio.com",
@@ -16,8 +16,8 @@ var firebaseConfig = {
   appId: "1:783260378487:web:ccaa9783f729e1246c2d72"
 };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.firestore()
+  firebase.initializeApp(firebaseConfig); // firebase initialisation
+  firebase.firestore() 
   // firebase.functions()
   const storage = firebase.storage();
   const auth = firebase.auth()
