@@ -22,7 +22,7 @@ function Hospital({uid}) {
   );
 }
 const mStp = (state) => {
-  const uid = state.firebase.auth.uid;
+  const uid = state.firebase.auth.uid; // getting uid from firebase 
  // const profile = state.firebase.profile;
   return {
     uid: uid,

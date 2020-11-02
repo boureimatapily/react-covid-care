@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 
 class Home extends Component {
   render() {
+    // checking user role
     const { uid, profile } = this.props;
     if (uid) {
       if (profile.role === "manager") {
@@ -81,8 +82,8 @@ class Home extends Component {
   }
 }
 const mStp = (state) => {
-  const uid = state.firebase.auth.uid;
-  const profile = state.firebase.profile;
+  const uid = state.firebase.auth.uid; // getting uid from firebase
+  const profile = state.firebase.profile; // getting user profile data from firebase 
   return {
     uid: uid,
     profile: profile,

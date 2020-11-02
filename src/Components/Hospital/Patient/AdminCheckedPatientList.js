@@ -56,7 +56,7 @@ class AdminCheckedPatientList extends React.Component{
               <tbody>
                 {checked  &&
                   checked.map((patient) => (
-                 
+                    // single Patient for Admin
                     <AdminTabSinglePatient patient={patient} key={patient.folderId} />
                     
                   ))}
