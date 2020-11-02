@@ -6,6 +6,7 @@ import { logout } from "../Redux/Actions/authActions";
 //import firebase from "../Config/fbconfig"
 
 function SignedInNavbar({logout, uid, profile}) {
+  // Signin Navbar if the user is manager
   if(profile.role === "manager"){
     return (
       <div className="container-fluid">
@@ -83,6 +84,7 @@ function SignedInNavbar({logout, uid, profile}) {
     );
   }else{
     return (
+      // Signin Navbar if the user is not a manager
       <div className="container">
         <div className="row">
           <div className="col">

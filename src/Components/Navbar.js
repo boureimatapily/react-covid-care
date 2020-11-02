@@ -4,6 +4,7 @@ import SignedInNavbar from "./SignedInNavbar";
 import SignedOutNavbar from "./SignedOutNavbar";
 
 function Navbar({ uid }) {
+  // Show the spefic Navbar based on the uid 
   if(uid){
     return (
       <SignedInNavbar />
