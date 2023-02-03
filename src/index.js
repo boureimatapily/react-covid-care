@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Provider, useSelector } from "react-redux"; // redux provider
+import { Provider} from "react-redux"; // redux provider
 import { ReactReduxFirebaseProvider } from "react-redux-firebase"; // new update from react-redux-firebase v3
 import firebase from "./Config/fbconfig"; // import firebase
 import store from "./Redux/Store"; // import redux store
