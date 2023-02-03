@@ -50,9 +50,9 @@ ReactDOM.render(
       <ReactReduxFirebaseProvider {...rrfProps}>
         {/* ADD BrowserRouter from react-router-dom */}
         <Router>
-          <AuthIsLoaded>
+//           <AuthIsLoaded>
             <App />
-          </AuthIsLoaded>
+//           </AuthIsLoaded>
         </Router>
       </ReactReduxFirebaseProvider>
     </Provider>
