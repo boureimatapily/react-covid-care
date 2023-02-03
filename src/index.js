@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider, useSelector } from "react-redux"; // redux provider
-import { ReactReduxFirebaseProvider, isLoaded } from "react-redux-firebase"; // new update from react-redux-firebase v3
+import { ReactReduxFirebaseProvider } from "react-redux-firebase"; // new update from react-redux-firebase v3
 import firebase from "./Config/fbconfig"; // import firebase
 import store from "./Redux/Store"; // import redux store
 import { createFirestoreInstance } from "redux-firestore"; // allow to create firestore intance in our app
@@ -28,21 +28,21 @@ const rrfProps = {
 };
 
 //Loding animation before data appear
-function AuthIsLoaded({ children }) {
-  const auth = useSelector((state) => state.firebase.auth);
-  if (!isLoaded(auth))
-    return (
-      <div className="mx-auto">
-        <div
-          className="spinner-border loadinganim"
-          role="status"
-        >
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-    );
-  return children;
-}
+// function AuthIsLoaded({ children }) {
+//   const auth = useSelector((state) => state.firebase.auth);
+//   if (!isLoaded(auth))
+//     return (
+//       <div className="mx-auto">
+//         <div
+//           className="spinner-border loadinganim"
+//           role="status"
+//         >
+//           <span className="sr-only">Loading...</span>
+//         </div>
+//       </div>
+//     );
+//   return children;
+// }
 
 ReactDOM.render(
   <React.StrictMode>
