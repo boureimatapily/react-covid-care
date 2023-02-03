@@ -4,7 +4,7 @@ import "firebase/compat/firestore";
 import "firebase/compat/auth";
 import "firebase/compat/database";
 import "firebase/compat/storage";
-import "firebase/compat/analytics";
+
 
 var firebaseConfig = { // firebase config 
   apiKey: "AIzaSyB9sIGOPZPiI4aRh3n5YEu7wRA79lBn0eY",
